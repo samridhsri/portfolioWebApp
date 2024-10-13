@@ -15,12 +15,13 @@ import { IoMdMail } from "react-icons/io";
 const Home = () => {
     return (
         <>
+
             <section>
                 <div className="flex">
                     <div className="navbarBox">
                         <Navbar />
                     </div>
-                    <div className="blankSpaceLeft"></div>
+                    {/* <div className="blankSpaceLeft"></div> */}
                     <div className="rightBox">
                         <div className="ContentBox">
                             <h3 className="body-name-title" id="homeSection">Hey! I'm Samridh 👋<br /><span id="job">Computer Engineering Student</span></h3>
@@ -66,7 +67,7 @@ const Home = () => {
 
 
                     </div>
-                    <div className="blankSpaceRight"></div>
+                    {/* <div className="blankSpaceRight"></div> */}
 
 
                 </div>

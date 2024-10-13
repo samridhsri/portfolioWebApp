@@ -3,7 +3,7 @@ import '../stylesheets/navbar.css';
 import { FaHome } from "react-icons/fa";
 import { FaBriefcase } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa6";
-import { SiAboutdotme } from "react-icons/si";
+// import { SiAboutdotme } from "react-icons/si";
 import { PiNewspaperDuotone } from "react-icons/pi";
 
 

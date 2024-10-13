@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
 
 :root {
   --polkadot-color: #797a87;
   --background-white: #222224;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -11,18 +14,18 @@ body {
   opacity: 1;
   background-image: radial-gradient(var(--polkadot-color) 0.5px, var(--background-white) 0.5px),
                     radial-gradient(var(--polkadot-color) 0.5px, var(--background-white) 0.5px);
-  background-size: 25px 25px; /* Adjust dot spacing */
-  background-position: 0 0, 10px 10px; /* Offset one layer to create diagonal effect */
+  background-size: 25px 25px;
+  background-position: 0 0, 10px 10px;
   color: white;
 }
 
-.body-title{
+.body-title {
   margin-top: 4em;
   font-size: 35px;
   margin-bottom: 0;
 }
 
-.body-name-title{
+.body-name-title {
   margin-top: 4.5em;
   font-size: 32px;
   margin-bottom: 0;
@@ -36,102 +39,78 @@ body {
 
 #job {
   font-size: 40px;
-  background: linear-gradient(to right, #ffcc99, #ff66b2); /* Peach to pink gradient */
+  background: linear-gradient(to right, #ffcc99, #ff66b2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 }
 
-
-.body-subtitle{
+.body-subtitle {
   margin-top: 0;
   font-size: 20px;
 }
 
 .flex {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: center; */
+  flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 768px) {
-  .navbarBox {
-      display: none;
-  }
+.navbarBox {
+  flex: 0 0 200px; /* Fixed width or adjust as needed */
 }
 
-
-
-
-#navbarBox{
-  width: 70%;
-
+.rightBox {
+  flex: 1 1 800px; /* Adjust as needed */
+  max-width: 800px;
+  padding: 0 20px; /* Add padding for spacing */
 }
 
-.rightBox{
-  width: 70%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
+.blankSpaceLeft,
 .blankSpaceRight {
-  width: 400px;
-}
-
-.blankSpaceLeft{
-  width: 300px;
+  display: none; /* Remove blank spaces */
 }
 
 .buttonsUnderName {
   display: flex;
-  width: 95%;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
   margin-top: 25px;
-
 }
 
 .btn {
   margin: 0;
   border-radius: 20px;
-  border-style: none;
+  border: none;
   height: 40px;
-  width: 110px;
+  padding: 0 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   font-weight: 600;
   background-color: #6d6d6d66;
-  opacity: 1;
   color: white;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover animation */
 .btn:hover {
-  background-color: #5a5a5a; /* Slightly darker background color */
-  transform: scale(1.05);    /* Slightly enlarge the button */
-  opacity: 0.9;              /* Change opacity on hover */
+  background-color: #5a5a5a;
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
-.icons{
+.icons {
   font-size: 20px;
   color: white;
+  margin-right: 5px;
 }
 
-#line{
-  border-bottom: 5px;
-  border-width: 1px;
+#line {
   opacity: 0.2;
-  height: 15px;
+  height: 1px;
   width: 90%;
-  border-color: white;
-  border-style: solid;
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  margin: 0;
-  margin-left: 10px;
+  background-color: white;
+  margin: 15px 0;
 }
 
 #resumeBtn {
@@ -141,4 +120,52 @@ body {
   transition: background 0.3s ease;
 }
 
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .navbarBox {
+    /* width: 100%; */
+    display: none;
+  }
+
+  .rightBox {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .body-name-title {
+    margin-top: 2em;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #job {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .body-subline {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .buttonsUnderName {
+    /* flex-direction: column;
+    align-items: center;
+    width: 100%; */
+  }
+
+  .btn {
+    width: 90%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  #line {
+    width: 100%;
+  }
+}
