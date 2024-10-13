@@ -14,13 +14,13 @@ const experiences = [
     "description": "Led projects with Python, C, and OpenCV to build smart image recognition tools. Streamlined workflows with data insights and teamed up to launch solutions that hit business goals!",
     "tools": ["Python", "OpenCV", "C#", "PyTorch", "UNet", "Computer Vision"]
   }
-  
+
 ];
 
 const experienceComp = () => {
   return (
     <div>
-      <h3 className="title">Experience 💼<span className="subtitle">(All the Cool stuff, I learnt along the way ✨)</span></h3>
+      <h3 className="title">Experience 💼 <br /> <span className="subtitle">(All the Cool stuff, I learnt along the way ✨)</span></h3>
       <div className="container">
         {experiences.map((experience, index) => (
           <div className="experienceBox" key={index}>
@@ -44,6 +44,7 @@ const experienceComp = () => {
                   ))}
                 </div>
               </div>
+
             </div>
           </div>
         ))}

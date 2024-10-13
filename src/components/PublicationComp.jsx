@@ -16,7 +16,7 @@ const publications = [
 const PublicationsComp = () => {
   return (
     <div>
-      <h3 className="title">Publications 📚<span className="subtitle">(Research I’ve Contributed To)</span></h3>
+      <h3 className="title">Publications 📚<br /><span className="subtitle">(Research Papers I’ve Contributed To)</span></h3>
       <div className="container">
         {publications.map((publication, index) => (
           <a className="publicationLink" href={publication.link} key={index} target="_blank" rel="noopener noreferrer">

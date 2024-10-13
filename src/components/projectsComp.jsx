@@ -31,7 +31,7 @@ const projects = [
 const ProjectsComp = () => {
   return (
     <div>
-      <h3 className="title">Projects 🚀<span className="subtitle">(Some of the cool things I built 🛠️)</span></h3>
+      <h3 className="title">Projects 🚀 <br /><span className="subtitle">(Some of the cool things I built 🛠️)</span></h3>
       <div className="container">
         {projects.map((project, index) => (
           <a className="projectLink" href={project.link} key={index} target="_blank" rel="noopener noreferrer">
