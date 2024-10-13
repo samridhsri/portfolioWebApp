@@ -1,0 +1,45 @@
+li {
+    list-style: none;
+}
+
+nav{
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+}
+
+ul.nav li {
+    margin-right: 30px;
+    line-height: 45px;
+    text-align: center;
+    
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+.middleContentBox {
+    width: 100%;
+    text-align: center;
+} 
+
+.icon {
+    color: white;
+    padding: 5px;
+    font-size: 45px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+
+.icon:hover {
+    transform: scale(1.1); 
+    height: 45px;
+    width: 45px;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
