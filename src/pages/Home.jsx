@@ -26,7 +26,7 @@ const Home = () => {
                         <div className="ContentBox">
                             <h3 className="body-name-title" id="homeSection">Hey! I'm Samridh 👋<br /><span id="job">Computer Engineering Student</span></h3>
                             <div className="buttonsUnderName">
-                            <a href="https://drive.google.com/file/d/1etkUGspYqZiKjK9czQMgz5bzU8Ai5NWb/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://drive.google.com/file/d/1nQi2OO7NGfH8MjakxIPHiKxciBVxFgsn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                                 <button id="resumeBtn" className="btn"><IoDocumentText className="icons" /> Resume</button>
                                 </a>
                                 <a href="https://www.linkedin.com/in/samridh-srivastava-a6b888ba/" target="_blank" rel="noopener noreferrer">
@@ -47,6 +47,8 @@ const Home = () => {
                                     <br /><br />
 
                                     Currently, I’m pursuing my <span style={{ fontWeight: "600", color: "white" }}>M.S. in Computer Engineering at NYU</span>, where I’m expanding my expertise in Computers. When I’m not immersed in coding, I enjoy playing Video Games, Watching Movies/TV Series, or just relaxing, always thinking of the next big project.</p>
+
+                                    <span style={{ fontWeight: "700", color: "white" }}>I am actively seeking exciting Summer Internship opportunities for 2025, where I can apply my skills in full-stack development and advanced machine learning to impactful projects.</span>
                             </div>
 
 
