@@ -6,7 +6,7 @@ const publications = [
     "title": "Leaf Edge Detection Using Machine Learning",
     "date": "August 2023",
     "journal": "2023 International Conference on Emerging Trends in Networks and Computer Communications (ETNCC)",
-    "authors": ["Samridh Srivastava", "John Doe", "Jane Smith"],
+    "authors": ["Samridh Srivastava", "Geeta Rani", "Nidhi Kundu", "Vijaypal Singh Dhaka"],
     "link": "https://ieeexplore.ieee.org/document/10284977",
     "description": "This paper reviews and compares various segmentation techniques for leaf lesion detection, finding Canny with Otsu thresholding to be the most effective across different noise levels."
   },
