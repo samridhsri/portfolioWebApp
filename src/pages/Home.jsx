@@ -26,8 +26,8 @@ const Home = () => {
                         <div className="ContentBox">
                             <h3 className="body-name-title" id="homeSection">Hey! I'm Samridh 👋<br /><span id="job">Computer Engineering Student</span></h3>
                             <div className="buttonsUnderName">
-                            <a href="https://drive.google.com/file/d/1nQi2OO7NGfH8MjakxIPHiKxciBVxFgsn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                                <button id="resumeBtn" className="btn"><IoDocumentText className="icons" /> Resume</button>
+                                <a href="https://drive.google.com/file/d/1pbfKBbERbnUQNE_w3dnW1dX-wr_5BF-l/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                    <button id="resumeBtn" className="btn"><IoDocumentText className="icons" /> Resume</button>
                                 </a>
                                 <a href="https://www.linkedin.com/in/samridh-srivastava-a6b888ba/" target="_blank" rel="noopener noreferrer">
                                     <button className="btn"><FaLinkedin className="icons" /> LinkedIn</button>
@@ -48,8 +48,20 @@ const Home = () => {
 
                                     Currently, I’m pursuing my <span style={{ fontWeight: "600", color: "white" }}>M.S. in Computer Engineering at NYU</span>, where I’m expanding my expertise in Computers. When I’m not immersed in coding, I enjoy playing Video Games, Watching Movies/TV Series, or just relaxing, always thinking of the next big project.</p>
 
-                                    <span style={{ fontWeight: "700", color: "white" }}>I am actively seeking exciting Summer Internship opportunities for 2025, where I can apply my skills in full-stack development and advanced machine learning to impactful projects.</span>
+                                {/* <span style={{ fontWeight: "700", color: "white" }}>I am actively seeking exciting Summer Internship opportunities for 2025, where I can apply my skills in full-stack development and advanced machine learning to impactful projects.</span> */}
                             </div>
+
+                            <section id="whatsNewSection">
+                                <h3 className="sectionTitle">What's New ✨</h3>
+                                <ul className="whatsNewList">
+                                    <li><strong>📞 Started a new role</strong> as an Engagement Ambassador at <span style={{ color: "#F39C12" }}>NYU Phonathon</span> – Feb 2025</li>
+                                    <li><strong>🧠 Built:</strong> Urban Sustainability Calculator using Next.js + Google Gemini</li>
+                                    <li><strong>🧠 Built:</strong> Exploratory Data Analysis on the role of AI in Tech Layoffs</li>
+                                    <li><strong>🎓 Just finished:</strong> Machine Learning, Computer System Architecture and Real-time Embedded Systems at NYU Tandon – Fall 2024</li>
+                                    <li><strong>📣 Currently seeking:</strong> Full-stack or ML Internship for Summer 2025</li>
+                                </ul>
+                            </section>
+
 
 
                             <section id="experienceSection">

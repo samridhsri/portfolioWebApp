@@ -171,3 +171,24 @@ body {
     width: 100%;
   }
 }
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.whatsNewList {
+  list-style: none;
+  padding-left: 0;
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.whatsNewList li::before {
+  content: "";
+  color: #F39C12;
+}
+
