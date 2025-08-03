@@ -57,7 +57,7 @@ const Home = () => {
                                     <li><strong>📞 Started a new role</strong> as an Engagement Ambassador at <span style={{ color: "#F39C12" }}>NYU Phonathon</span> – Feb 2025</li>
                                     <li><strong>🧠 Built:</strong> Urban Sustainability Calculator using Next.js + Google Gemini</li>
                                     <li><strong>🧠 Built:</strong> Exploratory Data Analysis on the role of AI in Tech Layoffs</li>
-                                    <li><strong>🎓 Just finished:</strong> Machine Learning, Computer System Architecture and Real-time Embedded Systems at NYU Tandon – Fall 2024</li>
+                                    <li><strong>🎓 Just finished:</strong> MLops, Deep Learning, Digital Signal Processing at NYU Tandon – Fall 2024</li>
                                     <li><strong>📣 Currently seeking:</strong> Full-stack or ML Internship for Summer 2025</li>
                                 </ul>
                             </section>
