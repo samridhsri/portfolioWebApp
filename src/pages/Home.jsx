@@ -26,7 +26,7 @@ const Home = () => {
                         <div className="ContentBox">
                             <h3 className="body-name-title" id="homeSection">Hey! I'm Samridh 👋<br /><span id="job">Computer Engineering Student</span></h3>
                             <div className="buttonsUnderName">
-                                <a href="https://drive.google.com/file/d/1pbfKBbERbnUQNE_w3dnW1dX-wr_5BF-l/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                <a href="https://drive.google.com/drive/folders/1bEBcGLMdbUTfA-n9YaUXMQdUDFFxgBfA?usp=sharing" target="_blank" rel="noopener noreferrer">
                                     <button id="resumeBtn" className="btn"><IoDocumentText className="icons" /> Resume</button>
                                 </a>
                                 <a href="https://www.linkedin.com/in/samridh-srivastava-a6b888ba/" target="_blank" rel="noopener noreferrer">
