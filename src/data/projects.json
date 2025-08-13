@@ -1,4 +1,11 @@
 [
+  {
+        "title": "Caffeine Tracker",
+        "date": "2025",
+        "description": "I built a simple but effective Caffeine Tracker web app to monitor daily caffeine intake. As someone who’s always juggling coffee breaks between deep work and debugging, I thought—why not build something that helps me keep it in check?",
+        "tools": ["React", "Tailwind CSS"],
+        "link": "https://caffeinetrackerwebapp.netlify.app/"
+      }, 
     {
         "title": "Enhanced ResNet for CIFAR-10 Classification",
         "date": "2025",
