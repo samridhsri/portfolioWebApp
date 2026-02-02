@@ -5,18 +5,22 @@ const ResumeSection = () => {
       <p className="text-xl" style={{ color: 'var(--text-secondary)' }}>
         Download my resume to learn more about my experience and skills.
       </p>
-      <button
-        className="px-8 py-4 rounded-lg text-lg transition-all"
+      <a
+        href="https://drive.google.com/drive/folders/1WQQTwyCf1lLcoBnAZuZnU4gqnaBvP_cQ?usp=sharing"
+        target="_blank"
+        download
+        className="inline-block px-8 py-4 rounded-lg text-lg transition-all"
         style={{
           backgroundColor: 'var(--accent-primary)',
           color: 'var(--text-primary)',
-          boxShadow: '0 0 20px var(--accent-glow)'
+          boxShadow: '0 0 20px var(--accent-glow)',
+          textDecoration: 'none'
         }}
         onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--accent-secondary)'}
         onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--accent-primary)'}
       >
         Download Resume
-      </button>
+      </a>
     </div>
   );
 };

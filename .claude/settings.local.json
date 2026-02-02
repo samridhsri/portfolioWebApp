@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm start)"
+      "Bash(npm start)",
+      "Bash(timeout:*)",
+      "Bash(git rm:*)",
+      "Bash(cmd //c \"del /F /Q .\\\\nul\")",
+      "Bash(git clean:*)",
+      "Bash(git add:*)"
     ]
   }
 }

@@ -1,4 +1,8 @@
-const ProjectCard = ({ project, onSelect }) => {
+import { useNavigate } from 'react-router-dom';
+
+const ProjectCard = ({ project }) => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="p-6 rounded-lg space-y-3 transition-all cursor-pointer"
@@ -8,7 +12,7 @@ const ProjectCard = ({ project, onSelect }) => {
       }}
       onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--card-hover-bg)'}
       onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--card-bg)'}
-      onClick={() => onSelect(project)}
+      onClick={() => navigate(`/projects/${project.id}`)}
     >
       {/* Image or Placeholder */}
       {project.image ? (
@@ -74,7 +78,7 @@ const ProjectCard = ({ project, onSelect }) => {
         }}
         onClick={(e) => {
           e.stopPropagation();
-          onSelect(project);
+          navigate(`/projects/${project.id}`);
         }}
       >
         View Details &rarr;

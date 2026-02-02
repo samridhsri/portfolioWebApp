@@ -1,9 +1,13 @@
-const ProjectDetail = ({ project, onBack }) => {
+import { useNavigate } from 'react-router-dom';
+
+const ProjectDetail = ({ project }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Back Button */}
       <button
-        onClick={onBack}
+        onClick={() => navigate(-1)}
         className="flex items-center gap-2 transition-colors"
         style={{ color: 'var(--text-secondary)' }}
         onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'}
@@ -66,7 +70,7 @@ const ProjectDetail = ({ project, onBack }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {project.features.map((feature, index) => (
             <div key={index} className="flex items-start gap-2">
-              <span className="mt-1" style={{ color: 'var(--accent-primary)' }}>&check;</span>
+              <span className="mt-1" style={{ color: 'var(--accent-primary)' }}>✓</span>
               <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>{feature}</span>
             </div>
           ))}

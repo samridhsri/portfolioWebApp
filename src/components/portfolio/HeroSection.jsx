@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import TypingName from "./TypingName";
 import RotatingText from "./RotatingText";
 
-const HeroSection = ({ setActiveSection }) => {
+const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="text-center space-y-6 max-w-4xl mx-auto">
       {/* Animoji */}
@@ -32,9 +34,9 @@ const HeroSection = ({ setActiveSection }) => {
       <div className="text-lg space-y-2" style={{ color: 'var(--text-secondary)' }}>
         <p className="flex items-center justify-center gap-2">
           <span style={{ color: 'var(--accent-primary)' }}>&#x1F393;</span>
-          <span>MS Computer Engineering @ NYU Tandon</span>
-          <span style={{ color: 'var(--accent-primary)' }}>&bull;</span>
-          <span style={{ color: 'var(--accent-primary)' }}>3.83 GPA</span>
+          <span>MS Computer Engineering @ <span style={{ color: 'var(--accent-primary)' }}>NYU</span></span>
+          {/* <span style={{ color: 'var(--accent-primary)' }}>&bull;</span> */}
+          {/* <span style={{ color: 'var(--accent-primary)' }}>3.83 GPA</span> */}
         </p>
       </div>
 
@@ -57,7 +59,7 @@ const HeroSection = ({ setActiveSection }) => {
           View My Work &rarr;
         </button>
         <button
-          onClick={() => setActiveSection("resume")}
+          onClick={() => navigate('/resume')}
           className="px-8 py-4 rounded-lg text-lg font-medium transition-all border"
           style={{
             backgroundColor: 'var(--bg-secondary)',
