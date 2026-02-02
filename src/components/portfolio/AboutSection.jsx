@@ -6,7 +6,7 @@ const AboutSection = () => {
       {/* Profile Photo Placeholder */}
       <div className="photo-placeholder">
         <span>
-          <img src="images/aboutPage/1736746580711.jpg" />
+          <img src="images/aboutPage/aboutPageImage.jpeg" />
         </span>
       </div>
 
