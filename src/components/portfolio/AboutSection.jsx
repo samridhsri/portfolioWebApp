@@ -76,7 +76,7 @@ const AboutSection = () => {
         </p>
         <p>
           Currently, I'm pursuing my M.S. in Computer Engineering at NYU (CGPA:
-          3.83/4.00), where I'm expanding my expertise in distributed systems,
+          3.89/4.00), where I'm expanding my expertise in distributed systems,
           MLOps, and deep learning. I graduated from Manipal University Jaipur
           with a 9.05/10 CGPA, earning the Dean's List Award twice and achieving
           the highest junior year GPA (9.86/10).
