@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samridh Srivastava - Portfolio</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Geist Mono', monospace;
+            overflow-x: hidden;
+        }
+        .bakbak {
+            font-family: 'Bakbak One', cursive;
+        }
+        .puzzle-piece {
+            position: absolute;
+            cursor: move;
+            user-select: none;
+            opacity: 0.25;
+            transition: all 2s ease-in-out;
+        }
+        .puzzle-piece:hover {
+            opacity: 0.5;
+            z-index: 10;
+        }
+        .puzzle-piece.dragging {
+            opacity: 0.7;
+            z-index: 20;
+            transition: none;
+        }
+        .puzzle-piece.moving {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -10px) rotate(2deg); }
+            50% { transform: translate(-5px, 5px) rotate(-1deg); }
+            75% { transform: translate(5px, 10px) rotate(1deg); }
+        }
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            width: auto;
+            max-width: 100%;
+        }
+        .typing-animation.active {
+            animation: typing-loop 10s linear infinite;
+        }
+        .typing-animation-subtitle {
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            animation: typing-subtitle-loop 10s steps(25) infinite;
+            animation-delay: 0.3s;
+        }
+        .rotating-text {
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            animation: rotating-text-loop 15s steps(40) infinite;
+        }
+        @keyframes typing-loop {
+            0% { 
+                max-width: 0;
+                border-right: 3px solid white;
+            }
+            25% { 
+                max-width: 100%;
+                border-right: 3px solid white;
+            }
+            75% { 
+                max-width: 100%;
+                border-right: 3px solid white;
+            }
+            85% {
+                max-width: 0;
+                border-right: 3px solid white;
+            }
+            100% { 
+                max-width: 0;
+                border-right: 3px solid white;
+            }
+        }
+        @keyframes typing-subtitle-loop {
+            0% { 
+                width: 0;
+                opacity: 0;
+                border-right: 3px solid rgba(167, 139, 250, 1);
+            }
+            5% {
+                opacity: 1;
+            }
+            25% { 
+                width: 100%;
+                opacity: 1;
+                border-right: 3px solid rgba(167, 139, 250, 1);
+            }
+            75% { 
+                width: 100%;
+                opacity: 1;
+                border-right: 3px solid rgba(167, 139, 250, 1);
+            }
+            85% {
+                width: 0;
+                opacity: 1;
+                border-right: 3px solid rgba(167, 139, 250, 1);
+            }
+            90% {
+                opacity: 0;
+            }
+            100% { 
+                width: 0;
+                opacity: 0;
+                border-right: 3px solid rgba(167, 139, 250, 1);
+            }
+        }
+        @keyframes rotating-text-loop {
+            /* Full Stack Developer */
+            0% {
+                content: "";
+                width: 0;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            8% {
+                width: 100%;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            23% {
+                width: 100%;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            28% {
+                width: 0;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            30% {
+                width: 0;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            /* First rotating text */
+            38% {
+                width: 100%;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            56% {
+                width: 100%;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            61% {
+                width: 0;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            63% {
+                width: 0;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            /* Second rotating text */
+            71% {
+                width: 100%;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            89% {
+                width: 100%;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            94% {
+                width: 0;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+            100% {
+                width: 0;
+                border-right: 3px solid rgba(147, 197, 253, 1);
+            }
+        }
+        .project-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        .photo-placeholder {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            100% { left: 100%; }
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .puzzle-tagline {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 14px;
+            color: rgba(167, 139, 250, 0.6);
+            font-style: italic;
+            max-width: 300px;
+            text-align: right;
+            z-index: 5;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .puzzle-tagline {
+                bottom: 20px;
+                right: 20px;
+                font-size: 12px;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 text-white">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // Puzzle Piece Component
+        const PuzzlePiece = ({ id, initialX, initialY, size, isMoving }) => {
+            const [position, setPosition] = useState({ x: initialX, y: initialY });
+            const [isDragging, setIsDragging] = useState(false);
+            const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+            useEffect(() => {
+                if (!isDragging) {
+                    setPosition({ x: initialX, y: initialY });
+                }
+            }, [initialX, initialY, isDragging]);
+
+            const handleMouseDown = (e) => {
+                setIsDragging(true);
+                setOffset({
+                    x: e.clientX - position.x,
+                    y: e.clientY - position.y
+                });
+            };
+
+            const handleMouseMove = (e) => {
+                if (isDragging) {
+                    setPosition({
+                        x: e.clientX - offset.x,
+                        y: e.clientY - offset.y
+                    });
+                }
+            };
+
+            const handleMouseUp = () => {
+                setIsDragging(false);
+            };
+
+            useEffect(() => {
+                if (isDragging) {
+                    window.addEventListener('mousemove', handleMouseMove);
+                    window.addEventListener('mouseup', handleMouseUp);
+                    return () => {
+                        window.removeEventListener('mousemove', handleMouseMove);
+                        window.removeEventListener('mouseup', handleMouseUp);
+                    };
+                }
+            }, [isDragging, offset]);
+
+            // Classic jigsaw puzzle piece - square with rounded tabs and blanks
+            const createClassicPuzzlePiece = (tabTop, tabRight, tabBottom, tabLeft) => {
+                let path = "M 20,20 ";
+                
+                // Top edge
+                if (tabTop) {
+                    path += "L 40,20 C 40,12 45,8 50,8 C 55,8 60,12 60,20 L 80,20 ";
+                } else if (tabTop === false) {
+                    path += "L 40,20 C 40,28 45,32 50,32 C 55,32 60,28 60,20 L 80,20 ";
+                } else {
+                    path += "L 80,20 ";
+                }
+                
+                // Right edge
+                if (tabRight) {
+                    path += "L 80,40 C 88,40 92,45 92,50 C 92,55 88,60 80,60 L 80,80 ";
+                } else if (tabRight === false) {
+                    path += "L 80,40 C 72,40 68,45 68,50 C 68,55 72,60 80,60 L 80,80 ";
+                } else {
+                    path += "L 80,80 ";
+                }
+                
+                // Bottom edge
+                if (tabBottom) {
+                    path += "L 60,80 C 60,88 55,92 50,92 C 45,92 40,88 40,80 L 20,80 ";
+                } else if (tabBottom === false) {
+                    path += "L 60,80 C 60,72 55,68 50,68 C 45,68 40,72 40,80 L 20,80 ";
+                } else {
+                    path += "L 20,80 ";
+                }
+                
+                // Left edge
+                if (tabLeft) {
+                    path += "L 20,60 C 12,60 8,55 8,50 C 8,45 12,40 20,40 L 20,20 ";
+                } else if (tabLeft === false) {
+                    path += "L 20,60 C 28,60 32,55 32,50 C 32,45 28,40 20,40 L 20,20 ";
+                } else {
+                    path += "L 20,20 ";
+                }
+                
+                path += "Z";
+                return path;
+            };
+
+            // Different classic puzzle piece variations
+            const shapes = {
+                1: createClassicPuzzlePiece(true, false, null, null),   // Tab top, blank right
+                2: createClassicPuzzlePiece(null, true, false, null),   // Tab right, blank bottom
+                3: createClassicPuzzlePiece(false, null, true, null),   // Blank top, tab bottom
+                4: createClassicPuzzlePiece(null, false, null, true),   // Blank right, tab left
+                5: createClassicPuzzlePiece(true, null, false, null),   // Tab top, blank bottom
+                6: createClassicPuzzlePiece(null, true, null, false),   // Tab right, blank left
+                7: createClassicPuzzlePiece(true, true, false, false),  // Tabs top & right, blanks bottom & left
+            };
+
+            const colors = {
+                1: { start: '#8b5cf6', end: '#7c3aed' },
+                2: { start: '#a78bfa', end: '#8b5cf6' },
+                3: { start: '#7c3aed', end: '#6d28d9' },
+                4: { start: '#9333ea', end: '#7e22ce' },
+                5: { start: '#a855f7', end: '#9333ea' },
+                6: { start: '#8b5cf6', end: '#a78bfa' },
+                7: { start: '#7c3aed', end: '#8b5cf6' },
+            };
+
+            const pieceShape = shapes[id] || shapes[1];
+            const pieceColor = colors[id] || colors[1];
+
+            return (
+                <svg
+                    className={`puzzle-piece ${isDragging ? 'dragging' : ''} ${isMoving && !isDragging ? 'moving' : ''}`}
+                    style={{ left: `${position.x}px`, top: `${position.y}px` }}
+                    width={size}
+                    height={size}
+                    viewBox="0 0 100 100"
+                    onMouseDown={handleMouseDown}
+                >
+                    <defs>
+                        <linearGradient id={`grad-${id}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style={{stopColor: pieceColor.start, stopOpacity: 1}} />
+                            <stop offset="100%" style={{stopColor: pieceColor.end, stopOpacity: 1}} />
+                        </linearGradient>
+                        <filter id={`shadow-${id}`}>
+                            <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.5"/>
+                        </filter>
+                    </defs>
+                    <path
+                        d={pieceShape}
+                        fill={`url(#grad-${id})`}
+                        stroke="#c4b5fd"
+                        strokeWidth="2"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        filter={`url(#shadow-${id})`}
+                    />
+                    {/* Add subtle texture highlights */}
+                    <circle cx="35" cy="35" r="3" fill="rgba(255,255,255,0.25)" opacity="0.7"/>
+                    <circle cx="55" cy="55" r="2.5" fill="rgba(255,255,255,0.2)" opacity="0.6"/>
+                    <circle cx="45" cy="65" r="2" fill="rgba(255,255,255,0.15)" opacity="0.5"/>
+                </svg>
+            );
+        };
+
+        // Typing Text Component for Name
+        const TypingName = () => {
+            const [displayText, setDisplayText] = useState('');
+            const [isDeleting, setIsDeleting] = useState(false);
+            const [showCursor, setShowCursor] = useState(true);
+            
+            const fullText = "Hey, I'm Samridh Srivastava";
+
+            useEffect(() => {
+                const typingSpeed = isDeleting ? 50 : 100;
+                
+                const timeout = setTimeout(() => {
+                    if (!isDeleting) {
+                        if (displayText.length < fullText.length) {
+                            setDisplayText(fullText.slice(0, displayText.length + 1));
+                        } else {
+                            // Wait 3 seconds before deleting
+                            setTimeout(() => setIsDeleting(true), 3000);
+                        }
+                    } else {
+                        if (displayText.length > 0) {
+                            setDisplayText(fullText.slice(0, displayText.length - 1));
+                        } else {
+                            setIsDeleting(false);
+                        }
+                    }
+                }, typingSpeed);
+
+                return () => clearTimeout(timeout);
+            }, [displayText, isDeleting]);
+
+            // Cursor blink effect
+            useEffect(() => {
+                const cursorInterval = setInterval(() => {
+                    setShowCursor(prev => !prev);
+                }, 500);
+                return () => clearInterval(cursorInterval);
+            }, []);
+
+            return (
+                <span>
+                    {displayText}
+                    <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
+                </span>
+            );
+        };
+
+        // Rotating Text Component
+        const RotatingText = () => {
+            const [textIndex, setTextIndex] = useState(0);
+            const [displayText, setDisplayText] = useState('');
+            const [isDeleting, setIsDeleting] = useState(false);
+            
+            const texts = [
+                "Full Stack Developer",
+                "I design and build scalable systems with code, data, and intent.",
+                "Full-Stack • Machine Learning • Systems"
+            ];
+
+            useEffect(() => {
+                const currentText = texts[textIndex];
+                const typingSpeed = isDeleting ? 30 : 80;
+                
+                const timeout = setTimeout(() => {
+                    if (!isDeleting) {
+                        if (displayText.length < currentText.length) {
+                            setDisplayText(currentText.slice(0, displayText.length + 1));
+                        } else {
+                            // Wait before deleting
+                            setTimeout(() => setIsDeleting(true), 2000);
+                        }
+                    } else {
+                        if (displayText.length > 0) {
+                            setDisplayText(currentText.slice(0, displayText.length - 1));
+                        } else {
+                            setIsDeleting(false);
+                            setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+                        }
+                    }
+                }, typingSpeed);
+
+                return () => clearTimeout(timeout);
+            }, [displayText, isDeleting, textIndex]);
+
+            return (
+                <span className="text-blue-300">
+                    {displayText}
+                    <span className="border-r-3 border-blue-300 animate-pulse">|</span>
+                </span>
+            );
+        };
+
+        // Main Portfolio Component
+        const Portfolio = () => {
+            const [activeSection, setActiveSection] = useState('home');
+            const [selectedProject, setSelectedProject] = useState(null);
+            const [animationKey, setAnimationKey] = useState(0);
+            
+            // Different puzzle positions for home and about pages
+            const puzzlePositions = {
+                home: [
+                    { id: 1, x: 100, y: 200, size: 120 },
+                    { id: 2, x: window.innerWidth - 200, y: 150, size: 100 },
+                    { id: 3, x: 200, y: window.innerHeight - 250, size: 90 },
+                    { id: 4, x: window.innerWidth - 150, y: window.innerHeight - 200, size: 110 },
+                    { id: 5, x: window.innerWidth / 2 - 50, y: 100, size: 85 },
+                    { id: 6, x: 50, y: window.innerHeight / 2, size: 95 },
+                    { id: 7, x: window.innerWidth - 250, y: window.innerHeight / 2 + 100, size: 105 },
+                ],
+                about: [
+                    { id: 1, x: window.innerWidth - 180, y: 250, size: 120 },
+                    { id: 2, x: 120, y: 180, size: 100 },
+                    { id: 3, x: window.innerWidth - 220, y: window.innerHeight - 300, size: 90 },
+                    { id: 4, x: 180, y: window.innerHeight - 180, size: 110 },
+                    { id: 5, x: window.innerWidth / 2 + 100, y: 120, size: 85 },
+                    { id: 6, x: window.innerWidth - 100, y: window.innerHeight / 2 - 50, size: 95 },
+                    { id: 7, x: 250, y: window.innerHeight / 2 + 100, size: 105 },
+                ]
+            };
+
+            const [currentPuzzles, setCurrentPuzzles] = useState(puzzlePositions.home);
+
+            useEffect(() => {
+                if (activeSection === 'home') {
+                    setCurrentPuzzles(puzzlePositions.home);
+                } else if (activeSection === 'about') {
+                    setCurrentPuzzles(puzzlePositions.about);
+                }
+                
+                // Reset animation key to restart typing
+                setAnimationKey(prev => prev + 1);
+            }, [activeSection]);
+
+            const projects = [
+                {
+                    id: 'f1-telemetry',
+                    title: "F1 Race Telemetry Analytics Platform",
+                    description: "Architected an end-to-end real-time data pipeline using Kafka for streaming ingestion and Apache Spark for distributed data processing. Built RESTful microservices with FastAPI and interactive dashboards with Streamlit.",
+                    tags: ["Python", "Kafka", "Apache Spark", "FastAPI", "Docker", "MLflow", "Streamlit"],
+                    image: null,
+                    link: "#",
+                    github: "https://github.com/samridh",
+                    detailedDescription: "A comprehensive real-time analytics platform for Formula 1 race telemetry data. The system processes live streaming data from races, performs distributed analytics, and provides real-time insights through interactive dashboards.",
+                    features: [
+                        "Real-time data ingestion with Apache Kafka",
+                        "Distributed processing using Apache Spark",
+                        "RESTful API services with FastAPI",
+                        "Interactive Streamlit dashboards",
+                        "ML experiment tracking with MLflow",
+                        "Containerized deployment with Docker"
+                    ],
+                    techStack: {
+                        "Backend": ["Python", "Apache Kafka", "Apache Spark", "FastAPI"],
+                        "ML & Analytics": ["MLflow", "Pandas", "NumPy"],
+                        "Visualization": ["Streamlit", "Plotly"],
+                        "DevOps": ["Docker", "Docker Compose"]
+                    },
+                    screenshots: [
+                        { title: "Dashboard Overview", placeholder: "Add dashboard screenshot here" },
+                        { title: "Real-time Analytics", placeholder: "Add analytics view screenshot here" },
+                        { title: "API Documentation", placeholder: "Add API docs screenshot here" }
+                    ]
+                },
+                {
+                    id: 'plant-disease',
+                    title: "Plant Disease Detection System",
+                    description: "Designed an end-to-end ML platform with ETL workflows, data validation, and distributed training using Ray. Optimized model inference using ONNX achieving sub-150ms latency on GPU deployments.",
+                    tags: ["FastAPI", "Ray", "ONNX", "Docker", "Terraform", "Prometheus", "MLFlow"],
+                    image: null,
+                    link: "https://github.com/samridh",
+                    github: "https://github.com/samridh",
+                    detailedDescription: "A production-grade machine learning system for detecting plant diseases from images. The platform includes complete MLOps infrastructure with automated training pipelines, model optimization, and monitoring.",
+                    features: [
+                        "ETL workflows with data validation",
+                        "Distributed training with Ray",
+                        "ONNX optimization for <150ms inference",
+                        "INT8 quantization for efficiency",
+                        "CI/CD pipelines with Terraform",
+                        "Monitoring with Prometheus & Grafana"
+                    ],
+                    techStack: {
+                        "ML Framework": ["PyTorch", "ONNX", "Ray"],
+                        "API": ["FastAPI", "Uvicorn"],
+                        "Storage": ["OpenStack Swift", "PostgreSQL"],
+                        "DevOps": ["Docker", "Terraform", "GitHub Actions"],
+                        "Monitoring": ["Prometheus", "Grafana", "MLflow"]
+                    },
+                    screenshots: [
+                        { title: "Inference Pipeline", placeholder: "Add inference screenshot here" },
+                        { title: "Training Dashboard", placeholder: "Add training metrics screenshot here" },
+                        { title: "Monitoring System", placeholder: "Add monitoring dashboard screenshot here" }
+                    ]
+                },
+                {
+                    id: 'urban-sustainability',
+                    title: "Urban Sustainability Calculator",
+                    description: "Engineered a real-time AI-powered tool to assess sustainability using 10+ environmental, economic, and social factors. Full-stack platform integrating Google Gemini API and OpenStreetMap.",
+                    tags: ["Next.js", "Tailwind CSS", "Flask", "Google Gemini API", "OpenStreetMap"],
+                    image: null,
+                    link: "#",
+                    github: "https://github.com/samridh",
+                    detailedDescription: "An intelligent sustainability assessment tool that uses AI to evaluate urban areas across multiple dimensions. The platform combines real-time mapping data with LLM-powered analysis to provide comprehensive sustainability scores.",
+                    features: [
+                        "AI-powered sustainability assessment",
+                        "Real-time mapping with OpenStreetMap",
+                        "Multi-factor analysis (10+ metrics)",
+                        "Interactive map interface",
+                        "Google Gemini API integration",
+                        "Responsive design with Tailwind CSS"
+                    ],
+                    techStack: {
+                        "Frontend": ["Next.js", "React", "Tailwind CSS", "React-Leaflet"],
+                        "Backend": ["Flask", "Python"],
+                        "AI/ML": ["Google Gemini API", "LangChain"],
+                        "Mapping": ["OpenStreetMap", "Leaflet"],
+                        "Deployment": ["Vercel", "Docker"]
+                    },
+                    screenshots: [
+                        { title: "Main Interface", placeholder: "Add main UI screenshot here" },
+                        { title: "Sustainability Analysis", placeholder: "Add analysis view screenshot here" },
+                        { title: "Map Integration", placeholder: "Add map screenshot here" }
+                    ]
+                },
+                {
+                    id: 'roberta-lora',
+                    title: "Fine-Tuning RoBERTa with LoRA",
+                    description: "Fine-tuned RoBERTa-base using LoRA, training only 0.69% of parameters (864K / 125M) while achieving 92.8% accuracy and F1-score. Built an end-to-end real-time inference pipeline for text classification.",
+                    tags: ["PyTorch", "Hugging Face", "LoRA", "PEFT", "CUDA"],
+                    image: null,
+                    link: "#",
+                    github: "https://github.com/samridh",
+                    detailedDescription: "An efficient parameter-efficient fine-tuning implementation using LoRA (Low-Rank Adaptation) on RoBERTa for text classification. Demonstrates how to achieve high performance while training only a tiny fraction of model parameters.",
+                    features: [
+                        "Parameter-efficient fine-tuning with LoRA",
+                        "Training only 0.69% of parameters",
+                        "92.8% accuracy on AG News dataset",
+                        "Cosine learning rate scheduling",
+                        "Gradient accumulation for stability",
+                        "Real-time inference pipeline"
+                    ],
+                    techStack: {
+                        "ML Framework": ["PyTorch", "Transformers"],
+                        "Fine-tuning": ["PEFT", "LoRA"],
+                        "Libraries": ["Hugging Face", "Datasets"],
+                        "Tools": ["CUDA", "Scikit-learn", "Weights & Biases"]
+                    },
+                    screenshots: [
+                        { title: "Training Metrics", placeholder: "Add training curves screenshot here" },
+                        { title: "Model Architecture", placeholder: "Add architecture diagram here" },
+                        { title: "Inference Demo", placeholder: "Add inference demo screenshot here" }
+                    ]
+                },
+                {
+                    id: 'custom-resnet',
+                    title: "Custom ResNet for Image Classification",
+                    description: "Designed a lightweight ResNet with Squeeze-and-Excitation modules achieving 96.19% accuracy on CIFAR-10 using only 4.79M parameters. Optimized training via cosine annealing and mixed precision.",
+                    tags: ["PyTorch", "TensorFlow", "Python", "Deep Learning"],
+                    image: null,
+                    link: "https://github.com/samridh",
+                    github: "https://github.com/samridh",
+                    detailedDescription: "A custom ResNet architecture optimized for edge deployment. Uses Squeeze-and-Excitation modules and advanced augmentation techniques to achieve high accuracy with minimal parameters.",
+                    features: [
+                        "Lightweight architecture (4.79M params)",
+                        "96.19% accuracy on CIFAR-10",
+                        "Squeeze-and-Excitation modules",
+                        "MixCut augmentation strategy",
+                        "Mixed precision training",
+                        "15% faster than ResNet18"
+                    ],
+                    techStack: {
+                        "Framework": ["PyTorch", "TensorFlow"],
+                        "Training": ["Mixed Precision", "Cosine Annealing"],
+                        "Augmentation": ["MixCut", "AutoAugment"],
+                        "Tools": ["TensorBoard", "Matplotlib"]
+                    },
+                    screenshots: [
+                        { title: "Model Architecture", placeholder: "Add architecture visualization here" },
+                        { title: "Training Progress", placeholder: "Add training charts here" },
+                        { title: "Results Comparison", placeholder: "Add comparison chart here" }
+                    ]
+                },
+                {
+                    id: 'muj-portal',
+                    title: "MUJ Convocation Portal",
+                    description: "Developed and deployed a live web platform currently used by 2000+ students for convocation registration and management at Manipal University Jaipur.",
+                    tags: ["Web Development", "Full Stack", "Database Management"],
+                    image: null,
+                    link: "#",
+                    github: "#",
+                    detailedDescription: "A comprehensive convocation management system serving 2000+ students. Handles registration, seat allocation, ticket generation, and administrative workflows for university convocation ceremonies.",
+                    features: [
+                        "Student registration system",
+                        "Automated seat allocation",
+                        "Digital ticket generation",
+                        "Admin dashboard",
+                        "Email notifications",
+                        "Real-time availability tracking"
+                    ],
+                    techStack: {
+                        "Frontend": ["React.js", "Material-UI"],
+                        "Backend": ["Node.js", "Express.js"],
+                        "Database": ["MongoDB"],
+                        "Authentication": ["JWT", "OAuth"],
+                        "Deployment": ["AWS", "Nginx"]
+                    },
+                    screenshots: [
+                        { title: "Student Dashboard", placeholder: "Add student view screenshot here" },
+                        { title: "Registration Flow", placeholder: "Add registration screenshot here" },
+                        { title: "Admin Panel", placeholder: "Add admin panel screenshot here" }
+                    ]
+                },
+            ];
+
+            const experiences = [
+                {
+                    company: "Course5 Intelligence (C5i)",
+                    role: "Machine Learning Intern",
+                    location: "Gurugram, India",
+                    period: "Feb 2024 – Jul 2024",
+                    description: [
+                        "Built scalable Python-based data and machine learning pipelines supporting NLP and LLM workloads in production environments",
+                        "Developed distributed Retrieval-Augmented Generation (RAG) systems using FAISS and transformer models (BERT, T5, BART), improving retrieval precision by 15%",
+                        "Designed and deployed containerized FastAPI services for ML inference, handling 50K+ monthly requests with low latency",
+                        "Optimized inference and data processing pipelines using ONNX, improving throughput and resource utilization"
+                    ]
+                },
+                {
+                    company: "Mahindra and Mahindra",
+                    role: "Software Engineering Intern",
+                    location: "Mumbai, India (Remote)",
+                    period: "Sep 2023 – Dec 2023",
+                    description: [
+                        "Engineered computer vision data pipelines using Python, C, and OpenCV to process large-scale image datasets for automated quality inspection",
+                        "Trained and evaluated deep learning models (YOLOv8, Mask R-CNN) across CPU and GPU environments",
+                        "Applied statistical analysis and machine learning techniques contributing to a 10% reduction in project costs",
+                        "Collaborated with cross-functional teams to integrate ML components into existing production systems"
+                    ]
+                },
+                {
+                    company: "NYU Phonathon",
+                    role: "Student Caller / Engagement Ambassador",
+                    location: "New York, NY",
+                    period: "Feb 2025 – Present",
+                    description: [
+                        "Engaged alumni and donors to strengthen university relations and raise funds for campus initiatives"
+                    ]
+                }
+            ];
+
+            return (
+                <div className="min-h-screen grid-bg relative">
+                    {/* Puzzle Pieces Background */}
+                    {currentPuzzles.map(piece => (
+                        <PuzzlePiece
+                            key={piece.id}
+                            id={piece.id}
+                            initialX={piece.x}
+                            initialY={piece.y}
+                            size={piece.size}
+                            isMoving={true}
+                        />
+                    ))}
+
+                    {/* Puzzle Tagline */}
+                    <div className="puzzle-tagline">
+                        "Every interface is a puzzle. I enjoy solving the hard parts."
+                    </div>
+
+                    {/* Main Content */}
+                    <div className="relative z-10">
+                        {/* Navigation */}
+                        <nav className="flex justify-between items-center px-8 py-6">
+                            <h1 className="bakbak text-2xl">Samridh.</h1>
+                            <div className="flex gap-4">
+                                <button
+                                    onClick={() => setActiveSection('home')}
+                                    className={`px-6 py-2 border border-white transition-colors ${
+                                        activeSection === 'home' ? 'bg-white text-black' : 'hover:bg-white hover:text-black'
+                                    }`}
+                                >
+                                    Work
+                                </button>
+                                <button
+                                    onClick={() => setActiveSection('about')}
+                                    className={`px-6 py-2 border border-white transition-colors ${
+                                        activeSection === 'about' ? 'bg-white text-black' : 'hover:bg-white hover:text-black'
+                                    }`}
+                                >
+                                    About
+                                </button>
+                                <button
+                                    onClick={() => setActiveSection('resume')}
+                                    className={`px-6 py-2 border border-white transition-colors ${
+                                        activeSection === 'resume' ? 'bg-white text-black' : 'hover:bg-white hover:text-black'
+                                    }`}
+                                >
+                                    Resume
+                                </button>
+                            </div>
+                        </nav>
+
+                        {/* Content Sections */}
+                        <div className="container mx-auto px-8 py-16">
+                            {activeSection === 'home' && (
+                                <div className="max-w-4xl mx-auto space-y-12" key={animationKey}>
+                                    {/* Hero Section */}
+                                    <div className="text-center space-y-12 max-w-4xl mx-auto">
+                                        {/* Emoji */}
+                                        <div className="text-8xl">👋🏽</div>
+                                        
+                                        {/* 1. Name - Largest, Bakbak One */}
+                                        <div className="space-y-6">
+                                            <h1 className="bakbak text-6xl md:text-7xl leading-tight">
+                                                <TypingName />
+                                            </h1>
+                                            
+                                            {/* 2. What I do / How I think */}
+                                            <div className="text-xl md:text-2xl min-h-16 flex items-center justify-center px-4">
+                                                <RotatingText />
+                                            </div>
+                                        </div>
+
+                                        {/* 3. Current Status */}
+                                        <div className="text-lg text-gray-300 space-y-2">
+                                            <p className="flex items-center justify-center gap-2">
+                                                <span className="text-purple-400">🎓</span>
+                                                <span>MS Computer Engineering @ NYU Tandon</span>
+                                                <span className="text-purple-400">•</span>
+                                                <span className="text-purple-300">3.83 GPA</span>
+                                            </p>
+                                        </div>
+
+                                        {/* 4. Primary & Secondary CTAs */}
+                                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                                            <button 
+                                                onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+                                                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+                                            >
+                                                View My Work →
+                                            </button>
+                                            <button 
+                                                onClick={() => setActiveSection('resume')}
+                                                className="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all border border-zinc-700 hover:border-purple-500"
+                                            >
+                                                Download Resume
+                                            </button>
+                                        </div>
+
+                                        {/* 5. Supporting Credibility Signals */}
+                                        <div className="pt-8 border-t border-zinc-800">
+                                            <p className="text-sm text-gray-400 mb-3">Previously worked on:</p>
+                                            <div className="flex flex-wrap justify-center gap-3 text-sm">
+                                                <span className="bg-zinc-800 bg-opacity-70 px-4 py-2 rounded-full text-purple-300">
+                                                    ML systems
+                                                </span>
+                                                <span className="bg-zinc-800 bg-opacity-70 px-4 py-2 rounded-full text-purple-300">
+                                                    RAG pipelines
+                                                </span>
+                                                <span className="bg-zinc-800 bg-opacity-70 px-4 py-2 rounded-full text-purple-300">
+                                                    Full-stack tools
+                                                </span>
+                                                <span className="bg-zinc-800 bg-opacity-70 px-4 py-2 rounded-full text-purple-300">
+                                                    Data products
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Projects Section */}
+                                    <h3 className="bakbak text-5xl text-center text-purple-400 mt-16">PROJECTS</h3>
+                                    
+                                    <div className="space-y-6">
+                                        {projects.map((project, index) => (
+                                            <div key={index} className="bg-zinc-800 bg-opacity-70 p-6 rounded-lg space-y-3 hover:bg-opacity-90 transition-all cursor-pointer"
+                                                onClick={() => {
+                                                    setSelectedProject(project);
+                                                    setActiveSection('project-detail');
+                                                }}>
+                                                {/* Conditional Image or Placeholder */}
+                                                {project.image ? (
+                                                    <img 
+                                                        src={project.image} 
+                                                        alt={project.title} 
+                                                        className="w-full h-48 object-cover rounded-lg mb-4"
+                                                    />
+                                                ) : (
+                                                    <div className="project-image-placeholder">
+                                                        <span>Add Project Screenshot Here</span>
+                                                    </div>
+                                                )}
+                                                
+                                                <div className="flex justify-between items-start flex-wrap gap-3">
+                                                    <h4 className="bakbak text-2xl">{project.title}</h4>
+                                                    <div className="flex gap-2 flex-wrap">
+                                                        {project.tags.slice(0, 3).map((tag, i) => (
+                                                            <span key={i} className="bg-purple-500 text-white px-3 py-1 text-xs rounded">
+                                                                {tag}
+                                                            </span>
+                                                        ))}
+                                                        {project.tags.length > 3 && (
+                                                            <span className="bg-purple-700 text-white px-3 py-1 text-xs rounded">
+                                                                +{project.tags.length - 3}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                <p className="text-sm leading-relaxed line-clamp-2">{project.description}</p>
+                                                <button 
+                                                    className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded transition-colors"
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        setSelectedProject(project);
+                                                        setActiveSection('project-detail');
+                                                    }}
+                                                >
+                                                    View Details →
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {activeSection === 'about' && (
+                                <div className="max-w-4xl mx-auto space-y-12">
+                                    {/* Profile Photo Placeholder */}
+                                    <div className="photo-placeholder">
+                                        <span>Add Your Photo Here</span>
+                                    </div>
+
+                                    {/* Social Links */}
+                                    <div className="flex justify-center gap-6">
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                            <svg className="w-10 h-10 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                            </svg>
+                                        </a>
+                                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                                            <svg className="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                            </svg>
+                                        </a>
+                                        <a href="mailto:ss18906@nyu.edu" className="hover:opacity-80 transition-opacity">
+                                            <svg className="w-10 h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+
+                                    {/* Bio */}
+                                    <div className="space-y-6 text-lg leading-relaxed">
+                                        <p>
+                                            <span className="bakbak text-2xl">Hey! I'm Samridh Srivastava</span>, a full-stack developer and machine learning engineer with experience in React, Vue.JS, Flask, FastAPI, and MongoDB. I specialize in building scalable data pipelines, deploying production ML systems, and creating end-to-end AI applications.
+                                        </p>
+                                        <p>
+                                            Over the past year, I've worked on diverse projects including developing distributed RAG systems with FAISS and transformer models, building real-time data pipelines with Apache Spark and Kafka, and optimizing ML inference with ONNX. My experience spans from computer vision at Mahindra & Mahindra to NLP and LLM workloads at Course5 Intelligence.
+                                        </p>
+                                        <p>
+                                            Currently, I'm pursuing my M.S. in Computer Engineering at NYU (CGPA: 3.83/4.00), where I'm expanding my expertise in distributed systems, MLOps, and deep learning. I graduated from Manipal University Jaipur with a 9.05/10 CGPA, earning the Dean's List Award twice and achieving the highest junior year GPA (9.86/10).
+                                        </p>
+                                        <p>
+                                            When I'm not immersed in coding, I enjoy playing video games, watching movies and TV series, or just relaxing while thinking of the next big project. I'm passionate about building systems that scale and solving complex technical challenges.
+                                        </p>
+                                    </div>
+
+                                    {/* Skills */}
+                                    <div className="space-y-4">
+                                        <h3 className="bakbak text-3xl text-purple-400">Technical Skills</h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="bg-zinc-800 bg-opacity-50 p-4 rounded-lg">
+                                                <h4 className="text-purple-300 font-bold mb-2">Languages</h4>
+                                                <p className="text-sm">Python, Java, C++, JavaScript, SQL</p>
+                                            </div>
+                                            <div className="bg-zinc-800 bg-opacity-50 p-4 rounded-lg">
+                                                <h4 className="text-purple-300 font-bold mb-2">ML & AI</h4>
+                                                <p className="text-sm">PyTorch, TensorFlow, Scikit-learn, Hugging Face, ONNX, LangChain, RAG</p>
+                                            </div>
+                                            <div className="bg-zinc-800 bg-opacity-50 p-4 rounded-lg">
+                                                <h4 className="text-purple-300 font-bold mb-2">Data Engineering</h4>
+                                                <p className="text-sm">Apache Spark, Hadoop, Kafka, Airflow, Databricks, Ray</p>
+                                            </div>
+                                            <div className="bg-zinc-800 bg-opacity-50 p-4 rounded-lg">
+                                                <h4 className="text-purple-300 font-bold mb-2">MLOps & DevOps</h4>
+                                                <p className="text-sm">Docker, Kubernetes, Terraform, CI/CD, MLflow, FastAPI, Flask</p>
+                                            </div>
+                                            <div className="bg-zinc-800 bg-opacity-50 p-4 rounded-lg">
+                                                <h4 className="text-purple-300 font-bold mb-2">Web Development</h4>
+                                                <p className="text-sm">React.js, Next.js, Node.js, Tailwind CSS, REST APIs</p>
+                                            </div>
+                                            <div className="bg-zinc-800 bg-opacity-50 p-4 rounded-lg">
+                                                <h4 className="text-purple-300 font-bold mb-2">Cloud & Databases</h4>
+                                                <p className="text-sm">AWS (EC2, S3), MongoDB, PostgreSQL, MySQL</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* What's New */}
+                                    <div className="space-y-4">
+                                        <h3 className="bakbak text-2xl flex items-center gap-2">
+                                            What's New ✨
+                                        </h3>
+                                        <ul className="space-y-3 text-base">
+                                            <li className="flex items-start gap-2">
+                                                <span>👋🏽</span>
+                                                <span>Started a new role as an Engagement Ambassador at NYU Phonathon – Feb 2025</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span>🧠</span>
+                                                <span>Built: Urban Sustainability Calculator using Next.js + Google Gemini</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span>🧠</span>
+                                                <span>Built: F1 Race Telemetry Analytics Platform with Kafka and Apache Spark</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span>🎓</span>
+                                                <span>Just finished: MLops, Deep Learning, Digital Signal Processing at NYU Tandon – Fall 2024</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span>✍️</span>
+                                                <span>Currently seeking: Full-stack or ML Internship for Summer 2025</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    {/* Work Experience */}
+                                    <div className="space-y-6">
+                                        <h3 className="bakbak text-3xl text-purple-400">Work Experience</h3>
+                                        {experiences.map((exp, index) => (
+                                            <div key={index} className="bg-zinc-800 bg-opacity-50 p-6 rounded-lg space-y-3">
+                                                <div className="flex justify-between items-start flex-wrap gap-2">
+                                                    <div>
+                                                        <h4 className="bakbak text-xl text-purple-300">{exp.role}</h4>
+                                                        <p className="text-lg">{exp.company}</p>
+                                                    </div>
+                                                    <div className="text-right text-sm opacity-80">
+                                                        <p>{exp.period}</p>
+                                                        <p>{exp.location}</p>
+                                                    </div>
+                                                </div>
+                                                <ul className="space-y-2 text-sm">
+                                                    {exp.description.map((item, i) => (
+                                                        <li key={i} className="flex items-start gap-2">
+                                                            <span className="text-purple-400 mt-1">→</span>
+                                                            <span>{item}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {activeSection === 'resume' && (
+                                <div className="max-w-4xl mx-auto text-center space-y-8">
+                                    <h2 className="bakbak text-5xl">Resume</h2>
+                                    <p className="text-xl">Download my resume to learn more about my experience and skills.</p>
+                                    <button className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 rounded-lg text-lg transition-colors">
+                                        Download Resume
+                                    </button>
+                                </div>
+                            )}
+
+                            {activeSection === 'project-detail' && selectedProject && (
+                                <div className="max-w-6xl mx-auto space-y-8">
+                                    {/* Back Button */}
+                                    <button 
+                                        onClick={() => setActiveSection('home')}
+                                        className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                                    >
+                                        <span>←</span> Back to Projects
+                                    </button>
+
+                                    {/* Project Header */}
+                                    <div className="space-y-4">
+                                        <h1 className="bakbak text-5xl">{selectedProject.title}</h1>
+                                        <p className="text-xl text-gray-300">{selectedProject.detailedDescription}</p>
+                                        <div className="flex gap-4 flex-wrap">
+                                            {selectedProject.github && (
+                                                <a 
+                                                    href={selectedProject.github} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-lg transition-colors"
+                                                >
+                                                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                                    </svg>
+                                                    View on GitHub
+                                                </a>
+                                            )}
+                                            {selectedProject.link && selectedProject.link !== '#' && (
+                                                <a 
+                                                    href={selectedProject.link} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors"
+                                                >
+                                                    Live Demo →
+                                                </a>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Key Features */}
+                                    <div className="bg-zinc-800 bg-opacity-50 p-6 rounded-lg">
+                                        <h3 className="bakbak text-2xl text-purple-400 mb-4">Key Features</h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            {selectedProject.features.map((feature, index) => (
+                                                <div key={index} className="flex items-start gap-2">
+                                                    <span className="text-purple-400 mt-1">✓</span>
+                                                    <span className="text-sm">{feature}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Tech Stack */}
+                                    <div className="bg-zinc-800 bg-opacity-50 p-6 rounded-lg">
+                                        <h3 className="bakbak text-2xl text-purple-400 mb-4">Technology Stack</h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                            {Object.entries(selectedProject.techStack).map(([category, technologies], index) => (
+                                                <div key={index}>
+                                                    <h4 className="text-purple-300 font-bold mb-2">{category}</h4>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {technologies.map((tech, i) => (
+                                                            <span key={i} className="bg-purple-900 bg-opacity-50 px-3 py-1 rounded text-xs">
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Screenshots */}
+                                    <div className="space-y-4">
+                                        <h3 className="bakbak text-2xl text-purple-400">Project Screenshots</h3>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            {selectedProject.screenshots.map((screenshot, index) => (
+                                                <div key={index} className="space-y-2">
+                                                    <div className="project-image-placeholder h-64">
+                                                        <span>{screenshot.placeholder}</span>
+                                                    </div>
+                                                    <p className="text-center text-sm text-gray-400">{screenshot.title}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* All Tags */}
+                                    <div className="space-y-3">
+                                        <h3 className="bakbak text-xl text-purple-400">Technologies Used</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {selectedProject.tags.map((tag, index) => (
+                                                <span key={index} className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // Render
+        ReactDOM.render(<Portfolio />, document.getElementById('root'));
+    </script>
+</body>
+</html>

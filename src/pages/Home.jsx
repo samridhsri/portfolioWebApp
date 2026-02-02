@@ -1,94 +1,130 @@
-import React from "react";
-import css from "../stylesheets/home.css";
-import Navbar from "../components/navbar";
-import ExperienceComp from "../components/experienceComp";
-import ProjectsComp from "../components/projectsComp";
-import PublicationsComp from "../components/PublicationComp";
-import { IoDocumentText } from "react-icons/io5";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
+import { useState, useEffect } from "react";
+import "../stylesheets/portfolio.css";
+import PuzzlePiece from "../components/portfolio/PuzzlePiece";
+import Navbar from "../components/portfolio/Navbar";
+import HeroSection from "../components/portfolio/HeroSection";
+import ProjectCard from "../components/portfolio/ProjectCard";
+import ProjectDetail from "../components/portfolio/ProjectDetail";
+import AboutSection from "../components/portfolio/AboutSection";
+import ResumeSection from "../components/portfolio/ResumeSection";
+import ThemeToggle from "../components/portfolio/ThemeToggle";
+import { projects } from "../data/portfolioData";
 
+const getPuzzlePositions = (section) => {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
 
+  const positions = {
+    home: [
+      { id: 1, x: 100, y: 200, size: 120 },
+      { id: 2, x: w - 200, y: 150, size: 100 },
+      { id: 3, x: 200, y: h - 250, size: 90 },
+      { id: 4, x: w - 150, y: h - 200, size: 110 },
+      { id: 5, x: w / 2 - 50, y: 100, size: 85 },
+      { id: 6, x: 50, y: h / 2, size: 95 },
+      { id: 7, x: w - 250, y: h / 2 + 100, size: 105 },
+    ],
+    about: [
+      { id: 1, x: w - 180, y: 250, size: 120 },
+      { id: 2, x: 120, y: 180, size: 100 },
+      { id: 3, x: w - 220, y: h - 300, size: 90 },
+      { id: 4, x: 180, y: h - 180, size: 110 },
+      { id: 5, x: w / 2 + 100, y: 120, size: 85 },
+      { id: 6, x: w - 100, y: h / 2 - 50, size: 95 },
+      { id: 7, x: 250, y: h / 2 + 100, size: 105 },
+    ],
+  };
 
+  return positions[section] || positions.home;
+};
 
 const Home = () => {
-    return (
-        <>
+  const [activeSection, setActiveSection] = useState("home");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [animationKey, setAnimationKey] = useState(0);
+  const [currentPuzzles, setCurrentPuzzles] = useState(() =>
+    getPuzzlePositions("home")
+  );
 
-            <section>
-                <div className="flex">
-                    <div className="navbarBox">
-                        <Navbar />
-                    </div>
-                    {/* <div className="blankSpaceLeft"></div> */}
-                    <div className="rightBox">
-                        <div className="ContentBox">
-                            <h3 className="body-name-title" id="homeSection">Hey! I'm Samridh 👋<br /><span id="job">Computer Engineering Student</span></h3>
-                            <div className="buttonsUnderName">
-                                <a href="https://drive.google.com/drive/folders/1bEBcGLMdbUTfA-n9YaUXMQdUDFFxgBfA?usp=sharing" target="_blank" rel="noopener noreferrer">
-                                    <button id="resumeBtn" className="btn"><IoDocumentText className="icons" /> Resume</button>
-                                </a>
-                                <a href="https://www.linkedin.com/in/samridh-srivastava-a6b888ba/" target="_blank" rel="noopener noreferrer">
-                                    <button className="btn"><FaLinkedin className="icons" /> LinkedIn</button>
-                                </a>
-                                <a href="https://github.com/samridhsri" target="_blank" rel="noopener noreferrer">
-                                    <button className="btn"><FaGithub className="icons" /> Github</button>
-                                </a>
-                                <a href="mailto:samridh@gmail.com">
-                                    <button className="btn"><IoMdMail className="icons" /> Mail</button>
-                                </a>
-                            </div>
-                            <div id="line"></div>
-                            <div>
+  useEffect(() => {
+    if (activeSection === "home" || activeSection === "about") {
+      setCurrentPuzzles(getPuzzlePositions(activeSection));
+    }
+    setAnimationKey((prev) => prev + 1);
+  }, [activeSection]);
 
-                                <p className="body-subline">Hey! I'm Samridh Srivastava, a <span style={{ fontWeight: "600", color: "white" }}>full-stack developer</span> with experience in <span style={{ fontWeight: "600", color: "white" }}>React</span>, <span style={{ fontWeight: "600", color: "white" }}>VueJS</span>, <span style={{ fontWeight: "600", color: "white" }}>Flask</span>, and <span style={{ fontWeight: "600", color: "white" }}>MongoDB</span>.
-                                    Over the last few years, I’ve worked on diverse projects, including developing web portals and Ticket Management Systems. My journey in tech has also led me to explore<span style={{ fontWeight: "600", color: "white" }}> advanced machine learning techniques </span>, where I’ve worked with <span style={{ fontWeight: "600", color: "white" }}>Large Language Models</span>, <span style={{ fontWeight: "600", color: "white" }}>fine-tuning transformers</span>, and integrating them with real-time web applications.
-                                    <br /><br />
+  const handleProjectSelect = (project) => {
+    setSelectedProject(project);
+    setActiveSection("project-detail");
+  };
 
-                                    Currently, I’m pursuing my <span style={{ fontWeight: "600", color: "white" }}>M.S. in Computer Engineering at NYU</span>, where I’m expanding my expertise in Computers. When I’m not immersed in coding, I enjoy playing Video Games, Watching Movies/TV Series, or just relaxing, always thinking of the next big project.</p>
+  return (
+    <div className="min-h-screen grid-bg relative">
+      {/* Puzzle Pieces Background */}
+      {currentPuzzles.map((piece) => (
+        <PuzzlePiece
+          key={piece.id}
+          id={piece.id}
+          initialX={piece.x}
+          initialY={piece.y}
+          size={piece.size}
+          isMoving={true}
+        />
+      ))}
 
-                                {/* <span style={{ fontWeight: "700", color: "white" }}>I am actively seeking exciting Summer Internship opportunities for 2025, where I can apply my skills in full-stack development and advanced machine learning to impactful projects.</span> */}
-                            </div>
+      {/* Puzzle Tagline */}
+      <div className="puzzle-tagline">
+        "Every interface is a puzzle. I enjoy solving the hard parts."
+      </div>
 
-                            <section id="whatsNewSection">
-                                <h3 className="sectionTitle">What's New ✨</h3>
-                                <ul className="whatsNewList">
-                                    <li><strong>📞 Started a new role</strong> as an Engagement Ambassador at <span style={{ color: "#F39C12" }}>NYU Phonathon</span> – Feb 2025</li>
-                                    <li><strong>🧠 Built:</strong> Urban Sustainability Calculator using Next.js + Google Gemini</li>
-                                    <li><strong>🧠 Built:</strong> Exploratory Data Analysis on the role of AI in Tech Layoffs</li>
-                                    <li><strong>🎓 Just finished:</strong> MLops, Deep Learning, Digital Signal Processing at NYU Tandon – Fall 2024</li>
-                                    <li><strong>📣 Currently seeking:</strong> Full-stack or ML Internship for Summer 2025</li>
-                                </ul>
-                            </section>
+      {/* Theme Toggle Button */}
+      <ThemeToggle />
 
+      {/* Main Content */}
+      <div className="relative z-10">
+        {/* Navigation */}
+        <Navbar
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
 
+        {/* Content Sections */}
+        <div className="container mx-auto px-8 py-16">
+          {activeSection === "home" && (
+            <div className="max-w-4xl mx-auto space-y-12" key={animationKey}>
+              <HeroSection setActiveSection={setActiveSection} />
 
-                            <section id="experienceSection">
-                                <ExperienceComp></ExperienceComp>
+              {/* Projects Section */}
+              <h3 className="bakbak text-5xl text-center mt-16" style={{ color: 'var(--accent-primary)', textShadow: '0 0 20px var(--accent-glow)' }}>
+                PROJECTS
+              </h3>
 
-                            </section>
-                            <section id="projectsSection">
-                                <ProjectsComp />
+              <div className="space-y-6">
+                {projects.map((project, index) => (
+                  <ProjectCard
+                    key={index}
+                    project={project}
+                    onSelect={handleProjectSelect}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
 
-                            </section>
+          {activeSection === "about" && <AboutSection />}
 
-                            <section id="publicationSection">
-                                <PublicationsComp />
+          {activeSection === "resume" && <ResumeSection />}
 
-                            </section>
-                        </div>
-
-
-                    </div>
-                    {/* <div className="blankSpaceRight"></div> */}
-
-
-                </div>
-
-            </section>
-        </>
-    )
-}
+          {activeSection === "project-detail" && selectedProject && (
+            <ProjectDetail
+              project={selectedProject}
+              onBack={() => setActiveSection("home")}
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Home;
