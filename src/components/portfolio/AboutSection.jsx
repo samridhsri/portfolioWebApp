@@ -13,7 +13,7 @@ const AboutSection = () => {
       {/* Social Links */}
       <div className="flex justify-center gap-6">
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/samridh-srivastava-a6b888ba/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:opacity-80 transition-opacity"
@@ -28,7 +28,7 @@ const AboutSection = () => {
           </svg>
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/samridhsri"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:opacity-80 transition-opacity"
@@ -43,7 +43,7 @@ const AboutSection = () => {
           </svg>
         </a>
         <a
-          href="mailto:ss18906@nyu.edu"
+          href="mailto:samridh@gmail.com"
           className="hover:opacity-80 transition-opacity"
         >
           <svg
