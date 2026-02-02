@@ -3,9 +3,18 @@ import RotatingText from "./RotatingText";
 
 const HeroSection = ({ setActiveSection }) => {
   return (
-    <div className="text-center space-y-12 max-w-4xl mx-auto">
-      {/* Emoji */}
-      <div className="text-8xl">&#x1F44B;&#x1F3FD;</div>
+    <div className="text-center space-y-6 max-w-4xl mx-auto">
+      {/* Animoji */}
+      <div className="flex justify-center">
+        <img
+          src="/images/aboutPage/frontPageAnimoji-removebg.png"
+          alt="Samridh's Animoji"
+          className="w-64 h-64 md:w-80 md:h-80 object-contain"
+          style={{
+            filter: 'drop-shadow(0 0 20px var(--accent-glow))'
+          }}
+        />
+      </div>
 
       {/* Name */}
       <div className="space-y-6">
