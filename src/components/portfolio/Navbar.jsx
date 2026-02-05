@@ -26,7 +26,8 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between items-center px-8 py-6">
-      <h1 className="bakbak text-2xl" style={{ color: 'var(--text-primary)' }}>Samridh.</h1>
+      <h1 className="bakbak text-2xl" style={{ color: 'var(--text-primary)' }}>
+      <NavLink to="/">Samridh.</NavLink></h1>
       <div className="flex gap-4">
         <NavLink
           to="/"
