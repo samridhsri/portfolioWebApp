@@ -21,7 +21,7 @@ const ProjectDetail = ({ project }) => {
         <h1 className="bakbak text-5xl" style={{ color: 'var(--text-primary)' }}>{project.title}</h1>
         <p className="text-xl" style={{ color: 'var(--text-secondary)' }}>{project.detailedDescription}</p>
         <div className="flex gap-4 flex-wrap">
-          {project.github && (
+          {project.github && project.github !== "#" && (
             <a
               href={project.github}
               target="_blank"

@@ -15,7 +15,7 @@ export const projects = [
       "MongoDB",
     ],
     image: "",
-    link: "https://github.com/samridhsri/f1-race-telemetry",
+    link: "#",
     github: "https://github.com/samridhsri/f1-race-telemetry",
     detailedDescription:
       "RaceFlux is a distributed, real-time Formula 1 analytics platform that ingests live and historical telemetry data via FastF1, processes six concurrent data streams using Spark Structured Streaming, and serves insights through interactive Streamlit dashboards. The system includes MLflow-tracked race outcome prediction models and is fully containerized with automated deployment.",
@@ -60,7 +60,7 @@ export const projects = [
       "MLflow",
     ],
     image: null,
-    link: "https://github.com/meghrathod/plantdisease-ml",
+    link: "#",
     github: "https://github.com/meghrathod/plantdisease-ml",
     detailedDescription:
       "A scalable, production-ready computer vision system for detecting plant diseases from images. The platform includes ETL workflows, data validation, distributed training with Ray, ONNX-based inference optimization, CI/CD pipelines, and full monitoring with Prometheus and Grafana.",
@@ -98,7 +98,7 @@ export const projects = [
       "OpenStreetMap",
     ],
     image: null,
-    link: "https://github.com/ranjan2601/Urban-Sustainability-Calculator",
+    link: "#",
     github: "https://github.com/ranjan2601/Urban-Sustainability-Calculator",
     detailedDescription:
       "A full-stack sustainability assessment tool that evaluates urban regions across environmental, economic, and social factors. The platform integrates OpenStreetMap data with Google Gemini-powered analysis and presents results via an interactive map-based UI.",
@@ -130,7 +130,7 @@ export const projects = [
       "Implemented parameter-efficient fine-tuning of RoBERTa using LoRA, achieving high accuracy while training less than 1% of model parameters.",
     tags: ["PyTorch", "Hugging Face", "LoRA", "PEFT", "CUDA"],
     image: null,
-    link: "https://github.com/samridhsri/finetuning-with-lora-dl-project-2",
+    link: "#",
     github: "https://github.com/samridhsri/finetuning-with-lora-dl-project-2",
     detailedDescription:
       "A deep learning project demonstrating efficient fine-tuning of large language models using Low-Rank Adaptation (LoRA). Achieved strong performance on the AG News dataset while training only 0.69% of total parameters.",
@@ -160,7 +160,7 @@ export const projects = [
       "Designed a lightweight ResNet architecture optimized for accuracy, speed, and edge deployment.",
     tags: ["PyTorch", "TensorFlow", "Deep Learning"],
     image: null,
-    link: "https://github.com/samridhsri/DL-Project-1-Cifar10-Classification-Using-Resnet",
+    link: "#",
     github: "https://github.com/samridhsri/DL-Project-1-Cifar10-Classification-Using-Resnet",
     detailedDescription:
       "A custom ResNet with Squeeze-and-Excitation modules and advanced augmentation strategies, achieving high accuracy with significantly fewer parameters than standard architectures.",
@@ -188,7 +188,7 @@ export const projects = [
       "Built and deployed a live convocation management platform used by over 2000 students at Manipal University Jaipur.",
     tags: ["Full Stack", "Web Development", "Databases"],
     image: null,
-    link: "#",
+    link: "https://mujconvocation.in/",
     github: "#",
     detailedDescription:
       "A production web application handling student registration, seat allocation, and convocation logistics for Manipal University Jaipur.",
