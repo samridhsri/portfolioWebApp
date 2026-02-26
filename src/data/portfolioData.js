@@ -14,7 +14,7 @@ export const projects = [
       "Streamlit",
       "MongoDB",
     ],
-    image: "",
+    image: "/images/F1/F1Dashboard.png",
     link: "#",
     github: "https://github.com/samridhsri/f1-race-telemetry",
     detailedDescription:
@@ -45,6 +45,71 @@ export const projects = [
       { title: "ML Experiment Tracking", url: "/images/F1/MLExperimentTracking.png", placeholder: "Add MLflow UI" },
     ],
   },
+  {
+  id: "music-mindscape",
+  title: "Music Mindscape",
+  description:
+    "An interactive force-directed mind map that visualizes your Spotify listening habits, clustering tracks into musical zones using audio features or AI-powered context via Gemini.",
+  tags: ["Full Stack", "Data Visualization", "AI/ML", "Web Development"],
+  image: "/images/music-mindscape/influenceAnalysis.png",
+  link: "https://github.com/samridhsri/music-mindscape",
+  github: "https://github.com/samridhsri/music-mindscape",
+  detailedDescription:
+    "A Spotify-connected visualization app that maps your top tracks as a living mind map. Tracks are clustered into musical zones by audio feature similarity, with an optional AI mode powered by Gemini 2.5 Flash that re-clusters using music knowledge. Features an Influence Simulator to overlay any Spotify artist as a ghost node and see how they connect to your existing taste.",
+  features: [
+    "Force-directed mind map with staggered node entrance animations",
+    "9 auto-generated musical zones (Energy, Chill, Sad, Happy, Electronic, etc.)",
+    "AI Clustering via Gemini 2.5 Flash with step-by-step algorithm insight panel",
+    "Influence Simulator — search any artist, visualize their sonic similarity to your library",
+    "Playlist export to Spotify or clipboard, plus PNG graph export",
+    "Demo mode with mock data — no login required",
+    "Persistent state via localStorage with automatic AI cache invalidation on re-sync",
+  ],
+  techStack: {
+    Frontend: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
+    Graph: ["react-force-graph-2d", "d3-force"],
+    Backend: ["Supabase Edge Functions (Deno)"],
+    Database: ["PostgreSQL (Supabase)"],
+    Auth: ["Spotify OAuth via Supabase"],
+    AI: ["Google Gemini 2.5 Flash"],
+  },
+  screenshots: [
+    { title: "Mind Map View", url: "/images/music-mindscape/clusters.png", placeholder: "Add mind map screenshot" },
+    { title: "Influence Simulator", url: "/images/music-mindscape/influenceAnalysis.png", placeholder: "Add influence panel screenshot" },
+    { title: "Main Page", url: "/images/music-mindscape/mainScreen.png", placeholder: "Add AI insight screenshot" },
+  ],
+},
+
+{
+  id: "triage",
+  title: "Triage",
+  description:
+    "A hotkey-triggered capture tool that uses Gemini AI to instantly classify anything you type as a Task, Project, or Idea and writes it to the right Notion database — without breaking your flow.",
+  tags: ["Productivity", "AI/ML", "Automation", "Desktop Tool"],
+  image: null,
+  link: "https://github.com/samridhsri/triage/",
+  github: "https://github.com/samridhsri/triage/",
+  detailedDescription:
+    "Press Ctrl+Alt+T from anywhere on your desktop, type a raw thought, hit Enter — Triage vanishes and silently routes your input to the correct Notion database in the background. Gemini parses natural language, handles multi-item inputs in a single sentence, infers priority and category, and writes structured records with no manual effort.",
+  features: [
+    "Global hotkey (Ctrl+Alt+T) via AutoHotkey v2 — works in any app",
+    "Gemini-powered NLP classifies input as Task, Project, or Idea",
+    "Handles multi-item inputs in a single sentence (e.g. 'email recruiter and push latest commit' → 2 Tasks)",
+    "Auto-infers priority, due date, category, and success criteria per entry type",
+    "Writes structured records directly to three separate Notion databases",
+    "Runs silently in the background — no UI after input submission",
+  ],
+  techStack: {
+    Language: ["Python 3.10+"],
+    AI: ["Google Gemini API (google-genai)"],
+    Automation: ["AutoHotkey v2"],
+    Integrations: ["Notion API"],
+    Config: [".env", "python-dotenv"],
+  },
+  screenshots: [
+    { title: "Capture UI", url: "/images/triage/Triage.png", placeholder: "Add hotkey input window screenshot" },
+  ],
+},
   {
     id: "plant-disease",
     title: "Plant Disease Detection System",
@@ -187,7 +252,7 @@ export const projects = [
     description:
       "Built and deployed a live convocation management platform used by over 2000 students at Manipal University Jaipur.",
     tags: ["Full Stack", "Web Development", "Databases"],
-    image: null,
+    image: "/images/mujconvocation/mainPage.png",
     link: "https://mujconvocation.in/",
     github: "#",
     detailedDescription:
@@ -281,12 +346,16 @@ export const whatsNew = [
     text: "Currently seeking: SDE or ML Engineering Full-time roles for 2026!",
   },
   {
+    emoji: "\uD83E\uDDE0",
+    text: "Building Triage - An AI powered braindump app that gives your braindump a structure and adds it to Notion",
+  },
+  {
     emoji: "\uD83D\uDC4B\uD83C\uDFFD",
-    text: "Started a new role as an Engagement Ambassador at NYU Phonathon \u2013 Feb 2025",
+    text: "Got a chance to visit the Capgemini office in NYC!",
   },
   {
     emoji: "\uD83E\uDDE0",
-    text: "Built: Urban Sustainability Calculator using Next.js + Google Gemini",
+    text: "Built: Music Match! - A tool to visualise the listening algorithms of Spotify and how a new artist can fit in that algorithm.",
   },
   {
     emoji: "\uD83E\uDDE0",
