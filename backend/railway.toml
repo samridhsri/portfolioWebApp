@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "bash start.sh"
+healthcheckPath = "/health"
+healthcheckTimeout = 120    # ingest + model load can take ~60s on cold start
+restartPolicyType = "on_failure"
