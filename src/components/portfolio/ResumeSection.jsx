@@ -8,6 +8,7 @@ const ResumeSection = () => {
       <a
         href="https://drive.google.com/drive/folders/1WQQTwyCf1lLcoBnAZuZnU4gqnaBvP_cQ?usp=sharing"
         target="_blank"
+        rel="noreferrer"
         download
         className="inline-block px-8 py-4 rounded-lg text-lg transition-all"
         style={{
