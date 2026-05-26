@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PuzzlePiece from "../portfolio/PuzzlePiece";
 import Navbar from "../portfolio/Navbar";
