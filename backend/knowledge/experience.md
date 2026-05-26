@@ -7,8 +7,8 @@ Supporting fundraising initiatives and alumni engagement for NYU Tandon School o
 
 ---
 
-## LLM & NLP Systems Intern
-**Course5 Intelligence** | Summer 2024 & 2025
+## Machine Learning Intern
+**Course5 Intelligence** | Spring-Summer 2025
 
 Worked on cutting-edge AI systems and language model applications:
 
@@ -21,7 +21,7 @@ Worked on cutting-edge AI systems and language model applications:
 
 ---
 
-## Computer Vision Intern
+## Software Engineering Intern
 **Mahindra & Mahindra** | 2024
 
 Developed computer vision solutions for real-world applications:
@@ -48,7 +48,7 @@ Led student technical initiatives and competitive programming communities:
 ## Key Technical Accomplishments
 
 ### ML Optimization & Performance (DS-GA 1019 Group Project)
-- Achieved **~75x speedup** in local LLM inference optimization using:
+- Achieved **~7.5x speedup** in local LLM inference optimization using:
   - Numba JIT compilation for numerical kernels
   - Cython for performance-critical sections
   - INT8 quantization for model compression
@@ -60,10 +60,6 @@ Led student technical initiatives and competitive programming communities:
 - Created Digital Design Review System for automated engineering plan analysis
 - Developed Blueprint Intelligence prototype using Gemini multimodal API
 
-### Open Source & Community
-- Active contributor to AI/ML projects
-- Experience with LangChain.js, Vercel AI SDK, and Dify
-- Committed to identifying and contributing to high-ROI open-source targets
 
 ---
 

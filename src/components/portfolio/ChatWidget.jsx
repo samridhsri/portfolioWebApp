@@ -3,6 +3,12 @@ import { useState, useRef, useEffect, useCallback } from "react";
 const CHAT_API_URL =
   process.env.REACT_APP_CHAT_API_URL || "http://localhost:8000";
 
+function renderBold(text) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+  );
+}
+
 const STARTERS = [
   "What projects has Samridh built?",
   "What are Samridh's ML skills?",
@@ -179,7 +185,7 @@ export default function ChatWidget() {
 
             {messages.map((msg, i) => (
               <div key={i} className={`chat-message chat-message-${msg.role}`}>
-                <div className="chat-bubble">{msg.content}</div>
+                <div className="chat-bubble">{renderBold(msg.content)}</div>
                 {msg.role === "assistant" && streaming && i === messages.length - 1 && !msg.content && (
                   <div className="chat-bubble chat-typing">
                     <span className="chat-dot" />

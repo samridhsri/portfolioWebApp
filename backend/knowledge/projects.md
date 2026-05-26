@@ -22,7 +22,7 @@ An intelligent system that analyzes startup failures and success patterns using 
 ### Local LLM Inference Optimization
 **Performance Engineering Project | NYU Tandon, 2025**
 
-Achieved **~75x speedup** in local LLM inference through systematic optimization.
+Achieved **~7.5x speedup** in local LLM inference through systematic optimization.
 
 **Techniques Applied:**
 - Numba JIT compilation for numerical kernels
