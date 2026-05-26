@@ -87,7 +87,7 @@ app = FastAPI(title="Portfolio Chatbot API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://www.samridhsrivastava.com", "http://localhost:3000"],
+    allow_origins=["https://samridhsrivastava.com", "https://www.samridhsrivastava.com", "http://localhost:3000"],
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )

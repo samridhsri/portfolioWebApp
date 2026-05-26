@@ -27,7 +27,10 @@ export default function ChatWidget() {
   const abortRef = useRef(null);
 
   useEffect(() => {
-    fetch(`${REACT_APP_CHAT_API_URL}/health`).catch(() => {});
+    fetch(`${CHAT_API_URL}/health`).catch(() => {});
+  }, []);
+
+  useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
