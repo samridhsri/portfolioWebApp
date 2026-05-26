@@ -127,26 +127,14 @@ I design databases that scale while maintaining data integrity.
 
 1. **Project-Based Learning** — Building real applications with new tech
 2. **Documentation & Research** — Reading official docs and papers
-3. **Open Source** — Contributing to projects (LangChain.js, Vercel AI SDK, Dify)
-4. **Hands-On Experimentation** — Small prototypes to understand capabilities
-5. **Community Engagement** — Technical meetups, hackathons, peer learning
+3. **Hands-On Experimentation** — Small prototypes to understand capabilities
+4. **Community Engagement** — Technical meetups, hackathons, peer learning
 
 This ensures I not only learn frameworks but understand their design principles.
 
 ---
 
 ## Career & Growth
-
-### Q: Have you worked on open-source projects?
-**A:** Yes! I actively contribute to high-impact AI/ML projects:
-
-- **LangChain.js** — JavaScript LLM orchestration framework
-- **Vercel AI SDK** — Edge-first AI primitives
-- **Dify** — Open-source LLM app builder
-
-I choose projects where my ML + full-stack skills create value. Open-source contribution is important for community and continued learning.
-
----
 
 ### Q: What's your experience leading teams or projects?
 **A:** I've led at multiple levels:
@@ -247,10 +235,9 @@ Feel free to explore my portfolio website and GitHub for detailed implementation
 ### Q: What do you do outside of coding?
 **A:** I balance coding with:
 
-- **Gaming** — PS5 Digital Edition Slim (PS Plus Extra, EA Play subscriber). PSN: SamTheReaper04
-- **Reading** — Kindle enthusiast, particularly non-fiction (recent reads: *Eight Dates*, *How to Lie with Statistics*)
+- **Gaming** — Fortnite, Rocket League, BattleField, Story based games. Favourite is Spiderman series PSN: SamTheReaper04
 - **Cooking** — Enjoy making Indian cuisine
-- **Fitness** — Regular gym sessions since mid-2025
+- **Movies** - I love to watch movies and TV Series
 
 I believe **sustainable productivity** requires balance.
 
@@ -260,11 +247,10 @@ I believe **sustainable productivity** requires balance.
 **A:** I stay motivated through:
 
 1. **Portfolio Building** — Constantly improving projects and skills
-2. **Open Source** — Contributing provides purpose and community
-3. **Networking** — Meeting interesting people in tech
-4. **Personal Growth** — Learning new frameworks and techniques
-5. **Side Interests** — Gaming, reading, cooking provide breaks
-6. **Long-term Vision** — Staying focused on my 5-year career goals
+2. **Networking** — Meeting interesting people in tech
+3. **Personal Growth** — Learning new frameworks and techniques
+4. **Side Interests** — Gaming, reading, cooking provide breaks
+5. **Long-term Vision** — Staying focused on my 5-year career goals
 
 A job search isn't just about landing a role—it's about becoming the engineer I want to be.
 
@@ -424,5 +410,5 @@ This knowledge base covers the most common topics, but I'm here for anything els
 
 ---
 
-**Last Updated:** March 2026  
+**Last Updated:** May 2026  
 **Status:** Actively seeking entry-level AI/ML engineering roles

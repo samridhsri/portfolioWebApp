@@ -6,7 +6,10 @@
       "Bash(git rm:*)",
       "Bash(cmd //c \"del /F /Q .\\\\nul\")",
       "Bash(git clean:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\Samri\\\\Desktop\\\\Work & Projects\\\\Coding\\\\Coding and stuff\\\\portfolio webapp\\\\my-app\\\\src\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(ConvertTo-Json)"
     ]
   }
 }

@@ -1,0 +1,105 @@
+============================================================
+ PORTFOLIO CHATBOT — SESSION NOTES & TOMORROW'S TODO
+============================================================
+
+------------------------------------------------------------
+ WHAT WE BUILT TODAY
+------------------------------------------------------------
+
+Backend (backend/)
+  - main.py        FastAPI server: RAG retrieval + Groq streaming SSE
+  - ingest.py      Reads knowledge/*.md → chunks → embeds → ChromaDB
+  - .env           Your local secrets (GROQ_API_KEY) — never commit this
+  - .env.example   Safe placeholder for the repo
+  - Dockerfile     For HuggingFace Spaces deployment
+  - .dockerignore  Excludes venv/, .env, chroma_db/ from Docker image
+  - knowledge/     6 markdown files (about, education, experience,
+                   projects, skills, faqs) — moved inside backend/
+
+Frontend (src/)
+  - ChatWidget.jsx         Floating chat button + panel (bottom-right)
+  - Layout.jsx             Now includes <ChatWidget />
+  - portfolio.css          All chat widget styles added at the bottom
+
+------------------------------------------------------------
+ HOW TO RUN LOCALLY (recap)
+------------------------------------------------------------
+
+1. Start the backend
+   cd backend
+   pip install -r requirements.txt      ← first time only
+   python ingest.py                     ← first time, or after editing .md files
+   uvicorn main:app --reload            ← runs at http://localhost:8000
+
+2. Test the backend is alive
+   curl http://localhost:8000/health
+   → should return {"status":"ok","chunks_indexed":42}
+
+3. Start the frontend (new terminal, stay in my-app/)
+   npm start
+   → runs at http://localhost:3000
+   → chat button appears bottom-right
+
+------------------------------------------------------------
+ TOMORROW: DEPLOY TO HUGGINGFACE SPACES
+------------------------------------------------------------
+
+[ ] 1. Create a new Space
+        Go to: https://huggingface.co/new-space
+        SDK: Docker  |  Name: portfolio-chatbot  |  Visibility: Public
+
+[ ] 2. Clone the empty Space repo HF gives you
+        git clone https://huggingface.co/spaces/YOUR_USERNAME/portfolio-chatbot
+
+[ ] 3. Copy backend/ contents into the Space repo
+        cp -r backend/* portfolio-chatbot/
+        (the root of the Space repo = contents of your backend/ folder)
+
+        Space repo should look like:
+          Dockerfile
+          main.py
+          ingest.py
+          requirements.txt
+          .dockerignore
+          knowledge/
+            about.md  education.md  experience.md
+            projects.md  skills.md  faqs.md
+
+[ ] 4. Push to HF
+        cd portfolio-chatbot
+        git add .
+        git commit -m "initial deploy"
+        git push
+        (watch the Logs tab — first build takes ~5-8 min)
+
+[ ] 5. Add GROQ_API_KEY as a Secret (NOT in the code)
+        Space → Settings → Repository secrets
+        Name: GROQ_API_KEY
+        Value: your actual key from backend/.env
+
+[ ] 6. Get your Space URL once build is green
+        https://YOUR_USERNAME-portfolio-chatbot.hf.space
+        Test: curl https://YOUR_USERNAME-portfolio-chatbot.hf.space/health
+
+[ ] 7. Wire the frontend to the deployed backend
+        Create my-app/.env.local:
+          REACT_APP_CHAT_API_URL=https://YOUR_USERNAME-portfolio-chatbot.hf.space
+
+        Also add the same var in Vercel:
+          Vercel → Project Settings → Environment Variables
+
+[ ] 8. Optional: warm up the Space on chat open (prevents 30s cold start)
+        In ChatWidget.jsx, add inside the component:
+          useEffect(() => {
+            fetch(`${CHAT_API_URL}/health`).catch(() => {});
+          }, []);
+
+------------------------------------------------------------
+ NOTES
+------------------------------------------------------------
+- backend/.env is local only, NEVER commit it
+- The HF Space uses the Secret for GROQ_API_KEY, not a .env file
+- If knowledge files change, re-run python ingest.py locally,
+  then push to HF so it rebuilds with fresh ChromaDB
+- Free Spaces sleep after ~15 min idle — step 8 above fixes that
+============================================================

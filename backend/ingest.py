@@ -10,10 +10,10 @@ import hashlib
 from pathlib import Path
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 import chromadb
 
-KNOWLEDGE_DIR  = Path(__file__).parent.parent / "knowledge"
+KNOWLEDGE_DIR  = Path(__file__).parent / "knowledge"
 CHROMA_DIR     = Path(__file__).parent / "chroma_db"
 COLLECTION     = "portfolio"
 CHUNK_CHARS    = 1600   # ~400 tokens at 4 chars/token
@@ -57,10 +57,10 @@ def main():
     chunks = chunk(docs)
     print(f"Chunking → {len(chunks)} chunks\n")
 
-    print("Embedding with all-MiniLM-L6-v2...")
-    model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+    print("Embedding with BAAI/bge-small-en-v1.5 (fastembed)...")
+    model = TextEmbedding("BAAI/bge-small-en-v1.5")
     texts = [c["text"] for c in chunks]
-    embeddings = model.encode(texts, show_progress_bar=True, normalize_embeddings=True)
+    embeddings = list(model.embed(texts))   # fastembed returns a generator
     print()
 
     print(f"Upserting to ChromaDB at {CHROMA_DIR}...")

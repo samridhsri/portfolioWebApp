@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import PuzzlePiece from "../portfolio/PuzzlePiece";
 import Navbar from "../portfolio/Navbar";
 import ThemeToggle from "../portfolio/ThemeToggle";
+import ChatWidget from "../portfolio/ChatWidget";
 
 const getPuzzlePositions = (section) => {
   const w = window.innerWidth;
@@ -37,6 +38,7 @@ const Layout = ({ children, puzzleType = "home" }) => {
   const [currentPuzzles, setCurrentPuzzles] = useState(() =>
     puzzleType ? getPuzzlePositions(puzzleType) : []
   );
+  const [taglineOpacity, setTaglineOpacity] = useState(1);
 
   useEffect(() => {
     if (puzzleType) {
@@ -45,6 +47,20 @@ const Layout = ({ children, puzzleType = "home" }) => {
       setCurrentPuzzles([]);
     }
   }, [puzzleType]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const fadeStart = 60;
+      const fadeEnd = 260;
+      const opacity = scrollY <= fadeStart
+        ? 1
+        : Math.max(0, 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart));
+      setTaglineOpacity(opacity);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen grid-bg relative">
@@ -61,12 +77,15 @@ const Layout = ({ children, puzzleType = "home" }) => {
       ))}
 
       {/* Puzzle Tagline */}
-      <div className="puzzle-tagline">
+      <div className="puzzle-tagline" style={{ opacity: taglineOpacity }}>
         "Every interface is a puzzle. I enjoy solving the hard parts."
       </div>
 
       {/* Theme Toggle Button */}
       <ThemeToggle />
+
+      {/* RAG Chat Widget */}
+      <ChatWidget />
 
       {/* Main Content */}
       <div className="relative z-10">

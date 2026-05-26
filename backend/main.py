@@ -12,12 +12,15 @@ import asyncio
 from contextlib import asynccontextmanager
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv(Path(__file__).parent / ".env")
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import chromadb
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
 from groq import AsyncGroq
 
 
@@ -27,7 +30,7 @@ from groq import AsyncGroq
 
 CHROMA_DIR    = Path(__file__).parent / "chroma_db"
 COLLECTION    = "portfolio"
-EMBED_MODEL   = "sentence-transformers/all-MiniLM-L6-v2"
+EMBED_MODEL   = "BAAI/bge-small-en-v1.5"
 GROQ_MODEL    = "llama-3.1-8b-instant"
 TOP_K         = 3
 MAX_HISTORY   = 10   # message pairs kept in context
@@ -49,7 +52,7 @@ sure and suggest the visitor reach out to Samridh directly.
 # ---------------------------------------------------------------------------
 
 class AppState:
-    embed_model: SentenceTransformer = None
+    embed_model: TextEmbedding       = None
     collection: chromadb.Collection  = None
     groq: AsyncGroq                  = None
 
@@ -63,7 +66,7 @@ async def lifespan(app: FastAPI):
         raise RuntimeError("GROQ_API_KEY environment variable is not set.")
 
     state.embed_model = await asyncio.to_thread(
-        SentenceTransformer, EMBED_MODEL
+        TextEmbedding, EMBED_MODEL
     )
 
     chroma_client    = chromadb.PersistentClient(path=str(CHROMA_DIR))
@@ -84,7 +87,7 @@ app = FastAPI(title="Portfolio Chatbot API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # tighten to your Vercel domain after deploy
+    allow_origins=["https://www.samridhsrivastava.com", "http://localhost:3000"],
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
@@ -107,21 +110,24 @@ class ChatRequest(BaseModel):
 # Helpers
 # ---------------------------------------------------------------------------
 
-async def retrieve_context(query: str) -> str:
+async def retrieve_context(query: str) -> tuple[str, list[str]]:
     embedding = await asyncio.to_thread(
-        state.embed_model.encode,
-        query,
-        normalize_embeddings=True,
+        lambda: next(state.embed_model.embed([query]))
     )
     results = state.collection.query(
         query_embeddings=[embedding.tolist()],
         n_results=TOP_K,
+        include=["documents", "metadatas"],
     )
     chunks = results["documents"][0]
-    return "\n\n---\n\n".join(chunks)
+    sources = list(dict.fromkeys(
+        m["source"] for m in results["metadatas"][0] if m.get("source")
+    ))
+    return "\n\n---\n\n".join(chunks), sources
 
 
-async def stream_groq(messages: list[dict]):
+async def stream_groq(messages: list[dict], sources: list[str]):
+    yield f"data: {json.dumps({'sources': sources})}\n\n"
     stream = await state.groq.chat.completions.create(
         model=GROQ_MODEL,
         messages=messages,
@@ -150,7 +156,7 @@ async def chat(req: ChatRequest):
     if not req.message.strip():
         raise HTTPException(status_code=400, detail="message cannot be empty")
 
-    context  = await retrieve_context(req.message)
+    context, sources = await retrieve_context(req.message)
 
     # Trim history to last MAX_HISTORY messages to stay within token limits
     history  = req.history[-MAX_HISTORY:]
@@ -162,7 +168,7 @@ async def chat(req: ChatRequest):
     )
 
     return StreamingResponse(
-        stream_groq(messages),
+        stream_groq(messages, sources),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",

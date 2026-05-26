@@ -4,9 +4,9 @@
 
 ## Who I Am
 
-I'm Samridh Srivastava, a Computer Engineering graduate student at NYU Tandon (graduating May 2026) with a passion for AI/ML engineering, full-stack development, and building intelligent systems that solve real-world problems.
+I'm Samridh Srivastava, a Computer Engineering graduate student at NYU Tandon. I just graduated on May 18, 2026. I have a passion for AI/ML engineering, full-stack development, and building intelligent systems that solve real-world problems.
 
-I hold a B.Tech in Computer Engineering from Manipal University Jaipur (9.05 GPA) and a programming diploma from IIT Madras, complemented by hands-on experience in LLM-based systems, computer vision, and full-stack web development.
+I hold a B.Tech in Computer and Communication Engineering from Manipal University Jaipur (9.05 GPA) and a Technical Diploma from IIT Madras in Computer Programming, complemented by hands-on experience in LLM-based systems, computer vision, and full-stack web development.
 
 ## My Focus Areas
 
@@ -22,17 +22,16 @@ I'm driven by the intersection of AI and practical engineering. I believe the be
 
 - Solving complex technical problems through thoughtful engineering
 - Continuous learning and staying current with AI/ML advancements
-- Contributing to open-source projects and communities
 - Mentoring and sharing knowledge with others
 
 ## Beyond Tech
 
 When I'm not coding, you'll find me:
 
-- **Gaming** on my PS5 Digital Edition Slim (PS Online: SamTheReaper04)
-- **Reading** non-fiction on Kindle (favorites include *Eight Dates* and *How to Lie with Statistics*)
-- **Cooking** Indian cuisine for friends and family
-- **Fitness** — Regular gym sessions and staying active
+- **Gaming** on my PS5 (PS Online: SamTheReaper04), I have more than 2000 hours in Fortnite 😆
+- **Reading** Not much of reader but I do read Non-Fiction books from time to time. (favorites include *Atomic Habits* and *How to Lie with Statistics*)
+- **Cooking** I love to cook, living alone in New York doesn't give you much of a choice to not cook
+- **Fitness** — I am the least athletic person you'll meet lol.
 
 I'm based in Brooklyn, NY, with family and close connections in New Delhi, India.
 

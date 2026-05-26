@@ -1,16 +1,16 @@
 # Education
 
 ## Master of Science in Computer Engineering
-**NYU Tandon School of Engineering** | Graduating May 2026
+**NYU Tandon School of Engineering** | Graduated May 2026
 
 New York, NY
-
-**GPA:** Strong (maintained consistent high performance) most recent is 3.89
+Got an A in every subject except Digital Signal Processing 😔
+**GPA:** - 3.86
 
 ### Key Courses & Projects
 
 **Advanced Python for Data Science (DS-GA 1019)**
-- Optimized local LLM inference with Numba, Cython, and quantization (~75x speedup)
+- Optimized local LLM inference with Numba, Cython, and quantization (~7.5x speedup)
 - Implemented Cython-based heat equation solver for numerical computing
 - Built advanced data structures using itertools and functional programming
 
@@ -34,7 +34,7 @@ Published work on leaf edge detection in machine learning, combining image proce
 ---
 
 ## B.Tech in Computer Engineering
-**Manipal University Jaipur** | 2021-2023
+**Manipal University Jaipur** | 2020-2024
 
 **GPA:** 9.05/10
 
@@ -83,8 +83,7 @@ Foundational program in programming languages, data structures, and computer sci
 
 I'm committed to staying at the cutting edge of AI/ML:
 
-- Regular participation in hackathons (Columbia AI hackathons, 2026)
-- Open-source contributions to AI projects (LangChain.js, Vercel AI SDK, Dify)
+- Regular participation in hackathons (Last one was Columbia Google AI hackathons, March 2026)
 - Self-directed learning in emerging AI techniques and architectures
 - Engagement with technical communities and peer learning
 
