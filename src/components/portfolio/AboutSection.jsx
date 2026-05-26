@@ -6,7 +6,7 @@ const AboutSection = () => {
       {/* Profile Photo Placeholder */}
       <div className="photo-placeholder">
         <span>
-          <img src="images/aboutPage/aboutPageImage.jpeg" alt="Profile photo of Samridh Srivastava" />
+          <img src="images/aboutPage/aboutPageImage.jpeg" alt="Samridh Srivastava" />
         </span>
       </div>
 
