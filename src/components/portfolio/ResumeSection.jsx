@@ -6,7 +6,7 @@ const ResumeSection = () => {
         Download my resume to learn more about my experience and skills.
       </p>
       <a
-        href="https://drive.google.com/drive/folders/1WQQTwyCf1lLcoBnAZuZnU4gqnaBvP_cQ?usp=sharing"
+        href="https://drive.google.com/file/d/1L5i-MZ2d16QehOudgUbCeQbAKX3yZQgz/view?usp=sharing"
         target="_blank"
         rel="noreferrer"
         download

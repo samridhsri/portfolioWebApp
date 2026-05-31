@@ -1,280 +1,481 @@
 # Skills
+
 # Technical Skills
 
 ## Programming Languages
 
 ### Primary Languages
-- **Python** — Expert-level proficiency
-  - Data science and ML development
-  - Backend systems (FastAPI, Django)
-  - Scripting and automation
-  - Performance optimization (Cython, Numba)
 
-- **JavaScript** — Advanced proficiency
-  - React frontend development
-  - Node.js backend development
-  - Full-stack web applications
-  - Browser automation and tools
+#### Python
+My strongest programming language and the foundation of most of my AI and backend work.
 
-### Secondary Languages
-- **Java** — Strong fundamentals, OOP design
-- **C++** — Systems programming and optimization
-- **SQL** — Database design and optimization
+Used extensively for:
+- machine learning systems
+- backend APIs
+- automation
+- optimization
+- data engineering
+- numerical computing
 
----
-
-## Machine Learning & AI
-
-### LLM & Deep Learning
-- Large Language Model (LLM) architectures and design
-- Transformer models and fine-tuning
-- Prompt engineering and in-context learning
-- Retrieval-Augmented Generation (RAG) systems
-- Vector databases and embeddings
-- Model quantization and optimization (INT8, mixed precision)
-- LLM deployment and inference optimization
-
-### Computer Vision
-- Image classification and object detection
-- Instance segmentation (YOLOv11, YOLO family)
-- Semantic segmentation
-- Transfer learning and model adaptation
-- Plant disease detection
-- Kitchen safety and compliance detection
-- Grounded SAM and zero-shot approaches
-- CUDA optimization for vision models
-
-### Natural Language Processing
-- Text preprocessing and tokenization
-- Named Entity Recognition (NER)
-- Sentiment analysis
-- Text classification
-- Language model fine-tuning
-- Multi-lingual NLP approaches
-
-### ML Frameworks & Libraries
-- **PyTorch** — Primary deep learning framework
-- **TensorFlow** — Deep learning and production deployments
-- **scikit-learn** — Classical ML algorithms
-- **Hugging Face Transformers** — Pre-trained models
-- **JAX** — Functional ML and differentiation
-- **Numba** — JIT compilation for numerical code
-- **Cython** — Performance-critical extensions
-
-### Data Science
-- Data preprocessing and cleaning
-- Feature engineering
-- Exploratory Data Analysis (EDA)
-- Statistical analysis
-- pandas, NumPy, SciPy proficiency
-- Data pipeline design and optimization
-- Apache Spark for distributed computing
+Frameworks and tools:
+- FastAPI
+- Django
+- Flask
+- PyTorch
+- TensorFlow
+- NumPy
+- pandas
+- Cython
+- Numba
 
 ---
 
-## Web Development
+#### JavaScript / TypeScript
+Used for modern frontend and full-stack development.
 
-### Frontend Development
-- **React** — Expert-level proficiency
-  - Component design and architecture
-  - State management (hooks, context API)
-  - Performance optimization
-  - Responsive design
-  - Interactive visualizations
-
-- **Tailwind CSS** — Modern utility-first styling
-- **D3.js** — Advanced data visualization
-- **Next.js** — React framework and full-stack development
-
-### Backend Development
-- **FastAPI** — Async Python web framework
-  - RESTful API design
-  - Data validation with Pydantic
-  - Async/await patterns
-  
-- **Django** — Full-featured web framework
-  - ORM and database design
-  - Admin interface
-  - Authentication and permissions
-  
-- **Node.js & Express** — JavaScript backend
-  - Middleware patterns
-  - Database integration
-  - WebSocket and real-time features
-
-### Databases
-- **PostgreSQL** — Relational database design and optimization
-- **Firebase** — Real-time database and authentication
-- **SQL** — Advanced querying and optimization
-
-### Web Technologies
-- REST API design and best practices
-- GraphQL (understanding and implementation)
-- WebSockets for real-time communication
-- Authentication (JWT, OAuth, Sessions)
-- CORS and security headers
-- Responsive web design
+Experience includes:
+- React applications
+- Next.js full-stack systems
+- Node.js backends
+- interactive UI systems
+- API integrations
+- data visualizations
 
 ---
 
-## Cloud & DevOps
-
-### Google Cloud Platform (GCP)
-- Vertex AI for LLM deployment
-- Google Cloud Storage
-- Cloud Functions and serverless computing
-- AI/ML services integration
-
-### Containerization & Deployment
-- Docker — Container creation and optimization
-- Container orchestration concepts
-- Application deployment best practices
-- Environment configuration
-
-### Tools & Platforms
-- Git and version control workflows
-- GitHub and GitLab integration
-- CI/CD concepts and automation
+### Additional Languages
+- Java
+- C++
+- SQL
+- Bash scripting
 
 ---
 
-## Performance Optimization
+# Artificial Intelligence & Machine Learning
 
-### Advanced Optimization Techniques
-- Numba JIT compilation
-- Cython for performance-critical sections
-- INT8 quantization for model compression
-- KV caching and attention optimization
-- Async batching for throughput
-- Profiling and bottleneck identification
+## Large Language Models (LLMs)
 
-### Optimization Results
-- Achieved ~75x speedup in LLM inference optimization
-- Model compression and quantization
-- Memory-efficient inference
-- Hardware-aware optimization (CUDA)
+### Core Areas
+- transformer architectures
+- prompt engineering
+- fine-tuning workflows
+- retrieval-augmented generation (RAG)
+- vector search systems
+- embeddings pipelines
+- inference optimization
+- quantization techniques
 
 ---
 
-## Specialized Skills
-
-### AI System Development
-- LLM-based application architecture
-- RAG pipeline implementation
-- Multi-agent AI systems
-- Fine-tuning and adaptation strategies
-- Production ML deployment
-
-### Computer Vision Applications
-- Real-world CV system design
-- Dataset handling and augmentation
-- Model selection and evaluation
-- Edge deployment optimization
-
-### Full-Stack ML Engineering
-- End-to-end ML system design
-- Training to serving pipelines
-- Model monitoring and maintenance
-- Scalable inference architecture
-
-### Research & Development
-- Literature review and technical research
-- Experimental design and validation
-- Performance benchmarking
-- Published research in ML
+### LLM Engineering Experience
+- Built RAG chatbots and AI assistants
+- Fine-tuned transformer-based systems
+- Worked on production-oriented NLP pipelines
+- Optimized local inference workloads
+- Built semantic retrieval systems
 
 ---
 
-## Soft Skills
-
-- **Problem-Solving** — Breaking down complex problems into manageable components
-- **Communication** — Clear explanation of technical concepts
-- **Collaboration** — Working effectively in teams and open-source communities
-- **Learning Agility** — Quick adaptation to new technologies and frameworks
-- **Mentoring** — Guiding 50+ students in competitive programming
-- **Leadership** — Technical club founding and management
-- **Project Management** — Leading full-stack projects from concept to deployment
+### Optimization Techniques
+- INT8 quantization
+- KV caching
+- async batching
+- mixed precision inference
+- memory-efficient serving
+- throughput optimization
 
 ---
 
-## Tools & Technologies
+# Computer Vision
 
-### Development Tools
-- Visual Studio Code (primary IDE)
-- Jupyter Notebooks (data science and exploration)
-- PyCharm (Python development)
-- Git and GitHub workflows
+## Experience Areas
+- object detection
+- image classification
+- instance segmentation
+- transfer learning
+- image preprocessing
+- dataset augmentation
+- real-world CV deployment
+
+---
+
+## Models & Frameworks
+- YOLO family
+- YOLOv11
+- Grounded SAM
+- OpenCV
+- PyTorch vision workflows
+
+---
+
+## Projects
+- Kitchen Hygiene Compliance Detection
+- Plant Disease Detection
+- Blueprint Intelligence
+
+---
+
+# Natural Language Processing (NLP)
+
+## Areas Worked On
+- text preprocessing
+- tokenization
+- transformer fine-tuning
+- semantic search
+- retrieval pipelines
+- multilingual NLP workflows
+- conversational AI systems
+
+---
+
+# Machine Learning Frameworks
+
+## Primary Frameworks
+
+### PyTorch
+My primary framework for:
+- deep learning
+- experimentation
+- research-oriented workflows
+- computer vision
+- NLP systems
+
+---
+
+### TensorFlow
+Used for:
+- production deployment
+- model experimentation
+- deep learning systems
+
+---
+
+### Additional Libraries
+- scikit-learn
+- Hugging Face Transformers
+- JAX
+- LangChain
+- pandas
+- NumPy
+- SciPy
+
+---
+
+# Data Science & Analytics
+
+## Skills
+- data preprocessing
+- feature engineering
+- exploratory data analysis
+- statistical analysis
+- visualization workflows
+- data pipeline development
+
+---
+
+## Tools
+- pandas
+- NumPy
+- Matplotlib
+- Plotly
+- Jupyter Notebooks
+- Apache Spark
+
+---
+
+# Full-Stack Development
+
+## Frontend Development
+
+### React
+My primary frontend framework.
+
+Experience includes:
+- component architecture
+- responsive UI design
+- state management
+- performance optimization
+- dynamic interfaces
+- AI-powered frontend experiences
+
+---
+
+### Frontend Technologies
+- React
+- Next.js
+- Tailwind CSS
+- D3.js
+- responsive design systems
+
+---
+
+## Backend Development
+
+### FastAPI
+My preferred backend framework for modern AI applications.
+
+Used for:
+- REST APIs
+- async backend systems
+- ML inference APIs
+- scalable backend services
+- production AI systems
+
+---
+
+### Additional Backend Frameworks
+- Django
+- Flask
+- Node.js
+- Express.js
+
+---
+
+## Backend Experience
+- authentication systems
+- API development
+- async workflows
+- database integration
+- deployment pipelines
+- scalable backend architecture
+
+---
+
+# Databases & Storage
+
+## Relational Databases
+- PostgreSQL
+- SQL optimization
+- schema design
+- indexing strategies
+
+---
+
+## Additional Storage Systems
+- Firebase
+- vector databases
+- semantic retrieval stores
+
+---
+
+# Cloud & DevOps
+
+## Cloud Platforms
+- Google Cloud Platform (GCP)
+- Vertex AI
+- cloud deployment workflows
+- serverless concepts
+
+---
+
+## DevOps & Deployment
+- Docker
+- CI/CD workflows
+- containerized applications
+- environment management
+- deployment automation
+
+---
+
+# Performance Optimization
+
+## Optimization Areas
+- low-level Python optimization
+- inference acceleration
+- memory optimization
+- profiling and benchmarking
+- numerical optimization
+- distributed workloads
+
+---
+
+## Technologies Used
+- Numba
+- Cython
+- CUDA experimentation
+- multiprocessing
+- async systems
+
+---
+
+## Performance Results
+Worked on projects involving:
+- approximately 7.5x inference speed improvements
+- quantized inference systems
+- optimized local LLM serving
+
+---
+
+# Distributed Systems & Computing
+
+## Areas Explored
+- Apache Spark
+- distributed data processing
+- parallel computing
+- MPI4PY
+- scalable ETL workflows
+
+---
+
+# APIs & Integrations
+
+## Experience With
+- REST APIs
+- OAuth workflows
+- external API integrations
+- webhook systems
+- AI API integration
+
+---
+
+## APIs Used
+- Google Gemini API
+- Spotify API
+- Last.fm API
+- Notion API
+- LLM inference APIs
+
+---
+
+# Developer Tools
+
+## Development Environment
+- VS Code
+- Git
+- GitHub
+- Linux workflows
 - Docker Desktop
-- Postman (API testing)
-
-### Data & ML Tools
-- Pandas & NumPy for data manipulation
-- Matplotlib, Seaborn, Plotly for visualization
-- Scikit-learn for classical ML
-- Hugging Face for transformer models
-- Weights & Biases for experiment tracking
-- Notion for project management and documentation
-
-### Productivity & Documentation
-- LaTeX/Overleaf for professional documents
-- Markdown for documentation
-- Jupyter Notebooks for reproducible research
-- Notion for knowledge management
+- Postman
 
 ---
 
-## Learning & Growth Areas
-
-### Currently Exploring
-- Emerging LLM architectures and techniques
-- Advanced distributed computing with Spark
-- MLOps and production ML best practices
-- Open-source LLM development
-
-### Interested In
-- Advanced systems optimization
-- Distributed ML systems
-- AI agents and multi-agent architectures
-- Reinforcement learning applications
-- Research and academic contributions
+## Documentation & Productivity
+- LaTeX / Overleaf
+- Markdown
+- Notion
+- Jupyter Notebooks
 
 ---
 
-## Proficiency Levels Summary
+# Specialized Engineering Skills
 
-| Category | Proficiency | Key Technologies |
-|----------|-------------|-----------------|
-| **Python** | Expert | FastAPI, Django, PyTorch, Data Science |
-| **JavaScript** | Advanced | React, Node.js, Next.js |
-| **LLMs & ML** | Expert | Fine-tuning, RAG, Optimization, Computer Vision |
-| **Web Development** | Advanced | Full-stack React, FastAPI, PostgreSQL |
-| **Cloud & DevOps** | Intermediate | GCP, Docker, CI/CD |
-| **Database Design** | Advanced | PostgreSQL, Firebase, Query Optimization |
-| **Performance Optimization** | Advanced | Numba, Cython, Quantization, CUDA |
+## AI Systems Engineering
+- production AI architecture
+- RAG pipeline implementation
+- LLM integration
+- retrieval systems
+- AI workflow orchestration
 
 ---
 
-## Why This Skill Set?
-
-My combination of deep ML expertise, full-stack development, and systems optimization experience positions me uniquely for **AI/ML engineering roles** where:
-
-- Building cutting-edge LLM systems is the priority
-- Production reliability and performance matter
-- End-to-end system design is valued
-- Both research and engineering rigor are important
-
-I'm particularly strong in the **intersection of AI research and engineering**, able to take academic concepts and turn them into production-grade systems.
+## Full-Stack AI Development
+- end-to-end AI applications
+- frontend + backend integration
+- AI-powered web applications
+- inference APIs
+- conversational systems
 
 ---
 
-## Always Learning
+## Research & Experimentation
+- benchmarking
+- performance evaluation
+- literature review
+- experimentation workflows
+- optimization research
 
-Technology evolves rapidly, especially in AI/ML. I'm committed to:
+---
 
-- Following latest research in transformers and LLMs
-- Exploring new frameworks and optimization techniques
-- Contributing to open-source AI projects
-- Participating in technical communities
-- Continuous skill development and refinement
+# Soft Skills
 
-Ask me about any specific skill or technology—I love discussing technical deep dives!
+## Technical & Professional Skills
+- problem-solving
+- communication
+- collaboration
+- mentoring
+- leadership
+- adaptability
+- rapid learning
+
+---
+
+## Leadership Experience
+- mentored 50+ students
+- led technical initiatives
+- organized programming workshops
+- guided collaborative engineering projects
+
+---
+
+# Areas of Interest
+
+## Currently Exploring
+- agentic AI systems
+- multi-agent workflows
+- AI developer tooling
+- distributed ML systems
+- inference infrastructure
+- advanced optimization techniques
+
+---
+
+# What Makes This Skill Set Unique
+
+My experience combines:
+- AI/ML engineering
+- backend systems
+- full-stack development
+- optimization
+- practical deployment experience
+
+I enjoy operating at the intersection of:
+- research-inspired engineering
+- scalable systems
+- product-focused development
+- AI infrastructure
+
+---
+
+# Continuous Learning
+
+Technology evolves quickly, especially in AI.
+
+I actively continue learning through:
+- hackathons
+- side projects
+- research exploration
+- technical communities
+- open-source ecosystems
+- experimentation with new tools and frameworks
+
+---
+
+# Preferred Engineering Areas
+
+The kinds of problems I enjoy working on most:
+- LLM systems
+- AI infrastructure
+- RAG pipelines
+- optimization-heavy systems
+- developer tools
+- scalable backend architectures
+- AI-powered products
+
+---
+
+# Engineering Philosophy
+
+I value:
+- clean architecture
+- practical engineering
+- measurable performance improvements
+- continuous experimentation
+- scalable system design
+
+I enjoy building systems that are:
+- useful
+- efficient
+- technically ambitious
+- production-oriented
+- Weird but fun
+

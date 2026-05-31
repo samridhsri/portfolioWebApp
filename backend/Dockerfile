@@ -16,9 +16,6 @@ RUN python -c "from fastembed import TextEmbedding; TextEmbedding('BAAI/bge-smal
 
 COPY . .
 
-# Build the ChromaDB vector store at image build time
-RUN python ingest.py
-
 EXPOSE 7860
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]

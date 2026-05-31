@@ -1,253 +1,555 @@
-# Projects Portfolio
+# Projects
 
 ## Featured Projects
 
-### Startup Autopsy
-**AI-Powered Startup Analysis | Columbia AI Hackathon, March 2026**
+---
 
-An intelligent system that analyzes startup failures and success patterns using AI agents.
+# Portfolio RAG Chatbot
 
-**Tech Stack:** Agent Development Kit (ADK), Vertex AI, LLMs
+### AI-Powered Personal Portfolio Assistant
 
-**What It Does:**
-- Processes startup case studies and financial data
-- Extracts patterns from success and failure narratives
-- Generates insights for entrepreneurs and investors
-- Provides actionable recommendations based on historical analysis
+An intelligent chatbot integrated into my portfolio website that can answer questions about:
+- my background
+- technical skills
+- projects
+- experience
+- education
+- career goals
 
-**My Role:** Full-stack development, AI agent design, system architecture
+The system uses Retrieval-Augmented Generation (RAG) to provide context-aware and personalized responses grounded in a custom knowledge base.
 
 ---
 
-### Local LLM Inference Optimization
-**Performance Engineering Project | NYU Tandon, 2025**
+## Features
 
-Achieved **~7.5x speedup** in local LLM inference through systematic optimization.
-
-**Techniques Applied:**
-- Numba JIT compilation for numerical kernels
-- Cython for performance-critical sections
-- INT8 quantization for model compression
-- Key-Value (KV) caching for efficient attention
-- Async batching for throughput optimization
-
-**Impact:** Demonstrated practical approaches to making LLMs run efficiently on resource-constrained environments.
-
-
-### Digital Design Review System
-**Automated Engineering Plan Analysis**
-
-An intelligent system for reviewing and analyzing digital design documents and engineering plans.
-
-**Tech Stack:** React Frontend, FastAPI Backend, Computer Vision
-
-**Capabilities:**
-- Automated design document analysis
-- Plan interpretation and validation
-- Design feedback generation
-- Integration with engineering workflows
+### Semantic Knowledge Retrieval
+- Context-aware question answering
+- Vector-based semantic search
+- Retrieval over structured portfolio data
+- Personalized conversational responses
 
 ---
 
-### Blueprint Intelligence
-**Multimodal Engineering Plan Assistant**
-
-An intelligent assistant for interpreting and analyzing construction and engineering blueprints.
-
-**Tech Stack:** Google Gemini Multimodal API, Flask Backend, React Frontend
-
-**Features:**
-- Blueprint image analysis and interpretation
-- Automated measurements and feature detection
-- Design recommendation generation
-- Integration with project workflows
+### AI-Powered Conversation
+- Natural conversational interaction
+- Technical Q\&A support
+- Project deep dives
+- Recruiter-friendly responses
+- Dynamic contextual retrieval
 
 ---
 
-### Music Mindscape / Spotify Mind Map
-**Music Analysis & Visualization**
-
-An innovative project mapping musical taste through clustering and visualization.
-
-**Original Approach:**
-- Spotify Audio Features API integration for Western music analysis
-
-**Evolved Approach (After API Deprecation):**
-- Pivoted to Last.fm + LLM hybrid clustering
-- Handles mixed Western and Bollywood libraries seamlessly
-- Advanced music taste visualization
-
-**Tech Stack:** React, FastAPI, Last.fm API, LLMs, D3.js visualization
-
-**Why It Evolved:** Demonstrates adaptability and problem-solving when facing API deprecations and changing constraints.
+### Knowledge Base Architecture
+The chatbot is backed by:
+- structured markdown knowledge files
+- portfolio metadata
+- project documentation
+- experience and education context
+- FAQ-based retrieval augmentation
 
 ---
 
-### Kitchen Hygiene Compliance Detection
-**Computer Vision for Safety Monitoring**
-
-An automated system for detecting kitchen hygiene compliance violations.
-
-**Initial Approach:** Grounded SAM zero-shot detection
-
-**Refined Approach:** YOLOv11n-seg instance segmentation
-- Better hallucination handling
-- Improved real-world accuracy
-- Faster inference on edge devices
-
-**Applications:** Restaurant compliance, food safety auditing, institutional kitchens
+## Tech Stack
+- React / Next.js frontend
+- FastAPI backend
+- LangChain
+- Vector database workflows
+- LLM APIs
+- Embedding pipelines
+- Retrieval optimization
 
 ---
 
-### Plant Disease Detection
-**Agricultural Computer Vision**
+## Why I Built It
+I wanted my portfolio to feel:
+- interactive
+- technically interesting
+- recruiter-friendly
+- AI-native
 
-An intelligent system for identifying and classifying plant diseases.
+Instead of static pages, this chatbot allows visitors to explore my background conversationally.
 
-**Datasets:** PlantWild_v2, PlantDoc multi-source training data
-
-**Features:**
-- Multi-disease classification
-- Confidence scoring and uncertainty quantification
-- Integration with agricultural advisory systems
-
-**Impact:** Helps farmers and agricultural professionals identify diseases early for better crop management.
-
----
-
-### Convocation Portal
-**Full-Stack University Application | Manipal University Jaipur**
-
-A comprehensive web application serving the entire university convocation process.
-
-**Scale:** 2000+ active users
-
-**Tech Stack:** Full-stack web development with user management and event coordination
-
-**Features:**
-- Event registration and management
-- User authentication and profiles
-- Real-time updates and notifications
-- Scalable database design
-
-**Achievement:** Successfully deployed and maintained throughout convocation season with zero downtime.
+It also demonstrates:
+- practical RAG implementation
+- AI product engineering
+- prompt engineering
+- retrieval system design
+- full-stack AI integration
 
 ---
 
-### React Portfolio Website
-**Personal Portfolio & Showcase**
+# Startup Autopsy
 
-A dynamic, theme-switching portfolio website showcasing all projects and achievements.
+### AI-Powered Startup Analysis  
+Columbia AI Hackathon — March 2026
 
-**Features:**
-- 16 theme variations for personalized browsing
-- Responsive design for all devices
-- Live project demonstrations
-- Interactive project cards
-- Dark/light mode support
-- Mobile-optimized interface
-
-**Tech Stack:** React, Tailwind CSS, Next.js
-
-**Status:** Live and deployed
+An AI agent system designed to analyze startup successes and failures using historical data, business narratives, and financial insights.
 
 ---
 
-### Relationship Sync Web App
-**Relationship Tracking & Communication Tool**
-
-A web application for couples to track relationship milestones and sync important dates.
-
-**Features:**
-- Shared calendar for important dates
-- Relationship milestone tracking
-- Communication tools and reminders
-- Data synchronization across devices
+## What It Does
+- Processes startup case studies
+- Extracts patterns from startup failures
+- Analyzes business trajectories
+- Generates actionable recommendations
+- Assists entrepreneurs and investors
 
 ---
 
-### Triage Hotkey-to-Notion Braindump Tool
-**Productivity & Note-Taking Integration**
-
-A tool for quickly capturing thoughts and organizing them into Notion.
-
-**Features:**
-- Global hotkey support for quick capture
-- Automatic Notion database integration
-- Smart tagging and categorization
-- Full-text search capabilities
+## Tech Stack
+- Agent Development Kit (ADK)
+- Vertex AI
+- LLM APIs
+- React
+- FastAPI
 
 ---
 
-### Citi Bike D3.js Data Visualization
-**Data Visualization & Analysis | Group Project**
-
-An interactive D3.js visualization of NYC Citi Bike usage patterns.
-
-**Features:**
-- Real-time bike station data visualization
-- Trip pattern analysis
-- Geographic heat maps
-- Temporal usage trends
-
-**Tech Stack:** D3.js, Node.js, CSV data processing
+## My Contributions
+- AI agent workflow design
+- system architecture
+- backend development
+- frontend integration
+- prompt engineering
 
 ---
 
-## Project Categories
+# Local LLM Inference Optimization
 
-### 🤖 AI/ML Projects
-- Startup Autopsy (AI Agents)
-- Local LLM Inference Optimization
-- Blueprint Intelligence (Multimodal)
-- Music Mindscape (LLM Clustering)
-- Kitchen Hygiene Detection (Computer Vision)
-- Plant Disease Detection (Computer Vision)
+### Performance Engineering Project  
+NYU Tandon — 2025
 
-### 💻 Full-Stack Web Applications
-- Netflix Episodes Web System (NEWS)
+A systems-focused optimization project aimed at improving local LLM inference performance.
+
+---
+
+## Optimization Techniques
+- Numba JIT compilation
+- Cython optimization
+- INT8 quantization
+- KV caching
+- async batching
+
+---
+
+## Results
+- Achieved approximately 7.5x speedup in optimized workloads
+- Reduced inference latency
+- Improved throughput efficiency
+- Lowered memory overhead
+
+---
+
+## Why This Project Matters
+This project combined:
+- machine learning
+- systems engineering
+- optimization
+- low-level performance work
+
+It reflects my interest in AI infrastructure and efficient inference systems.
+
+---
+
+# Digital Design Review System
+
+### Automated Engineering Plan Analysis
+
+An intelligent system for analyzing engineering plans and digital design documents.
+
+---
+
+## Features
+- Automated document review
+- engineering workflow integration
+- design validation
+- structured analysis pipelines
+- backend automation workflows
+
+---
+
+## Tech Stack
+- React
+- FastAPI
+- Computer Vision workflows
+- document processing pipelines
+
+---
+
+# Blueprint Intelligence
+
+### Multimodal Engineering Assistant
+
+A multimodal AI assistant for understanding and analyzing engineering blueprints and technical documents.
+
+---
+
+## Features
+- blueprint interpretation
+- image understanding
+- AI-assisted recommendations
+- multimodal workflows
+- contextual engineering analysis
+
+---
+
+## Tech Stack
+- Google Gemini Multimodal API
+- Flask
+- React
+- computer vision tooling
+
+---
+
+## Focus Areas
+- multimodal AI
+- vision-language systems
+- engineering workflow automation
+
+---
+
+# Music Mindscape / Spotify Mind Map
+
+### AI Music Analysis & Visualization
+
+A music recommendation and clustering system designed to analyze user listening behavior and visualize musical preferences.
+
+---
+
+## Original System
+Initially built around:
+- Spotify Audio Features API
+- clustering pipelines
+- music similarity analysis
+
+---
+
+## Evolution After API Deprecation
+After Spotify deprecated parts of the audio features workflow, the project evolved into:
+- Last.fm + LLM hybrid clustering
+- AI-assisted music analysis
+- improved handling of mixed music libraries
+- Bollywood + Western music compatibility
+
+---
+
+## Features
+- mood-based clustering
+- music taste visualization
+- recommendation pipelines
+- interactive frontend visualizations
+
+---
+
+## Tech Stack
+- React
+- FastAPI
+- Last.fm API
+- LLM APIs
+- D3.js
+
+---
+
+## Why This Project Is Important
+This project taught me:
+- adaptability
+- system redesign
+- handling external API limitations
+- iterative engineering under changing constraints
+
+---
+
+# Kitchen Hygiene Compliance Detection
+
+### Computer Vision Safety Monitoring
+
+A real-time computer vision system for monitoring kitchen hygiene compliance.
+
+---
+
+## Initial Approach
+- Grounded SAM zero-shot workflows
+
+---
+
+## Refined Production Approach
+Pivoted to:
+- YOLOv11n-seg instance segmentation
+
+Why:
+- reduced hallucinations
+- improved accuracy
+- faster inference
+- better real-world reliability
+
+---
+
+## Applications
+- restaurant compliance
+- food safety monitoring
+- institutional kitchen workflows
+
+---
+
+# Plant Disease Detection
+
+### Agricultural Computer Vision System
+
+A machine learning system for identifying and classifying plant diseases.
+
+---
+
+## Datasets Used
+- PlantWild\_v2
+- PlantDoc
+
+---
+
+## Features
+- disease classification
+- confidence scoring
+- transfer learning workflows
+- augmentation pipelines
+- agricultural advisory integration
+
+---
+
+## Focus Areas
+- computer vision
+- deep learning
+- image preprocessing
+- real-world agricultural AI
+
+---
+
+# Convocation Portal
+
+### University Full-Stack Application  
+Manipal University Jaipur
+
+A production-scale web application built for managing university convocation workflows.
+
+---
+
+## Scale
+- 2000+ active users
+
+---
+
+## Features
+- authentication systems
+- event registration
+- profile management
+- real-time notifications
+- scalable workflows
+
+---
+
+## My Contributions
+- backend development
+- frontend implementation
+- deployment
+- system maintenance
+
+---
+
+## Outcome
+Successfully deployed and maintained during convocation season with zero downtime.
+
+---
+
+# React Portfolio Website
+
+### Personal Portfolio & Interactive Showcase
+
+A modern portfolio platform showcasing projects, experience, and technical work.
+
+---
+
+## Features
+- 16 customizable themes
+- responsive UI
+- interactive project cards
+- AI-powered chatbot integration
+- dark/light mode support
+- mobile-first experience
+
+---
+
+## Tech Stack
+- React
+- Next.js
+- Tailwind CSS
+
+---
+
+# Relationship Sync Web App
+
+### Relationship Tracking & Communication Tool
+
+A web application designed to help couples manage milestones, reminders, and communication workflows.
+
+---
+
+## Features
+- shared calendar
+- milestone tracking
+- synchronization across devices
+- reminders and communication tools
+
+---
+
+# Triage Hotkey-to-Notion Tool
+
+### Productivity & Capture System
+
+A rapid note-capture workflow integrated with Notion.
+
+---
+
+## Features
+- global hotkeys
+- instant note capture
+- automatic Notion integration
+- smart categorization
+- searchable workflows
+
+---
+
+# Citi Bike D3.js Visualization
+
+### Interactive Data Visualization Project
+
+A D3.js-based visualization platform analyzing NYC Citi Bike usage patterns.
+
+---
+
+## Features
+- station activity visualization
+- trip analysis
+- temporal usage trends
+- geographic heat maps
+
+---
+
+## Tech Stack
+- D3.js
+- Node.js
+- CSV processing workflows
+
+---
+
+# Project Categories
+
+## AI / ML Projects
+- Portfolio RAG Chatbot
+- Startup Autopsy
+- Local LLM Optimization
+- Blueprint Intelligence
+- Music Mindscape
+- Kitchen Hygiene Detection
+- Plant Disease Detection
+
+---
+
+## Full-Stack Applications
+- Convocation Portal
 - Digital Design Review System
 - React Portfolio Website
-- Convocation Portal
 - Relationship Sync Web App
 
-### 📊 Data & Visualization
-- Citi Bike D3.js Visualization
+---
+
+## Data Visualization & Analytics
+- Citi Bike Visualization
 - Music Mindscape Visualization
 
-### 🔧 Tools & Utilities
+---
+
+## Productivity & Developer Tools
 - Triage Hotkey-to-Notion Tool
 - Blueprint Intelligence Assistant
 
 ---
 
-## Technology Summary
+# Technologies Across Projects
 
-**Across 16+ projects**, I've worked with:
+Across my projects, I’ve worked with:
 
-- **AI/ML Frameworks:** PyTorch, TensorFlow, LangChain, Vertex AI
-- **Frontend:** React, D3.js, Tailwind CSS, Next.js
-- **Backend:** FastAPI, Django, Flask, Node.js
-- **Databases:** PostgreSQL, Firebase
-- **Cloud:** Google Cloud Platform (GCP)
-- **DevOps:** Docker, deployment automation
-- **APIs:** Spotify, Last.fm, Google Gemini, Notion
-
----
-
-## What These Projects Demonstrate
-
-✅ **Full-Stack Capability** — From backend systems to beautiful frontends  
-✅ **AI/ML Expertise** — LLMs, Computer Vision, NLP, optimization  
-✅ **Production Mindset** — Scalability, performance, real-world constraints  
-✅ **Adaptability** — Pivoting strategies when facing new challenges  
-✅ **Impact Focus** — Building solutions that matter  
-✅ **Continuous Learning** — Adopting new frameworks and techniques  
+## AI / ML
+- PyTorch
+- TensorFlow
+- LangChain
+- Vertex AI
+- Transformers
+- vector databases
 
 ---
 
-
+## Frontend
+- React
+- Next.js
+- D3.js
+- Tailwind CSS
 
 ---
 
-For detailed information about any project, feel free to ask! I'm always happy to discuss technical decisions, learnings, and potential collaborations.
+## Backend
+- FastAPI
+- Django
+- Flask
+- Node.js
+
+---
+
+## Infrastructure & DevOps
+- Docker
+- PostgreSQL
+- Firebase
+- GCP
+- deployment pipelines
+
+---
+
+## APIs & Integrations
+- Spotify API
+- Last.fm API
+- Google Gemini API
+- Notion API
+
+---
+
+# What These Projects Demonstrate
+
+These projects collectively demonstrate:
+
+✅ AI/ML engineering skills  
+✅ Full-stack development capability  
+✅ Systems optimization expertise  
+✅ Product-oriented thinking  
+✅ Adaptability under changing constraints  
+✅ Real-world deployment experience  
+✅ Strong engineering fundamentals  
+✅ Curiosity-driven experimentation
+
+---
+
+# Engineering Philosophy
+
+I enjoy building systems that are:
+- practical
+- scalable
+- technically ambitious
+- user-focused
+- AI-native
+
+I’m especially motivated by projects that combine:
+- AI systems
+- backend engineering
+- optimization
+- great user experiences
+
+---
+
+For detailed technical discussions about any project, feel free to ask.
+

@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 
-const CHAT_API_URL =
-  process.env.REACT_APP_CHAT_API_URL || "http://localhost:8000";
+// const CHAT_API_URL =
+//   process.env.REACT_APP_CHAT_API_URL || "http://localhost:8000";
+const CHAT_API_URL = "http://localhost:8000";
 
 function renderBold(text) {
   return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
