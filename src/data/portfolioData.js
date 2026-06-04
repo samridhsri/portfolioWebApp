@@ -16,7 +16,7 @@ export const projects = [
   ],
   image: "/images/LLM/Dashboard_benchmark.png",
   link: "#",
-  github: "https://github.com/samridhsri/local-llm-inference-optimizer",
+  github: "https://github.com/ranjan2601/DS-GA-1019",
   detailedDescription:
     "Built a benchmarking and optimization framework for local Large Language Model inference focused on improving throughput, reducing latency, and lowering memory requirements on commodity hardware. Evaluated multiple optimization strategies including KV cache reuse, INT8 quantization, and asynchronous batching across GPT-2, TinyLlama, and Pythia models. Generated performance benchmarks, memory analyses, and speedup studies to quantify the impact of each optimization technique.",
   features: [
