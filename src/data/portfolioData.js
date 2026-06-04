@@ -1,5 +1,84 @@
 export const projects = [
   {
+  id: "llm-inference-optimizer",
+  title: "Local LLM Inference Optimization Framework",
+  description:
+    "Designed and benchmarked a local LLM inference optimization framework leveraging KV caching, INT8 quantization, and asynchronous batching, achieving up to 7.5x throughput improvement while reducing model memory footprint by over 40%.",
+  tags: [
+    "Python",
+    "Transformers",
+    "PyTorch",
+    "Numba",
+    "Cython",
+    "ONNX Runtime",
+    "LLM Inference",
+    "Performance Engineering",
+  ],
+  image: "/images/LLM/Dashboard_benchmark.png",
+  link: "#",
+  github: "https://github.com/samridhsri/local-llm-inference-optimizer",
+  detailedDescription:
+    "Built a benchmarking and optimization framework for local Large Language Model inference focused on improving throughput, reducing latency, and lowering memory requirements on commodity hardware. Evaluated multiple optimization strategies including KV cache reuse, INT8 quantization, and asynchronous batching across GPT-2, TinyLlama, and Pythia models. Generated performance benchmarks, memory analyses, and speedup studies to quantify the impact of each optimization technique.",
+  features: [
+    "Implemented transformer KV-cache reuse achieving up to 3.15x inference speedup",
+    "Applied INT8 quantization reducing model memory footprint by up to 7.5%",
+    "Built asynchronous batching pipeline reaching 176+ tokens/sec throughput",
+    "Benchmarked GPT-2, TinyLlama, and Pythia models across multiple optimization stages",
+    "Generated comparative latency, throughput, memory, and speedup analyses",
+    "Created reproducible performance evaluation framework for local LLM deployment",
+  ],
+  techStack: {
+    Core: ["Python", "PyTorch", "Transformers"],
+    Optimization: ["KV Caching", "INT8 Quantization"],
+    Performance: ["Numba", "Cython"],
+    Analysis: ["NumPy", "Pandas"],
+    Visualization: ["Matplotlib"],
+    Deployment: ["Docker"],
+  },
+  screenshots: [
+    {
+      title: "Benchmark Dashboard",
+      url: "/images/LLM/Dashboard_benchmark.png",
+      placeholder: "Comprehensive performance dashboard",
+    },
+    {
+      title: "Dashboard for initial experiments with GPT-2",
+      url: "/images/LLM/Dashboard.png",
+      placeholder: "Initial benchmarking dashboard for GPT-2",
+    },
+    {
+      title: "Dashboard for comparison between different optimizations applied to GPT-2",
+      url: "/images/LLM/Dashboard_comparison.png",
+      placeholder: "Comparative dashboard showing optimization impact on GPT-2",
+    },
+    {
+      title: "Optimization Pipeline Throughput",
+      url: "/images/LLM/final_comparison.png",
+      placeholder: "Inference throughput across optimization stages",
+    },
+    {
+      title: "Model Throughput Comparison",
+      url: "/images/LLM/final_all_models_bar.png",
+      placeholder: "Cross-model throughput analysis",
+    },
+    {
+      title: "Relative Speedup Analysis",
+      url: "/images/LLM/final_speedup_relative.png",
+      placeholder: "Speedup versus baseline",
+    },
+    {
+      title: "Memory Reduction with Quantization",
+      url: "/images/LLM/final_memory_comparison.png",
+      placeholder: "FP32 vs INT8 memory footprint",
+    },
+    {
+      title: "Per-Model Optimization Results",
+      url: "/images/LLM/final_per_model.png",
+      placeholder: "Performance across GPT-2, TinyLlama and Pythia",
+    },
+  ],
+},
+  {
     id: "f1-telemetry",
     title: "F1 Race Telemetry Analytics Platform (RaceFlux)",
     description:
