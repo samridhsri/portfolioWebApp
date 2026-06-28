@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Helper function to get computed CSS variable
 const getCSSVariable = (variable) => {
@@ -61,23 +61,23 @@ const shapes = {
 const PuzzlePiece = ({ id, initialX, initialY, size, isMoving }) => {
   const [position, setPosition] = useState({ x: initialX, y: initialY });
   const [isDragging, setIsDragging] = useState(false);
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const [isCustomPosition, setIsCustomPosition] = useState(false);
   const [themeColors, setThemeColors] = useState({
-    primary: '#7c3aed',
-    secondary: '#8b5cf6'
+    primary: '#8b5cf6',
+    secondary: '#a855f7'
   });
+  const dragRef = useRef({ isDragging: false, startX: 0, startY: 0, origX: 0, origY: 0 });
 
   // Update colors when theme changes
   useEffect(() => {
     const updateColors = () => {
-      const primary = getCSSVariable('--accent-primary') || '#7c3aed';
-      const secondary = getCSSVariable('--accent-secondary') || '#8b5cf6';
+      const primary = getCSSVariable('--accent-primary') || '#8b5cf6';
+      const secondary = getCSSVariable('--accent-secondary') || '#a855f7';
       setThemeColors({ primary, secondary });
     };
 
     updateColors();
 
-    // Watch for theme changes
     const observer = new MutationObserver(updateColors);
     observer.observe(document.documentElement, {
       attributes: true,
@@ -88,40 +88,46 @@ const PuzzlePiece = ({ id, initialX, initialY, size, isMoving }) => {
   }, []);
 
   useEffect(() => {
-    if (!isDragging) {
+    if (!isCustomPosition) {
       setPosition({ x: initialX, y: initialY });
     }
-  }, [initialX, initialY, isDragging]);
+  }, [initialX, initialY, isCustomPosition]);
 
-  const handleMouseDown = (e) => {
+  const handlePointerDown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsDragging(true);
-    setOffset({
-      x: e.clientX - position.x,
-      y: e.clientY - position.y,
-    });
-  };
+    setIsCustomPosition(true);
+    dragRef.current = {
+      isDragging: true,
+      startX: e.clientX,
+      startY: e.clientY,
+      origX: position.x,
+      origY: position.y,
+    };
 
-  useEffect(() => {
-    if (!isDragging) return;
-
-    const handleMouseMove = (e) => {
+    const onPointerMove = (moveEvent) => {
+      if (!dragRef.current.isDragging) return;
+      const dx = moveEvent.clientX - dragRef.current.startX;
+      const dy = moveEvent.clientY - dragRef.current.startY;
       setPosition({
-        x: e.clientX - offset.x,
-        y: e.clientY - offset.y,
+        x: dragRef.current.origX + dx,
+        y: dragRef.current.origY + dy,
       });
     };
 
-    const handleMouseUp = () => {
+    const onPointerUp = () => {
+      dragRef.current.isDragging = false;
       setIsDragging(false);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+      window.removeEventListener("pointercancel", onPointerUp);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", handleMouseUp);
-    };
-  }, [isDragging, offset]);
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerup", onPointerUp);
+    window.addEventListener("pointercancel", onPointerUp);
+  };
 
   const pieceShape = shapes[id] || shapes[1];
   // Use theme colors with variations for each piece
@@ -131,69 +137,81 @@ const PuzzlePiece = ({ id, initialX, initialY, size, isMoving }) => {
   };
 
   return (
-    <svg
-      className={`puzzle-piece ${isDragging ? "dragging" : ""} ${
+    <div
+      className={`puzzle-piece puzzle-ambient-${id} ${isDragging ? "dragging" : ""} ${
         isMoving && !isDragging ? "moving" : ""
       }`}
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      onMouseDown={handleMouseDown}
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        width: `${size}px`,
+        height: `${size}px`,
+      }}
+      onPointerDown={handlePointerDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`Interactive draggable puzzle piece ${id}`}
     >
-      <defs>
-        <linearGradient
-          id={`grad-${id}`}
-          x1="0%"
-          y1="0%"
-          x2="100%"
-          y2="100%"
-        >
-          <stop
-            offset="0%"
-            style={{ stopColor: pieceColor.start, stopOpacity: 1 }}
-          />
-          <stop
-            offset="100%"
-            style={{ stopColor: pieceColor.end, stopOpacity: 1 }}
-          />
-        </linearGradient>
-        <filter id={`shadow-${id}`}>
-          <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.5" />
-        </filter>
-      </defs>
-      <path
-        d={pieceShape}
-        fill={`url(#grad-${id})`}
-        stroke="var(--accent-primary)"
-        strokeWidth="2"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        filter={`url(#shadow-${id})`}
-        style={{ strokeOpacity: 0.3 }}
-      />
-      <circle
-        cx="35"
-        cy="35"
-        r="3"
-        fill="rgba(255,255,255,0.25)"
-        opacity="0.7"
-      />
-      <circle
-        cx="55"
-        cy="55"
-        r="2.5"
-        fill="rgba(255,255,255,0.2)"
-        opacity="0.6"
-      />
-      <circle
-        cx="45"
-        cy="65"
-        r="2"
-        fill="rgba(255,255,255,0.15)"
-        opacity="0.5"
-      />
-    </svg>
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 100 100"
+        className="w-full h-full pointer-events-none select-none"
+      >
+        <defs>
+          <linearGradient
+            id={`grad-${id}`}
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop
+              offset="0%"
+              style={{ stopColor: pieceColor.start, stopOpacity: 0.95 }}
+            />
+            <stop
+              offset="100%"
+              style={{ stopColor: pieceColor.end, stopOpacity: 0.8 }}
+            />
+          </linearGradient>
+          <filter id={`shadow-${id}`} x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="4" stdDeviation="5" floodColor={pieceColor.start} floodOpacity="0.6" />
+          </filter>
+        </defs>
+        <path
+          d={pieceShape}
+          fill={`url(#grad-${id})`}
+          stroke="var(--accent-primary)"
+          strokeWidth="2.5"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          filter={`url(#shadow-${id})`}
+          style={{ strokeOpacity: 0.85 }}
+        />
+        <circle
+          cx="35"
+          cy="35"
+          r="3"
+          fill="rgba(255,255,255,0.4)"
+          opacity="0.9"
+        />
+        <circle
+          cx="55"
+          cy="55"
+          r="2.5"
+          fill="rgba(255,255,255,0.3)"
+          opacity="0.8"
+        />
+        <circle
+          cx="45"
+          cy="65"
+          r="2"
+          fill="rgba(255,255,255,0.25)"
+          opacity="0.7"
+        />
+      </svg>
+    </div>
   );
 };
 

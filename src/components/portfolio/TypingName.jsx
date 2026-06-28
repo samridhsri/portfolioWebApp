@@ -1,53 +1,75 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+
+const TARGET_TEXT = "Hey, I'm Samridh!";
 
 const TypingName = () => {
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-
-  const fullText = "Hey, I'm Samridh!";
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia
+      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      : false
+  );
+  const [displayText, setDisplayText] = useState(() =>
+    prefersReducedMotion ? TARGET_TEXT : ""
+  );
+  const [isDone, setIsDone] = useState(() => prefersReducedMotion);
+  const timerRef = useRef(null);
 
   useEffect(() => {
-    const typingSpeed = isDeleting ? 50 : 100;
-
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (displayText.length < fullText.length) {
-          setDisplayText(fullText.slice(0, displayText.length + 1));
-        } else {
-          setTimeout(() => setIsDeleting(true), 3000);
-        }
-      } else {
-        if (displayText.length > 0) {
-          setDisplayText(fullText.slice(0, displayText.length - 1));
-        } else {
-          setIsDeleting(false);
-        }
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const handler = (e) => {
+      setPrefersReducedMotion(e.matches);
+      if (e.matches) {
+        setDisplayText(TARGET_TEXT);
+        setIsDone(true);
       }
-    }, typingSpeed);
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting]);
-
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
-    return () => clearInterval(cursorInterval);
+    };
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setDisplayText(TARGET_TEXT);
+      setIsDone(true);
+      return;
+    }
+
+    if (displayText.length < TARGET_TEXT.length) {
+      const nextChar = TARGET_TEXT[displayText.length];
+      // Keystroke delays with organic variation and pause after punctuation
+      let delay = 60 + Math.random() * 40;
+      if (nextChar === "," || nextChar === "!") {
+        delay += 180;
+      }
+
+      timerRef.current = setTimeout(() => {
+        setDisplayText(TARGET_TEXT.slice(0, displayText.length + 1));
+      }, delay);
+    } else {
+      setIsDone(true);
+    }
+
+    return () => clearTimeout(timerRef.current);
+  }, [displayText, prefersReducedMotion]);
+
   return (
-    <span>
-      {displayText}
-      <span
-        className={`${
-          showCursor ? "opacity-100" : "opacity-0"
-        } transition-opacity`}
-      >
-        |
+    <span className="inline-flex items-center justify-center gap-2 flex-wrap">
+      <span className="gradient-text-shimmer drop-shadow-sm whitespace-nowrap">
+        {prefersReducedMotion ? TARGET_TEXT : displayText}
       </span>
+      {isDone && (
+        <span className="animate-wave-hand inline-block" role="img" aria-label="Waving hand">
+          👋
+        </span>
+      )}
+      {!prefersReducedMotion && !isDone && (
+        <span className="typing-cursor ml-1" aria-hidden="true" />
+      )}
     </span>
   );
 };
 
 export default TypingName;
+
+
