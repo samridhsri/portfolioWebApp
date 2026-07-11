@@ -6,27 +6,28 @@ import ThemeToggle from "../portfolio/ThemeToggle";
 import ChatWidget from "../portfolio/ChatWidget";
 
 const getPuzzlePositions = (section) => {
+  if (typeof window === 'undefined') return [];
   const w = window.innerWidth;
   const h = window.innerHeight;
 
   const positions = {
     home: [
-      { id: 1, x: 100, y: 200, size: 120 },
-      { id: 2, x: w - 200, y: 150, size: 100 },
-      { id: 3, x: 200, y: h - 250, size: 90 },
-      { id: 4, x: w - 150, y: h - 200, size: 110 },
-      { id: 5, x: w / 2 - 50, y: 100, size: 85 },
-      { id: 6, x: 50, y: h / 2, size: 95 },
-      { id: 7, x: w - 250, y: h / 2 + 100, size: 105 },
+      { id: 1, x: Math.max(30, w * 0.05), y: Math.max(120, h * 0.18), size: 110 },
+      { id: 2, x: Math.max(w - 180, w * 0.85), y: Math.max(100, h * 0.15), size: 100 },
+      { id: 3, x: Math.max(40, w * 0.06), y: Math.max(300, h * 0.72), size: 95 },
+      { id: 4, x: Math.max(w - 160, w * 0.86), y: Math.max(300, h * 0.75), size: 115 },
+      { id: 5, x: Math.max(w - 190, w * 0.88), y: Math.max(200, h * 0.45), size: 88 },
+      { id: 6, x: Math.max(25, w * 0.04), y: Math.max(200, h * 0.46), size: 92 },
+      { id: 7, x: Math.max(w * 0.22, 180), y: Math.max(h - 140, 480), size: 105 },
     ],
     about: [
-      { id: 1, x: w - 180, y: 250, size: 120 },
-      { id: 2, x: 120, y: 180, size: 100 },
-      { id: 3, x: w - 220, y: h - 300, size: 90 },
-      { id: 4, x: 180, y: h - 180, size: 110 },
-      { id: 5, x: w / 2 + 100, y: 120, size: 85 },
-      { id: 6, x: w - 100, y: h / 2 - 50, size: 95 },
-      { id: 7, x: 250, y: h / 2 + 100, size: 105 },
+      { id: 1, x: Math.max(w - 170, w * 0.85), y: Math.max(140, h * 0.2), size: 110 },
+      { id: 2, x: Math.max(35, w * 0.05), y: Math.max(120, h * 0.16), size: 100 },
+      { id: 3, x: Math.max(w - 180, w * 0.84), y: Math.max(320, h * 0.75), size: 95 },
+      { id: 4, x: Math.max(45, w * 0.07), y: Math.max(300, h * 0.68), size: 115 },
+      { id: 5, x: Math.max(30, w * 0.04), y: Math.max(200, h * 0.42), size: 88 },
+      { id: 6, x: Math.max(w - 160, w * 0.86), y: Math.max(220, h * 0.48), size: 92 },
+      { id: 7, x: Math.max(w * 0.72, 220), y: Math.max(h - 130, 460), size: 105 },
     ],
   };
 
@@ -41,11 +42,17 @@ const Layout = ({ children, puzzleType = "home" }) => {
   const [taglineOpacity, setTaglineOpacity] = useState(1);
 
   useEffect(() => {
-    if (puzzleType) {
-      setCurrentPuzzles(getPuzzlePositions(puzzleType));
-    } else {
-      setCurrentPuzzles([]);
-    }
+    const updatePositions = () => {
+      if (puzzleType) {
+        setCurrentPuzzles(getPuzzlePositions(puzzleType));
+      } else {
+        setCurrentPuzzles([]);
+      }
+    };
+
+    updatePositions();
+    window.addEventListener("resize", updatePositions);
+    return () => window.removeEventListener("resize", updatePositions);
   }, [puzzleType]);
 
   useEffect(() => {
@@ -63,7 +70,11 @@ const Layout = ({ children, puzzleType = "home" }) => {
   }, []);
 
   return (
-    <div className="min-h-screen grid-bg relative">
+    <div className="min-h-screen grid-bg relative overflow-x-hidden">
+      {/* Ambient Floating Glow Orbs */}
+      <div className="ambient-glow-orb-1" aria-hidden="true" />
+      <div className="ambient-glow-orb-2" aria-hidden="true" />
+
       {/* Puzzle Pieces Background */}
       {currentPuzzles.map((piece) => (
         <PuzzlePiece
