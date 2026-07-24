@@ -1,89 +1,118 @@
 import { useNavigate } from 'react-router-dom';
+import { LuGraduationCap, LuArrowDown, LuFileText } from "react-icons/lu";
 import TypingName from "./TypingName";
 import RotatingText from "./RotatingText";
 
 const HeroSection = () => {
   const navigate = useNavigate();
+
+  const handleScrollToProjects = () => {
+    const projectsSection = document.getElementById("featured-projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({
+        top: window.innerHeight * 0.7,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="text-center space-y-6 max-w-4xl mx-auto">
-      {/* Animoji */}
-      <div className="flex justify-center">
-        <img
-          src="/images/aboutPage/frontPageAnimoji-removebg.png"
-          alt="Samridh's Animoji"
-          className="w-64 h-64 md:w-80 md:h-80 object-contain"
-          style={{
-            filter: 'drop-shadow(0 0 20px var(--accent-glow))'
-          }}
-        />
+    <div className="text-center space-y-6 max-w-4xl mx-auto pt-2 pb-6">
+      {/* Animoji with Dual Halo & Ambient Levitation */}
+      <div className="flex justify-center relative pt-2">
+        <div className="relative inline-block">
+          <div className="avatar-halo-glow" aria-hidden="true" />
+          <div className="avatar-halo-secondary" aria-hidden="true" />
+          <img
+            src="/images/aboutPage/frontPageAnimoji-removebg.png"
+            alt="Samridh Srivastava avatar"
+            className="avatar-levitate w-48 h-48 sm:w-60 sm:h-60 md:w-68 md:h-68 object-contain relative z-10 select-none pointer-events-none"
+            style={{
+              filter: 'drop-shadow(0 0 28px var(--accent-glow))'
+            }}
+          />
+        </div>
       </div>
 
-      {/* Name */}
-      <div className="space-y-6">
-        <h1 className="bakbak text-6xl md:text-7xl leading-tight">
+      {/* Name & Dynamic Role Typing */}
+      <div className="space-y-3 sm:space-y-4">
+        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl leading-tight tracking-tight title-glow-pulse">
           <TypingName />
         </h1>
 
-        {/* Rotating subtitle */}
-        <div className="text-xl md:text-2xl min-h-16 flex items-center justify-center px-4">
+        {/* Rotating Subtitle / Roles */}
+        <div className="text-base sm:text-xl md:text-2xl min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center px-4">
           <RotatingText />
         </div>
       </div>
 
-      {/* Current Status */}
-      <div className="text-lg space-y-2" style={{ color: 'var(--text-secondary)' }}>
-        <p className="flex items-center justify-center gap-2">
-          <span style={{ color: 'var(--accent-primary)' }}>&#x1F393;</span>
-          <span>MS Computer Engineering @ <span style={{ color: 'var(--accent-primary)' }}>NYU</span></span>
-          {/* <span style={{ color: 'var(--accent-primary)' }}>&bull;</span> */}
-          {/* <span style={{ color: 'var(--accent-primary)' }}>3.83 GPA</span> */}
-        </p>
-      </div>
-
-      {/* CTAs */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-        <button
-          onClick={() =>
-            window.scrollTo({
-              top: document.body.scrollHeight,
-              behavior: "smooth",
-            })
-          }
-          className="px-8 py-4 rounded-lg text-lg font-medium transition-all transform hover:scale-105 shadow-lg"
+      {/* Current Academic Status with Live Radar Beacon */}
+      <div className="text-xs sm:text-sm font-mono flex justify-center">
+        <div
+          className="inline-flex items-center justify-center gap-2.5 px-4 py-2 rounded-full border backdrop-blur-md transition-all duration-200 hover:border-[var(--accent-primary)] hover:shadow-[0_0_20px_var(--accent-glow-subtle)]"
           style={{
-            backgroundColor: 'var(--accent-primary)',
-            color: 'var(--text-primary)',
-            boxShadow: '0 0 20px var(--accent-glow)'
+            borderColor: 'var(--border-color)',
+            backgroundColor: 'var(--card-bg)',
+            color: 'var(--text-secondary)'
           }}
         >
-          View My Work &rarr;
+          <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+            <span className="status-beacon-ping" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent-emerald)]" />
+          </span>
+          <LuGraduationCap className="text-base shrink-0" style={{ color: 'var(--accent-primary)' }} aria-hidden="true" />
+          <span>
+            MS Computer Engineering @ <span className="font-semibold text-[var(--text-primary)]">NYU</span>
+          </span>
+        </div>
+      </div>
+
+      {/* Primary CTAs */}
+      <div className="flex flex-col sm:flex-row gap-3.5 justify-center items-center pt-2 max-w-md mx-auto sm:max-w-none">
+        <button
+          onClick={handleScrollToProjects}
+          className="btn-shimmer-sheen w-full sm:w-auto px-7 py-3.5 rounded-full text-sm sm:text-base font-medium flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-transform duration-150 active:scale-95"
+          style={{
+            backgroundColor: 'var(--accent-primary)',
+            color: '#ffffff',
+            boxShadow: '0 0 24px var(--accent-glow)'
+          }}
+          aria-label="Scroll down to view projects"
+        >
+          <span>Explore Featured Work</span>
+          <LuArrowDown className="text-base animate-subtle-bob" aria-hidden="true" />
         </button>
         <button
           onClick={() => navigate('/resume')}
-          className="px-8 py-4 rounded-lg text-lg font-medium transition-all border"
+          className="w-full sm:w-auto px-7 py-3.5 rounded-full text-sm sm:text-base font-medium font-mono border backdrop-blur-md flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 hover:border-[var(--accent-primary)] hover:bg-[var(--card-hover-bg)] active:scale-95 focus:outline-none focus-visible:ring-2"
           style={{
-            backgroundColor: 'var(--bg-secondary)',
+            backgroundColor: 'var(--card-bg)',
             color: 'var(--text-primary)',
             borderColor: 'var(--border-color)'
           }}
-          onMouseEnter={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
-          onMouseLeave={(e) => e.target.style.borderColor = 'var(--border-color)'}
+          aria-label="Navigate to Resume page"
         >
-          Download Resume
+          <LuFileText className="text-base text-[var(--accent-primary)]" aria-hidden="true" />
+          <span>Interactive Resume</span>
         </button>
       </div>
 
-      {/* Credibility Signals */}
-      <div className="pt-8 border-t" style={{ borderColor: 'var(--border-color)' }}>
-        <p className="text-sm mb-3" style={{ color: 'var(--text-tertiary)' }}>Previously worked on:</p>
-        <div className="flex flex-wrap justify-center gap-3 text-sm">
-          {["ML systems", "RAG pipelines", "Full-stack tools", "Data products"].map(
+      {/* Credibility Architecture Tags */}
+      <div className="pt-6 sm:pt-8 border-t max-w-2xl mx-auto" style={{ borderColor: 'var(--border-subtle)' }}>
+        <p className="text-xs uppercase tracking-widest mb-3 font-mono font-medium" style={{ color: 'var(--text-tertiary)' }}>
+          CORE SPECIALIZATIONS
+        </p>
+        <div className="flex flex-wrap justify-center gap-2 text-xs font-mono">
+          {["Agentic AI & RAG", "Distributed Systems", "LLM Optimization", "High-Throughput Web"].map(
             (item) => (
               <span
                 key={item}
-                className="px-4 py-2 rounded-full"
+                className="pill-motion px-3 py-1.5 rounded-md border cursor-default"
                 style={{
                   backgroundColor: 'var(--card-bg)',
+                  borderColor: 'var(--border-color)',
                   color: 'var(--text-secondary)'
                 }}
               >
