@@ -93,7 +93,7 @@ const Layout = ({ children, puzzleType = "home" }) => {
         <Navbar />
 
         {/* Content Sections */}
-        <div className="container mx-auto px-8 py-16" key={location.pathname}>
+        <div className="container mx-auto px-4 sm:px-8 py-8 sm:py-16" key={location.pathname}>
           {children}
         </div>
       </div>

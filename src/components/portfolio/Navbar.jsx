@@ -25,13 +25,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center px-8 py-6">
-      <h1 className="bakbak text-2xl" style={{ color: 'var(--text-primary)' }}>
-      <NavLink to="/">Samridh.</NavLink></h1>
-      <div className="flex gap-4">
+    <nav className="flex flex-col sm:flex-row justify-between items-center px-4 sm:px-8 py-4 sm:py-6 gap-3 sm:gap-0">
+      <h1 className="bakbak text-2xl text-center sm:text-left" style={{ color: 'var(--text-primary)' }}>
+        <NavLink to="/">Samridh.</NavLink>
+      </h1>
+      <div className="flex gap-2 sm:gap-4 w-full sm:w-auto justify-center">
         <NavLink
           to="/"
-          className="px-6 py-2 border transition-all"
+          className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 text-center text-sm sm:text-base border transition-all rounded-md sm:rounded-none"
           style={({ isActive }) => getNavLinkStyle(isActive)}
           onMouseEnter={(e) => {
             const isActive = e.currentTarget.classList.contains('active');
@@ -46,7 +47,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink
           to="/about"
-          className="px-6 py-2 border transition-all"
+          className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 text-center text-sm sm:text-base border transition-all rounded-md sm:rounded-none"
           style={({ isActive }) => getNavLinkStyle(isActive)}
           onMouseEnter={(e) => {
             const isActive = e.currentTarget.classList.contains('active');
@@ -61,7 +62,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink
           to="/resume"
-          className="px-6 py-2 border transition-all"
+          className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 text-center text-sm sm:text-base border transition-all rounded-md sm:rounded-none"
           style={({ isActive }) => getNavLinkStyle(isActive)}
           onMouseEnter={(e) => {
             const isActive = e.currentTarget.classList.contains('active');
