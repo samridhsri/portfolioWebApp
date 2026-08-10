@@ -1,83 +1,152 @@
 export const projects = [
   {
-  id: "llm-inference-optimizer",
-  title: "Local LLM Inference Optimization Framework",
-  description:
-    "Designed and benchmarked a local LLM inference optimization framework leveraging KV caching, INT8 quantization, and asynchronous batching, achieving up to 7.5x throughput improvement while reducing model memory footprint by over 40%.",
-  tags: [
-    "Python",
-    "Transformers",
-    "PyTorch",
-    "Numba",
-    "Cython",
-    "ONNX Runtime",
-    "LLM Inference",
-    "Performance Engineering",
-  ],
-  image: "/images/LLM/Dashboard_benchmark.png",
-  link: "#",
-  github: "https://github.com/ranjan2601/DS-GA-1019",
-  detailedDescription:
-    "Built a benchmarking and optimization framework for local Large Language Model inference focused on improving throughput, reducing latency, and lowering memory requirements on commodity hardware. Evaluated multiple optimization strategies including KV cache reuse, INT8 quantization, and asynchronous batching across GPT-2, TinyLlama, and Pythia models. Generated performance benchmarks, memory analyses, and speedup studies to quantify the impact of each optimization technique.",
-  features: [
-    "Implemented transformer KV-cache reuse achieving up to 3.15x inference speedup",
-    "Applied INT8 quantization reducing model memory footprint by up to 7.5%",
-    "Built asynchronous batching pipeline reaching 176+ tokens/sec throughput",
-    "Benchmarked GPT-2, TinyLlama, and Pythia models across multiple optimization stages",
-    "Generated comparative latency, throughput, memory, and speedup analyses",
-    "Created reproducible performance evaluation framework for local LLM deployment",
-  ],
-  techStack: {
-    Core: ["Python", "PyTorch", "Transformers"],
-    Optimization: ["KV Caching", "INT8 Quantization"],
-    Performance: ["Numba", "Cython"],
-    Analysis: ["NumPy", "Pandas"],
-    Visualization: ["Matplotlib"],
-    Deployment: ["Docker"],
+    id: "ai-research-intelligence-platform",
+
+    title: "AI Research Intelligence Platform",
+
+    description:
+      "Engineered an agentic research platform that decomposes complex research questions into parallel workflows, retrieves and reranks information, and synthesizes evidence-backed insights using LangGraph, PostgreSQL, Redis, and Cohere.",
+
+    tags: [
+      "Python",
+      "LangGraph",
+      "FastAPI",
+      "PostgreSQL",
+      "pgvector",
+      "Redis",
+      "Cohere",
+      "Agentic AI",
+      "RAG",
+      "Docker",
+    ],
+
+    image: "/images/aiResearch/AIResearchIntelligence1.png",
+
+    link: "#",
+
+    github: "https://github.com/samridhsri",
+
+    detailedDescription:
+      "Built an agentic AI research intelligence platform designed to transform complex research questions into structured, evidence-backed analyses. The system uses LangGraph to orchestrate research workflows, decomposing broad questions into focused research tasks and coordinating retrieval, ranking, and synthesis. PostgreSQL with pgvector provides persistent semantic retrieval, Redis supports caching and intermediate state, and Cohere reranking improves the relevance of retrieved evidence before final synthesis. FastAPI exposes the research pipeline as a production-oriented backend service, while Docker provides reproducible deployment.",
+
+    features: [
+      "Designed an agentic research workflow using LangGraph for task decomposition and orchestration",
+      "Implemented retrieval-augmented generation using PostgreSQL and pgvector for semantic search",
+      "Integrated Cohere reranking to improve relevance of retrieved research evidence",
+      "Used Redis for caching frequently accessed information and intermediate workflow state",
+      "Built FastAPI services for exposing research workflows through production-ready APIs",
+      "Implemented multi-stage research pipelines combining retrieval, evidence evaluation, and synthesis",
+      "Designed structured outputs to transform unstructured research into actionable intelligence",
+      "Containerized the complete platform using Docker for reproducible deployment",
+    ],
+
+    techStack: {
+      Language: ["Python"],
+      AgenticAI: ["LangGraph", "Agent Orchestration", "LLM Workflows"],
+      Backend: ["FastAPI"],
+      Retrieval: ["PostgreSQL", "pgvector", "RAG"],
+      Reranking: ["Cohere Rerank"],
+      Caching: ["Redis"],
+      Infrastructure: ["Docker"],
+    },
+
+    screenshots: [
+      {
+        title: "ResearchAI Platform Workspace & RAG Query UI",
+        url: "/images/aiResearch/AIResearchIntelligence1.png",
+        placeholder: "ResearchAI Platform workspace with verified source citations",
+      },
+      {
+        title: "Research Analysis & Document Querying",
+        url: "/images/aiResearch/AIResearchIntelligence2.png",
+        placeholder: "Multi-document AI research Q&A response",
+      },
+      {
+        title: "ResearchAI Paper Synthesis Architecture",
+        url: "/images/aiResearch/AIResearchIntelligence3.png",
+        placeholder: "Hybrid Retrieval, RRF, and Cohere Reranking pipeline overview",
+      },
+    ],
   },
-  screenshots: [
-    {
-      title: "Benchmark Dashboard",
-      url: "/images/LLM/Dashboard_benchmark.png",
-      placeholder: "Comprehensive performance dashboard",
+  {
+    id: "llm-inference-optimizer",
+    title: "Local LLM Inference Optimization Framework",
+    description:
+      "Designed and benchmarked a local LLM inference optimization framework leveraging KV caching, INT8 quantization, and asynchronous batching, achieving up to 7.5x throughput improvement while reducing model memory footprint by over 40%.",
+    tags: [
+      "Python",
+      "Transformers",
+      "PyTorch",
+      "Numba",
+      "Cython",
+      "ONNX Runtime",
+      "LLM Inference",
+      "Performance Engineering",
+    ],
+    image: "/images/LLM/Dashboard_benchmark.png",
+    link: "#",
+    github: "https://github.com/ranjan2601/DS-GA-1019",
+    detailedDescription:
+      "Built a benchmarking and optimization framework for local Large Language Model inference focused on improving throughput, reducing latency, and lowering memory requirements on commodity hardware. Evaluated multiple optimization strategies including KV cache reuse, INT8 quantization, and asynchronous batching across GPT-2, TinyLlama, and Pythia models. Generated performance benchmarks, memory analyses, and speedup studies to quantify the impact of each optimization technique.",
+    features: [
+      "Implemented transformer KV-cache reuse achieving up to 3.15x inference speedup",
+      "Applied INT8 quantization reducing model memory footprint by up to 7.5%",
+      "Built asynchronous batching pipeline reaching 176+ tokens/sec throughput",
+      "Benchmarked GPT-2, TinyLlama, and Pythia models across multiple optimization stages",
+      "Generated comparative latency, throughput, memory, and speedup analyses",
+      "Created reproducible performance evaluation framework for local LLM deployment",
+    ],
+    techStack: {
+      Core: ["Python", "PyTorch", "Transformers"],
+      Optimization: ["KV Caching", "INT8 Quantization"],
+      Performance: ["Numba", "Cython"],
+      Analysis: ["NumPy", "Pandas"],
+      Visualization: ["Matplotlib"],
+      Deployment: ["Docker"],
     },
-    {
-      title: "Dashboard for initial experiments with GPT-2",
-      url: "/images/LLM/Dashboard.png",
-      placeholder: "Initial benchmarking dashboard for GPT-2",
-    },
-    {
-      title: "Dashboard for comparison between different optimizations applied to GPT-2",
-      url: "/images/LLM/Dashboard_comparison.png",
-      placeholder: "Comparative dashboard showing optimization impact on GPT-2",
-    },
-    {
-      title: "Optimization Pipeline Throughput",
-      url: "/images/LLM/final_comparison.png",
-      placeholder: "Inference throughput across optimization stages",
-    },
-    {
-      title: "Model Throughput Comparison",
-      url: "/images/LLM/final_all_models_bar.png",
-      placeholder: "Cross-model throughput analysis",
-    },
-    {
-      title: "Relative Speedup Analysis",
-      url: "/images/LLM/final_speedup_relative.png",
-      placeholder: "Speedup versus baseline",
-    },
-    {
-      title: "Memory Reduction with Quantization",
-      url: "/images/LLM/final_memory_comparison.png",
-      placeholder: "FP32 vs INT8 memory footprint",
-    },
-    {
-      title: "Per-Model Optimization Results",
-      url: "/images/LLM/final_per_model.png",
-      placeholder: "Performance across GPT-2, TinyLlama and Pythia",
-    },
-  ],
-},
+    screenshots: [
+      {
+        title: "Benchmark Dashboard",
+        url: "/images/LLM/Dashboard_benchmark.png",
+        placeholder: "Comprehensive performance dashboard",
+      },
+      {
+        title: "Dashboard for initial experiments with GPT-2",
+        url: "/images/LLM/Dashboard.png",
+        placeholder: "Initial benchmarking dashboard for GPT-2",
+      },
+      {
+        title: "Dashboard for comparison between different optimizations applied to GPT-2",
+        url: "/images/LLM/Dashboard_comparison.png",
+        placeholder: "Comparative dashboard showing optimization impact on GPT-2",
+      },
+      {
+        title: "Optimization Pipeline Throughput",
+        url: "/images/LLM/final_comparison.png",
+        placeholder: "Inference throughput across optimization stages",
+      },
+      {
+        title: "Model Throughput Comparison",
+        url: "/images/LLM/final_all_models_bar.png",
+        placeholder: "Cross-model throughput analysis",
+      },
+      {
+        title: "Relative Speedup Analysis",
+        url: "/images/LLM/final_speedup_relative.png",
+        placeholder: "Speedup versus baseline",
+      },
+      {
+        title: "Memory Reduction with Quantization",
+        url: "/images/LLM/final_memory_comparison.png",
+        placeholder: "FP32 vs INT8 memory footprint",
+      },
+      {
+        title: "Per-Model Optimization Results",
+        url: "/images/LLM/final_per_model.png",
+        placeholder: "Performance across GPT-2, TinyLlama and Pythia",
+      },
+    ],
+  },
   {
     id: "f1-telemetry",
     title: "F1 Race Telemetry Analytics Platform (RaceFlux)",
@@ -125,70 +194,92 @@ export const projects = [
     ],
   },
   {
-  id: "music-mindscape",
-  title: "Music Mindscape",
-  description:
-    "An interactive force-directed mind map that visualizes your Spotify listening habits, clustering tracks into musical zones using audio features or AI-powered context via Gemini.",
-  tags: ["Full Stack", "Data Visualization", "AI/ML", "Web Development"],
-  image: "/images/music-mindscape/influenceAnalysis.png",
-  link: "https://github.com/samridhsri/music-mindscape",
-  github: "https://github.com/samridhsri/music-mindscape",
-  detailedDescription:
-    "A Spotify-connected visualization app that maps your top tracks as a living mind map. Tracks are clustered into musical zones by audio feature similarity, with an optional AI mode powered by Gemini 2.5 Flash that re-clusters using music knowledge. Features an Influence Simulator to overlay any Spotify artist as a ghost node and see how they connect to your existing taste.",
-  features: [
-    "Force-directed mind map with staggered node entrance animations",
-    "9 auto-generated musical zones (Energy, Chill, Sad, Happy, Electronic, etc.)",
-    "AI Clustering via Gemini 2.5 Flash with step-by-step algorithm insight panel",
-    "Influence Simulator — search any artist, visualize their sonic similarity to your library",
-    "Playlist export to Spotify or clipboard, plus PNG graph export",
-    "Demo mode with mock data — no login required",
-    "Persistent state via localStorage with automatic AI cache invalidation on re-sync",
-  ],
-  techStack: {
-    Frontend: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
-    Graph: ["react-force-graph-2d", "d3-force"],
-    Backend: ["Supabase Edge Functions (Deno)"],
-    Database: ["PostgreSQL (Supabase)"],
-    Auth: ["Spotify OAuth via Supabase"],
-    AI: ["Google Gemini 2.5 Flash"],
+    id: "music-mindscape",
+    title: "Music Mindscape",
+    description:
+      "An interactive force-directed mind map that visualizes your Spotify listening habits, clustering tracks into musical zones using audio features or AI-powered context via Gemini.",
+    tags: ["Full Stack", "Data Visualization", "AI/ML", "Web Development"],
+    image: "/images/music-mindscape/influenceAnalysis.png",
+    link: "https://github.com/samridhsri/music-mindscape",
+    github: "https://github.com/samridhsri/music-mindscape",
+    detailedDescription:
+      "A Spotify-connected visualization app that maps your top tracks as a living mind map. Tracks are clustered into musical zones by audio feature similarity, with an optional AI mode powered by Gemini 2.5 Flash that re-clusters using music knowledge. Features an Influence Simulator to overlay any Spotify artist as a ghost node and see how they connect to your existing taste.",
+    features: [
+      "Force-directed mind map with staggered node entrance animations",
+      "9 auto-generated musical zones (Energy, Chill, Sad, Happy, Electronic, etc.)",
+      "AI Clustering via Gemini 2.5 Flash with step-by-step algorithm insight panel",
+      "Influence Simulator — search any artist, visualize their sonic similarity to your library",
+      "Playlist export to Spotify or clipboard, plus PNG graph export",
+      "Demo mode with mock data — no login required",
+      "Persistent state via localStorage with automatic AI cache invalidation on re-sync",
+    ],
+    techStack: {
+      Frontend: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
+      Graph: ["react-force-graph-2d", "d3-force"],
+      Backend: ["Supabase Edge Functions (Deno)"],
+      Database: ["PostgreSQL (Supabase)"],
+      Auth: ["Spotify OAuth via Supabase"],
+      AI: ["Google Gemini 2.5 Flash"],
+    },
+    screenshots: [
+      { title: "Mind Map View", url: "/images/music-mindscape/clusters.png", placeholder: "Add mind map screenshot" },
+      { title: "Influence Simulator", url: "/images/music-mindscape/influenceAnalysis.png", placeholder: "Add influence panel screenshot" },
+      { title: "Main Page", url: "/images/music-mindscape/mainScreen.png", placeholder: "Add AI insight screenshot" },
+    ],
   },
-  screenshots: [
-    { title: "Mind Map View", url: "/images/music-mindscape/clusters.png", placeholder: "Add mind map screenshot" },
-    { title: "Influence Simulator", url: "/images/music-mindscape/influenceAnalysis.png", placeholder: "Add influence panel screenshot" },
-    { title: "Main Page", url: "/images/music-mindscape/mainScreen.png", placeholder: "Add AI insight screenshot" },
-  ],
-},
 
-{
-  id: "triage",
-  title: "Triage",
-  description:
-    "A hotkey-triggered capture tool that uses Gemini AI to instantly classify anything you type as a Task, Project, or Idea and writes it to the right Notion database — without breaking your flow.",
-  tags: ["Productivity", "AI/ML", "Automation", "Desktop Tool"],
-  image: null,
-  link: "https://github.com/samridhsri/triage/",
-  github: "https://github.com/samridhsri/triage/",
-  detailedDescription:
-    "Press Ctrl+Alt+T from anywhere on your desktop, type a raw thought, hit Enter — Triage vanishes and silently routes your input to the correct Notion database in the background. Gemini parses natural language, handles multi-item inputs in a single sentence, infers priority and category, and writes structured records with no manual effort.",
-  features: [
-    "Global hotkey (Ctrl+Alt+T) via AutoHotkey v2 — works in any app",
-    "Gemini-powered NLP classifies input as Task, Project, or Idea",
-    "Handles multi-item inputs in a single sentence (e.g. 'email recruiter and push latest commit' → 2 Tasks)",
-    "Auto-infers priority, due date, category, and success criteria per entry type",
-    "Writes structured records directly to three separate Notion databases",
-    "Runs silently in the background — no UI after input submission",
-  ],
-  techStack: {
-    Language: ["Python 3.10+"],
-    AI: ["Google Gemini API (google-genai)"],
-    Automation: ["AutoHotkey v2"],
-    Integrations: ["Notion API"],
-    Config: [".env", "python-dotenv"],
+  {
+    id: "triage-ai-productivity-agent",
+
+    title: "Triage: AI Productivity Agent",
+
+    description:
+      "Built an AI-powered productivity agent that converts unstructured thoughts into structured, actionable Notion tasks using Gemini 2.5 Flash, automated classification, and direct Notion integration.",
+
+    tags: [
+      "Python",
+      "Gemini 2.5 Flash",
+      "Notion API",
+      "FastAPI",
+      "Docker",
+      "AI Agents",
+      "LLM",
+      "Productivity Automation",
+    ],
+
+    image: "/images/Triage/triagev2.gif",
+
+    link: "#",
+
+    github: "https://github.com/samridhsri",
+
+    detailedDescription:
+      "Built Triage as a Raycast-style AI productivity interface for capturing unstructured thoughts and automatically routing them into structured Notion databases. The system uses Gemini 2.5 Flash to interpret natural language input and return structured JSON containing fields such as task type, destination database, priority, and actionable content. Integrated the Notion SDK for automated page creation and database routing, with FastAPI providing the backend API and Docker enabling reproducible deployment.",
+
+    features: [
+      "Built a Raycast-style interface for rapidly capturing unstructured thoughts and tasks",
+      "Used Gemini 2.5 Flash to classify and structure natural language input into deterministic JSON",
+      "Implemented automatic routing of captured items to the appropriate Notion database",
+      "Integrated the Notion SDK for programmatic page and database operations",
+      "Designed a structured prompt and schema-based workflow for reliable LLM outputs",
+      "Built a FastAPI backend to expose the AI processing and Notion integration pipeline",
+      "Containerized the application with Docker for reproducible local deployment",
+    ],
+
+    techStack: {
+      Language: ["Python"],
+      AI: ["Gemini 2.5 Flash", "LLM Prompting", "Structured Outputs"],
+      Backend: ["FastAPI"],
+      Integration: ["Notion API", "Notion SDK"],
+      Infrastructure: ["Docker"],
+    },
+
+    screenshots: [
+      { title: "Triage", url: "/images/triage/TriageScreenshot.png", placeholder: "Triage Screenshot" },
+      { title: "Triage Feedback UI", url: "/images/triage/TriageFBScreenshot.png", placeholder: "Feedback UI screenshot" },
+
+    ],
   },
-  screenshots: [
-    { title: "Capture UI", url: "/images/triage/Triage.png", placeholder: "Add hotkey input window screenshot" },
-  ],
-},
   {
     id: "plant-disease",
     title: "Plant Disease Detection System",
@@ -226,7 +317,7 @@ export const projects = [
     screenshots: [
       { title: "System Architecture", url: "/images/plantDisease/SystemDiagram.png", placeholder: "Add training UI" },
       { title: "Dashboard for the Dataset", url: "/images/plantDisease/PlantDataSet.png", placeholder: "" },
-     
+
     ],
   },
   {
