@@ -186,30 +186,33 @@ export default function ChatWidget() {
               </div>
             )}
 
-            {messages.map((msg, i) => (
-              <div key={i} className={`chat-message chat-message-${msg.role}`}>
-                {msg.content ? (
-                  <div className="chat-bubble">{renderBold(msg.content.trimStart())}</div>
-                ) : (
-                  msg.role === "assistant" && streaming && i === messages.length - 1 && (
-                    <div className="chat-bubble chat-typing">
-                      <span className="chat-dot" />
-                      <span className="chat-dot" />
-                      <span className="chat-dot" />
+            {messages.map((msg, i) => {
+              const hasText = Boolean(msg.content && msg.content.trim());
+              return (
+                <div key={i} className={`chat-message chat-message-${msg.role}`}>
+                  {hasText ? (
+                    <div className="chat-bubble">{renderBold(msg.content.trimStart())}</div>
+                  ) : (
+                    msg.role === "assistant" && streaming && i === messages.length - 1 && (
+                      <div className="chat-bubble chat-typing">
+                        <span className="chat-dot" />
+                        <span className="chat-dot" />
+                        <span className="chat-dot" />
+                      </div>
+                    )
+                  )}
+                  {msg.role === "assistant" && hasText && msg.sources?.length > 0 && (
+                    <div className="chat-sources">
+                      {msg.sources.map((src) => (
+                        <span key={src} className="chat-source-chip">
+                          {SOURCE_LABELS[src] ?? src.replace(".md", "")}
+                        </span>
+                      ))}
                     </div>
-                  )
-                )}
-                {msg.role === "assistant" && msg.sources?.length > 0 && (
-                  <div className="chat-sources">
-                    {msg.sources.map((src) => (
-                      <span key={src} className="chat-source-chip">
-                        {SOURCE_LABELS[src] ?? src.replace(".md", "")}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              );
+            })}
             <div ref={bottomRef} />
           </div>
 
