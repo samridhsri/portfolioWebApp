@@ -134,41 +134,48 @@ async def retrieve_context(query: str) -> tuple[str, list[str]]:
 
 async def stream_groq(messages: list[dict], sources: list[str]):
     yield f"data: {json.dumps({'sources': sources})}\n\n"
-    kwargs = {
-        "model": GROQ_MODEL,
-        "messages": messages,
-        "stream": True,
-        "temperature": 0.7,
-        "max_tokens": 1024,
-    }
     try:
         stream = await state.groq.chat.completions.create(
-            **kwargs,
-            reasoning_format="hidden",
+            model=GROQ_MODEL,
+            messages=messages,
+            stream=True,
+            temperature=0.7,
+            max_tokens=1024,
         )
-    except Exception:
-        stream = await state.groq.chat.completions.create(
-            **kwargs,
-            extra_body={"reasoning_format": "hidden"},
-        )
-
-    in_think = False
-    async for chunk in stream:
-        content = chunk.choices[0].delta.content
-        if not content:
-            continue
-        if "<think>" in content:
-            in_think = True
-            content = content.split("<think>")[0]
-        if in_think:
-            if "</think>" in content:
-                in_think = False
-                content = content.split("</think>")[-1]
-            else:
+        in_think = False
+        think_buffer = ""
+        async for chunk in stream:
+            if not chunk.choices:
                 continue
-        if content:
+            delta = chunk.choices[0].delta
+            content = delta.content or ""
+            if not content:
+                continue
+
+            if not in_think and "<think>" in content:
+                in_think = True
+                before_think, after_start = content.split("<think>", 1)
+                if before_think:
+                    yield f"data: {json.dumps({'text': before_think})}\n\n"
+                content = after_start
+
+            if in_think:
+                think_buffer += content
+                if "</think>" in think_buffer:
+                    in_think = False
+                    _, after_think = think_buffer.split("</think>", 1)
+                    think_buffer = ""
+                    clean_text = after_think.lstrip("\n")
+                    if clean_text:
+                        yield f"data: {json.dumps({'text': clean_text})}\n\n"
+                continue
+
             yield f"data: {json.dumps({'text': content})}\n\n"
-    yield "data: [DONE]\n\n"
+
+        yield "data: [DONE]\n\n"
+    except Exception as e:
+        yield f"data: {json.dumps({'error': str(e)})}\n\n"
+        yield "data: [DONE]\n\n"
 
 
 # ---------------------------------------------------------------------------
