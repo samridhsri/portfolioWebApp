@@ -91,6 +91,9 @@ export default function ChatWidget() {
                 const last = { ...updated[updated.length - 1] };
                 if (payload.sources) last.sources = payload.sources;
                 if (payload.text) last.content += payload.text;
+                if (payload.error) {
+                  last.content = (last.content ? last.content + "\n" : "") + `Error: ${payload.error}`;
+                }
                 updated[updated.length - 1] = last;
                 return updated;
               });

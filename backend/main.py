@@ -140,10 +140,11 @@ async def stream_groq(messages: list[dict], sources: list[str]):
             messages=messages,
             stream=True,
             temperature=0.7,
-            max_tokens=1024,
+            max_tokens=2048,
         )
         in_think = False
         think_buffer = ""
+        emitted_any = False
         async for chunk in stream:
             if not chunk.choices:
                 continue
@@ -156,6 +157,7 @@ async def stream_groq(messages: list[dict], sources: list[str]):
                 in_think = True
                 before_think, after_start = content.split("<think>", 1)
                 if before_think:
+                    emitted_any = True
                     yield f"data: {json.dumps({'text': before_think})}\n\n"
                 content = after_start
 
@@ -167,10 +169,15 @@ async def stream_groq(messages: list[dict], sources: list[str]):
                     think_buffer = ""
                     clean_text = after_think.lstrip("\n")
                     if clean_text:
+                        emitted_any = True
                         yield f"data: {json.dumps({'text': clean_text})}\n\n"
                 continue
 
+            emitted_any = True
             yield f"data: {json.dumps({'text': content})}\n\n"
+
+        if in_think and think_buffer and not emitted_any:
+            yield f"data: {json.dumps({'text': think_buffer.strip()})}\n\n"
 
         yield "data: [DONE]\n\n"
     except Exception as e:
