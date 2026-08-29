@@ -1,75 +1,55 @@
 # Professional Experience
 
-## Engagement Ambassador
-**NYU Phonathon** | Current Role
+## Student Caller / Engagement Ambassador
+**NYU Phonathon** | Feb 2025 – Present
+*Location:* New York, NY
 
-Supporting fundraising initiatives and alumni engagement for NYU Tandon School of Engineering.
+- Engaged alumni and donors to strengthen university relations and raise funds for campus initiatives.
 
 ---
 
 ## Machine Learning Intern
-**Course5 Intelligence** | Spring-Summer 2025
+**Course5 Intelligence (C5i)** | Feb 2024 – Jul 2024
+*Location:* Gurugram, India
 
-Worked on cutting-edge AI systems and language model applications:
+Worked on scalable machine learning pipelines, NLP systems, and Retrieval-Augmented Generation (RAG) in production environments:
 
-- **LLM-Based Systems Development** — Built and deployed production systems leveraging large language models for various applications
-- **Transformer Fine-Tuning** — Fine-tuned transformer models on custom datasets for domain-specific tasks
-- **NLP & RAG Pipelines** — Implemented Natural Language Processing workflows and Retrieval-Augmented Generation (RAG) systems for enhanced context understanding
-- **Model Optimization** — Optimized models for performance and efficiency in production environments
-
-**Key Learnings:** Deep understanding of LLM architecture, fine-tuning strategies, prompt engineering, and production deployment considerations.
+- **Scalable ML Pipelines** — Built scalable Python-based data and machine learning pipelines supporting NLP and LLM workloads in production environments.
+- **Distributed RAG Systems** — Developed distributed Retrieval-Augmented Generation (RAG) systems using FAISS and transformer models (BERT, T5, BART), improving retrieval precision by 15%.
+- **Containerized FastAPI Services** — Designed and deployed containerized FastAPI services for ML inference, handling 50K+ monthly requests with low latency.
+- **Inference Optimization** — Optimized inference and data processing pipelines using ONNX, improving throughput and resource utilization.
 
 ---
 
 ## Software Engineering Intern
-**Mahindra & Mahindra** | 2024
+**Mahindra and Mahindra** | Sep 2023 – Dec 2023
+*Location:* Mumbai, India (Remote)
 
-Developed computer vision solutions for real-world applications:
+Engineered computer vision data pipelines and deep learning solutions for automated quality inspection:
 
-- **Vision System Development** — Built end-to-end computer vision pipelines for industrial and product-focused applications
-- **Model Implementation** — Implemented and integrated CV models into production systems
-- **Data Pipeline Creation** — Designed and built data pipelines for training and evaluation
-
-**Key Learnings:** Practical experience with production CV systems, dataset handling at scale, and integration with business workflows.
-
----
-
-## Technical Club Leadership
-**Manipal University Jaipur** | 2021-2023
-
-Led student technical initiatives and competitive programming communities:
-
-- Organized coding competitions and technical workshops
-- Mentored 50+ students in competitive programming and DSA
-- Conducted seminars on emerging technologies and best practices
+- **Computer Vision Pipelines** — Engineered computer vision data pipelines using Python, C, and OpenCV to process large-scale image datasets for automated quality inspection.
+- **Deep Learning Model Training** — Trained and evaluated deep learning models (YOLOv8, Mask R-CNN) across CPU and GPU environments.
+- **Cost & Efficiency Optimization** — Applied statistical analysis and machine learning techniques contributing to a 10% reduction in project costs.
+- **Cross-Functional Integration** — Collaborated with cross-functional teams to integrate ML components into existing production systems.
 
 ---
 
-## Key Technical Accomplishments
+## Key Accomplishments & Projects
 
-### ML Optimization & Performance (DS-GA 1019 Group Project)
-- Achieved **~7.5x speedup** in local LLM inference optimization using:
-  - Numba JIT compilation for numerical kernels
-  - Cython for performance-critical sections
-  - INT8 quantization for model compression
-  - KV caching for efficient attention computation
-  - Async batching for throughput optimization
+### AI Research Intelligence Platform
+- Engineered an agentic research platform using LangGraph for task decomposition and orchestration, PostgreSQL + pgvector for semantic search, Cohere for reranking, and Redis for caching.
 
-### Full-Stack Development
-- Built multiple full-stack applications with React, FastAPI, and Django
-- Created Digital Design Review System for automated engineering plan analysis
-- Developed Blueprint Intelligence prototype using Gemini multimodal API
+### Local LLM Inference Optimization (DS-GA 1019)
+- Achieved **up to 7.5x speedup** in local LLM inference optimization leveraging Numba JIT compilation, Cython, INT8 quantization, KV caching, and asynchronous batching.
 
+### Real-Time F1 Telemetry Platform (RaceFlux)
+- Built distributed streaming pipeline using Apache Kafka and Apache Spark Structured Streaming with sub-5s latency, MLflow model tracking, and Streamlit dashboards.
+
+### Full-Stack & Production Web Systems
+- Built Triage (Raycast-style AI productivity agent with Gemini 2.5 Flash & Notion SDK), Music Mindscape (Spotify AI Mind Map), and MUJ Convocation Portal (2000+ live users).
 
 ---
 
-## What I'm Looking For
+## Career Focus & Goals
 
-I'm actively seeking **entry-level AI/ML engineering roles** where I can:
-
-- Build and optimize LLM-based systems at scale
-- Contribute to production ML pipelines and inference optimization
-- Work on computer vision and NLP applications
-- Grow as a full-stack ML engineer in a collaborative environment
-
-Target companies and roles include positions at forward-thinking organizations that value both innovation and engineering rigor.
+Actively seeking **Software Development Engineer (SDE) or Machine Learning Engineering Full-Time Roles for 2026** to build and scale production AI/ML infrastructure, agentic workflows, inference optimization pipelines, and full-stack applications.

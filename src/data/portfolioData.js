@@ -24,7 +24,7 @@ export const projects = [
 
     link: "#",
 
-    github: "https://github.com/samridhsri",
+    github: "https://github.com/samridhsri/ai-research-intelligence",
 
     detailedDescription:
       "Built an agentic AI research intelligence platform designed to transform complex research questions into structured, evidence-backed analyses. The system uses LangGraph to orchestrate research workflows, decomposing broad questions into focused research tasks and coordinating retrieval, ranking, and synthesis. PostgreSQL with pgvector provides persistent semantic retrieval, Redis supports caching and intermediate state, and Cohere reranking improves the relevance of retrieved evidence before final synthesis. FastAPI exposes the research pipeline as a production-oriented backend service, while Docker provides reproducible deployment.",
@@ -251,7 +251,7 @@ export const projects = [
 
     link: "#",
 
-    github: "https://github.com/samridhsri",
+    github: "https://github.com/samridhsri/triage",
 
     detailedDescription:
       "Built Triage as a Raycast-style AI productivity interface for capturing unstructured thoughts and automatically routing them into structured Notion databases. The system uses Gemini 2.5 Flash to interpret natural language input and return structured JSON containing fields such as task type, destination database, priority, and actionable content. Integrated the Notion SDK for automated page creation and database routing, with FastAPI providing the backend API and Docker enabling reproducible deployment.",

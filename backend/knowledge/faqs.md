@@ -1,414 +1,89 @@
-# Frequently Asked Questions
+# Frequently Asked Questions (FAQs)
 
-## About Samridh
+## About Samridh Srivastava
 
-### Q: What are you looking for in your next role?
-**A:** I'm actively seeking **entry-level AI/ML engineering positions** where I can:
-- Build and optimize LLM-based systems at scale
-- Work on production ML pipelines and inference optimization
-- Contribute to computer vision and NLP applications
-- Grow as a full-stack ML engineer in a collaborative environment
+### Q: Who is Samridh Srivastava?
+**A:** Samridh Srivastava is a Computer Engineering M.S. graduate from NYU Tandon School of Engineering (graduated May 2026, 3.86 GPA) and holds a B.Tech in Computer Engineering from Manipal University Jaipur (9.05 GPA) along with a Programming Diploma from IIT Madras. He specializes in AI/ML engineering, LLM & agentic systems, data engineering, performance optimization, and full-stack development.
 
-I'm particularly interested in roles that value both AI innovation and engineering rigor. I'm open to opportunities in San Francisco, New York, remote, or relocation for the right opportunity.
+### Q: What roles is Samridh currently seeking?
+**A:** Samridh is actively seeking **full-time Software Development Engineer (SDE) or Machine Learning Engineering (MLE) roles for 2026**. He is interested in building scalable AI/ML pipelines, agentic workflows, production LLM systems, real-time data platforms, and full-stack applications.
 
----
-
-### Q: When are you graduating?
-**A:** I'm completing my M.S. in Computer Engineering at NYU Tandon in **May 2026**, with the flexibility to start full-time positions immediately upon graduation or sooner if opportunities arise.
+### Q: Where is Samridh located?
+**A:** Samridh is based in **Brooklyn, New York (NY)**, with strong connections in New Delhi, India. He is authorized to work in the US and open to remote or relocation opportunities.
 
 ---
 
-### Q: What's your background?
-**A:** I have a strong foundation combining:
-- **B.Tech from Manipal University Jaipur** (9.05 GPA) in Computer Engineering
-- **Programming Diploma from IIT Madras** for foundational CS skills
-- **M.S. from NYU Tandon** (graduating May 2026) in Computer Engineering
-- **Internships** at Course5 Intelligence (LLM/NLP) and Mahindra & Mahindra (Computer Vision)
+## Projects & Technical Deep Dives
 
-This diverse background gives me expertise across AI/ML, full-stack development, and systems optimization.
+### Q: What is the AI Research Intelligence Platform?
+**A:** The **AI Research Intelligence Platform** is an agentic AI research platform that decomposes complex research questions into parallel workflows, retrieves and reranks information, and synthesizes evidence-backed insights using LangGraph, PostgreSQL (with pgvector), Redis, Cohere Rerank, FastAPI, and Docker.
+- **GitHub:** https://github.com/samridhsri/ai-research-intelligence
 
----
+### Q: Tell me about the Local LLM Inference Optimization framework.
+**A:** In a performance engineering project at NYU Tandon (DS-GA 1019), Samridh achieved **up to 7.5x throughput improvement** and **>40% memory reduction** for local LLM inference across GPT-2, TinyLlama, and Pythia. Key techniques include:
+- Transformer KV-cache reuse (up to 3.15x speedup)
+- INT8 quantization
+- Asynchronous batching (176+ tokens/sec)
+- Numba JIT compilation & Cython kernels
+- **GitHub:** https://github.com/ranjan2601/DS-GA-1019
 
-### Q: Where are you based?
-**A:** I'm currently in **Brooklyn, New York** and open to relocation. I have family in New Delhi and am a work-authorized professional.
+### Q: What is RaceFlux (F1 Race Telemetry Analytics Platform)?
+**A:** **RaceFlux** is a real-time, production-grade Formula 1 telemetry analytics platform built using Apache Kafka and Apache Spark Structured Streaming. It ingests 6 live/historical telemetry data streams with sub-5s micro-batch processing, trains Gradient Boosting position prediction models tracked via MLflow, and serves interactive analytics across 6 Streamlit dashboards.
+- **GitHub:** https://github.com/samridhsri/f1-race-telemetry
 
----
+### Q: What is Triage: AI Productivity Agent?
+**A:** **Triage** is a Raycast-style AI productivity interface for capturing unstructured thoughts and automatically routing them into structured Notion tasks using Gemini 2.5 Flash, automated JSON classification, Notion SDK integration, FastAPI, and Docker.
+- **GitHub:** https://github.com/samridhsri/triage
 
-## Technical Questions
+### Q: What is Music Mindscape?
+**A:** **Music Mindscape** is a Spotify-connected interactive mind map visualization that clusters top tracks into 9 musical zones using audio feature similarity or AI-powered re-clustering via Gemini 2.5 Flash. It includes an Influence Simulator to search and overlay any Spotify artist as a ghost node.
+- **GitHub:** https://github.com/samridhsri/music-mindscape
 
-### Q: What's your strongest area of expertise?
-**A:** My strongest areas are:
+### Q: What is the Plant Disease Detection System?
+**A:** It is an end-to-end MLOps pipeline for plant disease detection featuring distributed training with Ray, ONNX + INT8 quantization for sub-150ms inference, MLflow tracking, OpenStack Swift storage, and Dockerized Terraform deployment monitored by Prometheus and Grafana.
+- **GitHub:** https://github.com/meghrathod/plantdisease-ml
 
-1. **Large Language Models & NLP** — Fine-tuning, RAG systems, prompt engineering, inference optimization
-2. **Full-Stack Development** — React, FastAPI/Django, PostgreSQL, end-to-end system design
-3. **Performance Optimization** — Achieved ~75x speedup in LLM inference using Numba, Cython, quantization, KV caching
-4. **Computer Vision** — Object detection, segmentation, real-world applications
+### Q: What is the Urban Sustainability Calculator?
+**A:** A full-stack urban planning platform built with Next.js, React-Leaflet, Flask, and Google Gemini API that evaluates urban regions across 10+ sustainability metrics using real-time OpenStreetMap data.
+- **GitHub:** https://github.com/ranjan2601/Urban-Sustainability-Calculator
 
-I'm particularly strong at the **intersection of AI research and production engineering**.
+### Q: What is the RoBERTa LoRA project?
+**A:** Implemented parameter-efficient fine-tuning (PEFT) of RoBERTa using LoRA on the AG News dataset. Achieved 92.8% accuracy and F1-score while training only 864K / 125M parameters (0.69% of total model parameters).
+- **GitHub:** https://github.com/samridhsri/finetuning-with-lora-dl-project-2
 
----
+### Q: What is the Custom ResNet project?
+**A:** Designed a custom lightweight ResNet (4,4,4,3) architecture with Squeeze-and-Excitation modules and MixCut augmentation, achieving 96.19% CIFAR-10 accuracy with only 4.79M parameters.
+- **GitHub:** https://github.com/samridhsri/DL-Project-1-Cifar10-Classification-Using-Resnet
 
-### Q: Tell me about your LLM optimization project.
-**A:** In my DS-GA 1019 (Advanced Python for Data Science) group project, we optimized local LLM inference and achieved **~75x speedup** through:
-
-- **Numba JIT Compilation** — Accelerated numerical kernels
-- **Cython** — Hand-optimized performance-critical sections
-- **INT8 Quantization** — Reduced model size and memory footprint
-- **KV Caching** — Efficient attention computation
-- **Async Batching** — Maximized throughput
-
-**Takeaway:** This demonstrates my ability to combine theoretical knowledge with practical systems optimization.
-
----
-
-### Q: What machine learning frameworks do you use?
-**A:** I'm proficient in:
-
-- **PyTorch** — My primary framework for research and production ML
-- **TensorFlow** — For production deployments and pre-built models
-- **Hugging Face Transformers** — For LLM and NLP tasks
-- **scikit-learn** — For classical ML algorithms
-- **JAX** — For functional ML and custom differentiation
-
-I choose frameworks based on project requirements and use cases.
+### Q: What is the MUJ Convocation Portal?
+**A:** A full-stack web application (React.js, Node.js, Express.js, MongoDB, AWS) built and deployed for Manipal University Jaipur, serving 2000+ students for event registration, seat allocation, and logistics.
+- **Live URL:** https://mujconvocation.in/
 
 ---
 
-### Q: What's your experience with production ML systems?
-**A:** I have hands-on production ML experience through:
+## Experience & Background
 
-- **Course5 Intelligence internship** — Deployed LLM-based systems and fine-tuned transformers in production
-- **Full-stack projects** — Netflix Episodes Web System, Digital Design Review System, Blueprint Intelligence
-- **Optimization work** — Production-grade inference optimization techniques
-- **Scalability focus** — Designed systems handling 2000+ users (Convocation Portal)
-
-I understand the gap between research and production ML.
-
----
-
-### Q: What's your computer vision experience?
-**A:** I've built practical CV systems including:
-
-- **Kitchen Hygiene Compliance Detection** — Real-world safety monitoring using YOLOv11n segmentation
-- **Plant Disease Detection** — Multi-dataset agricultural application
-- **Computer Vision Coursework** — Image analysis, object detection, transfer learning
-- **Model Selection** — Knowing when to use zero-shot (Grounded SAM) vs fine-tuned models
-
-I focus on **practical applications** rather than just research.
+### Q: What internship experience does Samridh have?
+1. **Course5 Intelligence (C5i)** (Machine Learning Intern, Feb 2024 – Jul 2024):
+   - Scalable Python data & ML pipelines for NLP/LLM workloads.
+   - Distributed RAG using FAISS and BERT, T5, BART (+15% retrieval precision).
+   - Containerized FastAPI services handling 50K+ monthly requests.
+   - Inference optimization via ONNX.
+2. **Mahindra and Mahindra** (Software Engineering Intern, Sep 2023 – Dec 2023):
+   - Computer vision pipelines (Python, OpenCV, C) for quality inspection.
+   - Trained YOLOv8 and Mask R-CNN models across CPU/GPU environments.
+   - Contributed to 10% reduction in project costs.
+3. **NYU Phonathon** (Student Caller / Engagement Ambassador, Feb 2025 – Present):
+   - Alumni engagement and fundraising initiatives.
 
 ---
 
-### Q: Do you have experience with RAG systems?
-**A:** Yes! I've worked extensively with RAG (Retrieval-Augmented Generation) systems at Course5 Intelligence. RAG is crucial for:
-
-- Adding domain knowledge to LLMs
-- Reducing hallucinations
-- Making models more current and specific
-- Integrating external data sources
-
-I understand vector databases, retrieval strategies, and how to design effective RAG pipelines.
-
----
-
-### Q: What's your database experience?
-**A:** I'm comfortable with:
-
-- **PostgreSQL** — Design, optimization, complex queries
-- **Firebase** — Real-time databases, NoSQL approaches
-- **Database Design** — Normalization, indexing, query optimization
-- **ORMs** — Django ORM, SQLAlchemy concepts
-
-I design databases that scale while maintaining data integrity.
-
----
-
-### Q: How do you approach learning new technologies?
-**A:** I learn through:
-
-1. **Project-Based Learning** — Building real applications with new tech
-2. **Documentation & Research** — Reading official docs and papers
-3. **Hands-On Experimentation** — Small prototypes to understand capabilities
-4. **Community Engagement** — Technical meetups, hackathons, peer learning
-
-This ensures I not only learn frameworks but understand their design principles.
-
----
-
-## Career & Growth
-
-### Q: What's your experience leading teams or projects?
-**A:** I've led at multiple levels:
-
-- **Technical Club Leadership** at Manipal University — Founded competitive programming initiatives, mentored 50+ students
-- **Group Projects** — Netflix Episodes Web System (led team of 4), LLM Optimization (coordinated team efforts)
-- **Hackathons** — Both participated and volunteered (Columbia AI hackathons, 2026)
-- **Mentoring** — Guided students in DSA and competitive programming
-
-Leadership combines **technical depth** with **people skills**.
-
----
-
-### Q: How do you stay current with AI/ML?
-**A:** I stay current through:
-
-- **Following Research** — Reading papers, attending talks
-- **Practical Experimentation** — Building projects with new techniques
-- **Community Participation** — Hackathons, meetups, open-source
-- **Continuous Learning** — Online courses and self-directed study
-- **Peer Discussion** — Engaging with technical communities
-
-AI moves fast—continuous learning isn't optional.
-
----
-
-### Q: What attracted you to AI/ML?
-**A:** I'm drawn to:
-
-- **Impact Potential** — AI can solve meaningful problems at scale
-- **Interesting Problems** — The technical challenges are genuinely fascinating
-- **Rapid Evolution** — Every day brings new research and techniques
-- **Intersection of Theory & Practice** — Taking research ideas to production systems
-- **Collaboration** — Strong communities and opportunities to learn from others
-
-I want to build systems that matter.
-
----
-
-## Projects & Portfolio
-
-### Q: Which project are you most proud of?
-**A:** It's hard to choose, but I'm particularly proud of:
-
-1. **LLM Optimization Project** — Achieving ~75x speedup demonstrates my systems optimization skills
-2. **Startup Autopsy** — Building an AI agent system at a major hackathon shows I can learn new frameworks quickly
-3. **Convocation Portal** — Serving 2000+ users in production shows full-stack capability at scale
-
-Different projects showcase different strengths.
-
----
-
-### Q: Can I see your projects?
-**A:** Absolutely! I have:
-
-- **Live Portfolio Website** — Interactive showcase of projects and achievements (react-based, 16 themes)
-- **GitHub** — Public repositories with well-documented code
-- **Project Demonstrations** — Can walk through technical details of any project
-
-Feel free to explore my portfolio website and GitHub for detailed implementations.
-
----
-
-### Q: What's the difference between your ML and Full-Stack projects?
-**A:** 
-
-**ML-Focused Projects:** LLM Optimization, Kitchen Hygiene Detection, Plant Disease Detection, Blueprint Intelligence
-- Emphasis on model architecture, optimization, research
-- Deployment and inference considerations
-
-**Full-Stack Projects:** Netflix Episodes Web System, Digital Design Review System, Portfolio Website
-- End-to-end system design from database to UI
-- User experience and scalability
-
-**Hybrid Projects:** Startup Autopsy, Music Mindscape
-- Combining AI backends with beautiful interfaces
-- Production-ready systems with ML components
-
-**I'm strongest when building the whole stack.**
-
----
-
-### Q: How do you approach the "API deprecation" problem in your Music Mindscape project?
-**A:** When Spotify deprecated their Audio Features API, I:
-
-1. **Identified the problem quickly** — Monitored API status changes
-2. **Evaluated alternatives** — Researched other music data sources
-3. **Redesigned the approach** — Pivoted to Last.fm + LLM hybrid clustering
-4. **Maintained functionality** — System actually improved, handling mixed Western/Bollywood music better
-5. **Learned from it** — Now design systems with API deprecation in mind
-
-**Key lesson:** Flexibility and quick adaptation are critical skills.
-
----
-
-## Personal & Lifestyle
-
-### Q: What do you do outside of coding?
-**A:** I balance coding with:
-
-- **Gaming** — Fortnite, Rocket League, BattleField, Story based games. Favourite is Spiderman series PSN: SamTheReaper04
-- **Cooking** — Enjoy making Indian cuisine
-- **Movies** - I love to watch movies and TV Series
-
-I believe **sustainable productivity** requires balance.
-
----
-
-### Q: How do you stay motivated during a long job search?
-**A:** I stay motivated through:
-
-1. **Portfolio Building** — Constantly improving projects and skills
-2. **Networking** — Meeting interesting people in tech
-3. **Personal Growth** — Learning new frameworks and techniques
-4. **Side Interests** — Gaming, reading, cooking provide breaks
-5. **Long-term Vision** — Staying focused on my 5-year career goals
-
-A job search isn't just about landing a role—it's about becoming the engineer I want to be.
-
----
-
-### Q: What's your ideal work environment?
-**A:** I thrive in:
-
-- **Technically Rigorous Teams** — Serious about engineering quality
-- **Learning Culture** — Mentorship and knowledge sharing valued
-- **Challenging Problems** — Not just maintenance work
-- **Autonomy + Collaboration** — Ownership with team support
-- **Good Communication** — Clear expectations and feedback
-
-Size and industry matter less than culture and technical depth.
-
----
-
-### Q: How do you handle setbacks or failures?
-**A:** I view setbacks as learning opportunities:
-
-- **Analyze thoroughly** — Understand what went wrong
-- **Extract lessons** — What would I do differently?
-- **Implement changes** — Don't make the same mistake twice
-- **Move forward** — Don't dwell on failures
-
-Examples: pivoting Music Mindscape when APIs deprecated, switching CV models when seeing hallucinations (Grounded SAM → YOLO).
-
----
-
-## Getting In Touch
-
-### Q: How can I contact you about opportunities?
-**A:** You can reach out via:
-
-- **Email** — Best for formal inquiries and opportunities
-- **LinkedIn** — Connection requests and professional networking
-- **GitHub** — For technical discussions and code collaboration
-
-I'm actively looking and respond promptly to genuine opportunities. Please include:
-- Brief introduction
-- Role details
-- Why you think we might be a good fit
-
----
-
-### Q: What's your ideal next opportunity?
-**A:** My ideal next role:
-
-- **Entry-Level AI/ML Engineer** position at a growth-stage company
-- Working on **LLM-based systems** or **computer vision** products
-- Opportunity to **grow** as an engineer in a **strong technical team**
-- **Full-time** role aligned with my graduation (May 2026) or soon after
-- **Flexibility** on location: SF, NYC, remote, or willing to relocate
-
-I'm less interested in legacy tech companies and more focused on places doing cutting-edge AI work.
-
----
-
-### Q: Do you do contract work or freelancing?
-**A:** My primary focus is full-time opportunities, but I'm happy to discuss:
-
-- **Short-term contracts** during my final semester
-- **Consultation** for specific technical problems
-- **Open-source collaboration** (ongoing)
-
-Contact me to discuss specific opportunities.
-
----
-
-## Technical Deep Dives
-
-### Q: Can you explain how KV caching works in LLM inference?
-**A:** Absolutely! KV caching stores Key-Value pairs from previous tokens to avoid recomputing attention. When generating token N, we compute attention only against the cached KV from tokens 1...N-1 plus the new token N, dramatically reducing computation. This is crucial for autoregressive generation efficiency.
-
-I built this optimization into the LLM inference project—happy to discuss in detail.
-
----
-
-### Q: What's the difference between INT8 and FP32 quantization?
-**A:** INT8 uses 8-bit integers vs FP32's 32-bit floats, reducing model size 4x and speeding inference. INT8 trade-off: slight accuracy loss, but for many applications negligible. FP32 maintains full precision but requires more memory and compute.
-
-In our optimization project, INT8 quantization contributed to the overall 75x speedup.
-
----
-
-### Q: How would you design a RAG system for a knowledge base?
-**A:** I'd design with:
-
-1. **Document Chunking** — Split docs into semantic chunks
-2. **Embedding** — Generate embeddings with embedding model (OpenAI, open-source)
-3. **Vector DB** — Store embeddings (Pinecone, Weaviate, Milvus, vector stores in LangChain)
-4. **Retrieval** — Find similar chunks via semantic search
-5. **Augmentation** — Combine chunks with user query
-6. **Generation** — Pass to LLM for synthesis
-
-Happy to discuss specific choices based on use case and constraints.
-
----
-
-### Q: What's the advantage of async/await in Python?
-**A:** Async/await enables **concurrent I/O** without threads:
-
-- Multiple network requests run concurrently
-- Single thread, but non-blocking operations
-- Lower overhead than threading
-- Critical for performance in FastAPI applications
-
-I use this extensively in my backend development.
-
----
-
-## About This Chatbot
-
-### Q: Who created this chatbot?
-**A:** This chatbot was created using my portfolio knowledge base—an AI-powered assistant trained on information about my background, projects, experience, and skills.
-
-Think of it as a **24/7 assistant** who knows everything about me and can answer questions about my background, projects, and expertise!
-
----
-
-### Q: What can this chatbot help with?
-**A:** Ask me about:
-
-- **My background** — Education, experience, skills
-- **My projects** — Technical details, architecture, learnings
-- **Technical topics** — ML, web development, optimization, AI systems
-- **Career** — What I'm looking for, my approach to roles
-- **Personal info** — Interests, hobbies, location
-- **Getting in touch** — How to reach me about opportunities
-
-I'll do my best to provide helpful, accurate information!
-
----
-
-### Q: How accurate is the information in this chatbot?
-**A:** This chatbot is trained on verified information about me. However, for:
-
-- **Current opportunities** — Check my actual website and LinkedIn
-- **Latest projects** — See my GitHub for most recent work
-- **Contact details** — Use information provided in the chatbot
-
-When in doubt, reach out directly!
-
----
-
-## More Questions?
-
-Don't see your question here? Feel free to ask anything! I'm happy to:
-
-- Provide more technical details
-- Discuss specific projects in depth
-- Answer career and background questions
-- Have casual conversations
-
-This knowledge base covers the most common topics, but I'm here for anything else you'd like to know!
-
----
-
-**Last Updated:** May 2026  
-**Status:** Actively seeking entry-level AI/ML engineering roles
+## Skills & Tech Stack
+
+### Q: What programming languages and tools is Samridh proficient in?
+- **Languages:** Python, Java, C++, JavaScript, SQL
+- **ML & AI:** PyTorch, TensorFlow, Scikit-learn, Hugging Face, ONNX, LangChain, RAG
+- **Data Engineering:** Apache Spark, Hadoop, Kafka, Airflow, Databricks, Ray
+- **MLOps & DevOps:** Docker, Kubernetes, Terraform, CI/CD, MLflow, FastAPI, Flask
+- **Web Development:** React.js, Next.js, Node.js, Tailwind CSS, REST APIs
+- **Cloud & Databases:** AWS (EC2, S3), MongoDB, PostgreSQL, MySQL

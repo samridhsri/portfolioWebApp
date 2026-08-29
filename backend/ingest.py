@@ -7,7 +7,14 @@ Usage (local):
 """
 
 import hashlib
+import sys
 from pathlib import Path
+
+# Ensure UTF-8 output encoding for Windows compatibility
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from fastembed import TextEmbedding
@@ -52,10 +59,10 @@ def main():
     print("\n=== Ingest ===")
     print("Loading knowledge files...")
     docs = load_docs()
-    print(f"  → {len(docs)} files\n")
+    print(f"  -> {len(docs)} files\n")
 
     chunks = chunk(docs)
-    print(f"Chunking → {len(chunks)} chunks\n")
+    print(f"Chunking -> {len(chunks)} chunks\n")
 
     print("Embedding with BAAI/bge-small-en-v1.5 (fastembed)...")
     model = TextEmbedding("BAAI/bge-small-en-v1.5")
@@ -75,7 +82,7 @@ def main():
         embeddings = [e.tolist() for e in embeddings],
         metadatas  = [c["metadata"] for c in chunks],
     )
-    print(f"  → {collection.count()} total chunks in collection")
+    print(f"  -> {collection.count()} total chunks in collection")
     print("=== Done ===\n")
 
 
