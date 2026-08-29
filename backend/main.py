@@ -184,7 +184,7 @@ async def stream_groq(messages: list[dict], sources: list[str]):
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "chunks_indexed": state.collection.count()}
+    return {"status": "ok", "model": GROQ_MODEL, "chunks_indexed": state.collection.count()}
 
 
 @app.post("/chat")
