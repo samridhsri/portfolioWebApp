@@ -188,7 +188,7 @@ export default function ChatWidget() {
 
             {messages.map((msg, i) => (
               <div key={i} className={`chat-message chat-message-${msg.role}`}>
-                <div className="chat-bubble">{renderBold(msg.content)}</div>
+                <div className="chat-bubble">{renderBold(msg.content.trimStart())}</div>
                 {msg.role === "assistant" && streaming && i === messages.length - 1 && !msg.content && (
                   <div className="chat-bubble chat-typing">
                     <span className="chat-dot" />
