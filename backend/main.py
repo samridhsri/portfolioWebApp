@@ -31,7 +31,7 @@ from groq import AsyncGroq
 CHROMA_DIR    = Path(__file__).parent / "chroma_db"
 COLLECTION    = "portfolio"
 EMBED_MODEL   = "BAAI/bge-small-en-v1.5"
-GROQ_MODEL    = "llama-3.3-70b-versatile"
+GROQ_MODEL    = "qwen/qwen3.6-27b"
 TOP_K         = 3
 MAX_HISTORY   = 10   # message pairs kept in context
 
