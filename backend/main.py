@@ -134,15 +134,38 @@ async def retrieve_context(query: str) -> tuple[str, list[str]]:
 
 async def stream_groq(messages: list[dict], sources: list[str]):
     yield f"data: {json.dumps({'sources': sources})}\n\n"
-    stream = await state.groq.chat.completions.create(
-        model=GROQ_MODEL,
-        messages=messages,
-        stream=True,
-        temperature=0.7,
-        max_tokens=1024,
-    )
+    kwargs = {
+        "model": GROQ_MODEL,
+        "messages": messages,
+        "stream": True,
+        "temperature": 0.7,
+        "max_tokens": 1024,
+    }
+    try:
+        stream = await state.groq.chat.completions.create(
+            **kwargs,
+            reasoning_format="hidden",
+        )
+    except Exception:
+        stream = await state.groq.chat.completions.create(
+            **kwargs,
+            extra_body={"reasoning_format": "hidden"},
+        )
+
+    in_think = False
     async for chunk in stream:
         content = chunk.choices[0].delta.content
+        if not content:
+            continue
+        if "<think>" in content:
+            in_think = True
+            content = content.split("<think>")[0]
+        if in_think:
+            if "</think>" in content:
+                in_think = False
+                content = content.split("</think>")[-1]
+            else:
+                continue
         if content:
             yield f"data: {json.dumps({'text': content})}\n\n"
     yield "data: [DONE]\n\n"
