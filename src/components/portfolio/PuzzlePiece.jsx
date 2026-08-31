@@ -129,7 +129,7 @@ const PuzzlePiece = ({ id, initialX, initialY, size, isMoving }) => {
     window.addEventListener("pointercancel", onPointerUp);
   };
 
-  const pieceShape = shapes[id] || shapes[1];
+  const pieceShape = shapes[id] || shapes[((id - 1) % 7) + 1] || shapes[1];
   // Use theme colors with variations for each piece
   const pieceColor = {
     start: id % 2 === 0 ? themeColors.primary : themeColors.secondary,

@@ -10,24 +10,44 @@ const getPuzzlePositions = (section) => {
   const w = window.innerWidth;
   const h = window.innerHeight;
 
+  // Responsive scale factor: on mobile (< 640px) shrink to ~45-55px, tablet (~65-75px), desktop (~85-110px)
+  const isMobile = w < 640;
+  const isTablet = w >= 640 && w < 1024;
+  const s = (baseSize) => Math.round(baseSize * (isMobile ? 0.48 : isTablet ? 0.72 : 1.0));
+
   const positions = {
     home: [
-      { id: 1, x: Math.max(30, w * 0.05), y: Math.max(120, h * 0.18), size: 110 },
-      { id: 2, x: Math.max(w - 180, w * 0.85), y: Math.max(100, h * 0.15), size: 100 },
-      { id: 3, x: Math.max(40, w * 0.06), y: Math.max(300, h * 0.72), size: 95 },
-      { id: 4, x: Math.max(w - 160, w * 0.86), y: Math.max(300, h * 0.75), size: 115 },
-      { id: 5, x: Math.max(w - 190, w * 0.88), y: Math.max(200, h * 0.45), size: 88 },
-      { id: 6, x: Math.max(25, w * 0.04), y: Math.max(200, h * 0.46), size: 92 },
-      { id: 7, x: Math.max(w * 0.22, 180), y: Math.max(h - 140, 480), size: 105 },
+      // Top corners & floating accents
+      { id: 1, x: Math.max(15, w * 0.04), y: Math.max(70, h * 0.14), size: s(105) },
+      { id: 2, x: Math.max(w - (isMobile ? 70 : 160), w * 0.88), y: Math.max(65, h * 0.12), size: s(98) },
+      { id: 11, x: Math.max(w * 0.18, 50), y: Math.max(40, h * 0.06), size: s(80) },
+      { id: 12, x: Math.max(w * 0.78, w - (isMobile ? 85 : 200)), y: Math.max(45, h * 0.07), size: s(82) },
+
+      // Mid-lateral flanks
+      { id: 3, x: Math.max(10, w * 0.03), y: Math.max(220, h * 0.38), size: s(90) },
+      { id: 4, x: Math.max(w - (isMobile ? 65 : 150), w * 0.90), y: Math.max(210, h * 0.36), size: s(94) },
+      { id: 5, x: Math.max(18, w * 0.05), y: Math.max(340, h * 0.58), size: s(88) },
+      { id: 6, x: Math.max(w - (isMobile ? 75 : 170), w * 0.87), y: Math.max(330, h * 0.56), size: s(100) },
+
+      // Lower viewport & bottom periphery
+      { id: 7, x: Math.max(25, w * 0.07), y: Math.max(460, h * 0.78), size: s(95) },
+      { id: 8, x: Math.max(w - (isMobile ? 70 : 165), w * 0.89), y: Math.max(450, h * 0.76), size: s(108) },
+      { id: 9, x: Math.max(w * 0.22, 60), y: Math.max(h - (isMobile ? 80 : 130), 500), size: s(86) },
+      { id: 10, x: Math.max(w * 0.74, w - (isMobile ? 110 : 260)), y: Math.max(h - (isMobile ? 75 : 125), 490), size: s(92) },
     ],
     about: [
-      { id: 1, x: Math.max(w - 170, w * 0.85), y: Math.max(140, h * 0.2), size: 110 },
-      { id: 2, x: Math.max(35, w * 0.05), y: Math.max(120, h * 0.16), size: 100 },
-      { id: 3, x: Math.max(w - 180, w * 0.84), y: Math.max(320, h * 0.75), size: 95 },
-      { id: 4, x: Math.max(45, w * 0.07), y: Math.max(300, h * 0.68), size: 115 },
-      { id: 5, x: Math.max(30, w * 0.04), y: Math.max(200, h * 0.42), size: 88 },
-      { id: 6, x: Math.max(w - 160, w * 0.86), y: Math.max(220, h * 0.48), size: 92 },
-      { id: 7, x: Math.max(w * 0.72, 220), y: Math.max(h - 130, 460), size: 105 },
+      { id: 1, x: Math.max(w - (isMobile ? 75 : 165), w * 0.87), y: Math.max(75, h * 0.15), size: s(105) },
+      { id: 2, x: Math.max(18, w * 0.04), y: Math.max(65, h * 0.12), size: s(98) },
+      { id: 11, x: Math.max(w * 0.22, 60), y: Math.max(40, h * 0.06), size: s(80) },
+      { id: 12, x: Math.max(w * 0.75, w - (isMobile ? 90 : 210)), y: Math.max(45, h * 0.07), size: s(82) },
+
+      { id: 3, x: Math.max(w - (isMobile ? 65 : 155), w * 0.89), y: Math.max(220, h * 0.38), size: s(92) },
+      { id: 4, x: Math.max(15, w * 0.05), y: Math.max(210, h * 0.35), size: s(96) },
+      { id: 5, x: Math.max(20, w * 0.04), y: Math.max(340, h * 0.58), size: s(88) },
+      { id: 6, x: Math.max(w - (isMobile ? 70 : 160), w * 0.88), y: Math.max(330, h * 0.55), size: s(98) },
+
+      { id: 7, x: Math.max(w * 0.76, w - (isMobile ? 110 : 250)), y: Math.max(h - (isMobile ? 80 : 130), 480), size: s(100) },
+      { id: 8, x: Math.max(w * 0.18, 50), y: Math.max(h - (isMobile ? 75 : 125), 470), size: s(90) },
     ],
   };
 

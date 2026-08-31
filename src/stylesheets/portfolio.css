@@ -129,6 +129,21 @@
 .puzzle-piece.moving.puzzle-ambient-7 {
   animation: puzzleFloat7 5.2s ease-in-out infinite alternate;
 }
+.puzzle-piece.moving.puzzle-ambient-8 {
+  animation: puzzleFloat2 5.8s ease-in-out infinite alternate;
+}
+.puzzle-piece.moving.puzzle-ambient-9 {
+  animation: puzzleFloat5 6.6s ease-in-out infinite alternate;
+}
+.puzzle-piece.moving.puzzle-ambient-10 {
+  animation: puzzleFloat3 5.4s ease-in-out infinite alternate;
+}
+.puzzle-piece.moving.puzzle-ambient-11 {
+  animation: puzzleFloat6 6.8s ease-in-out infinite alternate;
+}
+.puzzle-piece.moving.puzzle-ambient-12 {
+  animation: puzzleFloat1 7.2s ease-in-out infinite alternate;
+}
 
 /* Fallback for general moving pieces */
 .puzzle-piece.moving:not([class*="puzzle-ambient-"]) {
