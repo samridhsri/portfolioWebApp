@@ -10,9 +10,9 @@ function renderBold(text) {
 }
 
 const STARTERS = [
-  "What projects has Samridh built?",
-  "What are Samridh's ML skills?",
-  "Tell me about his work experience.",
+  "What did you build at FairWAI?",
+  "What distributed systems and ML projects have you built?",
+  "What is your experience with LLM optimization and agents?",
 ];
 
 const SOURCE_LABELS = {
@@ -107,7 +107,7 @@ export default function ChatWidget() {
           setMessages((prev) => {
             const updated = [...prev];
             const last = { ...updated[updated.length - 1] };
-            last.content = "Sorry, something went wrong. Please try again.";
+            last.content = "Connection error. Please try again.";
             updated[updated.length - 1] = last;
             return updated;
           });
@@ -159,7 +159,7 @@ export default function ChatWidget() {
           <div className="chat-panel-header">
             <div className="chat-panel-title">
               <span className="chat-panel-dot" />
-              Ask about Samridh
+              Ask Samridh
             </div>
             <button className="chat-panel-close" onClick={handleClose} aria-label="Close">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -173,7 +173,7 @@ export default function ChatWidget() {
           <div className="chat-messages">
             {messages.length === 0 && (
               <div className="chat-starters">
-                <p className="chat-starters-label">Ask me anything about Samridh:</p>
+                <p className="chat-starters-label">Ask me about:</p>
                 {STARTERS.map((q) => (
                   <button
                     key={q}
@@ -221,7 +221,7 @@ export default function ChatWidget() {
             <textarea
               className="chat-input"
               rows={1}
-              placeholder="Ask something..."
+              placeholder="Ask me about my projects, stack, or background..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
