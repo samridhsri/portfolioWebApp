@@ -18,7 +18,7 @@ export const roleTracks = [
     title: "Machine Learning & Distributed Systems Engineer",
     summary: "Built edge multimodal pipelines, agentic AI workflows with LangGraph, distributed streaming systems, and low-latency production ML services.",
     pdfName: "Samridh_Srivastava_Resume_Comprehensive.pdf",
-    pdfUrl: "https://drive.google.com/file/d/1L5i-MZ2d16QehOudgUbCeQbAKX3yZQgz/view",
+    pdfUrl: "https://drive.google.com/file/d/1_5dK0D3DaDhgAtDUY_FIge1Ju77WRdbn/view?usp=drive_link",
   },
   {
     id: "ai-engineer",
