@@ -26,7 +26,7 @@ export const roleTracks = [
     badge: "Agentic & Multimodal",
     icon: "bot",
     title: "AI/ML Engineer specializing in LLMs, agentic AI, multimodal systems, and inference optimization",
-    summary: "Built production agentic workflows with LangGraph, multimodal VLM edge pipelines at FairWAI (200.8x latency reduction), and full-stack AI apps with Gemini 2.5 Flash and Vertex AI.",
+    summary: "Built production agentic workflows with LangGraph, multimodal VLM edge pipelines at FairwAI (200.8x latency reduction), and full-stack AI apps with Gemini 2.5 Flash and Vertex AI.",
     pdfName: "Samridh_Srivastava_Resume_AIEngineer.pdf",
     pdfUrl: "https://drive.google.com/file/d/1_5dK0D3DaDhgAtDUY_FIge1Ju77WRdbn/view?usp=drive_link",
   },
@@ -77,7 +77,7 @@ export const impactMetrics = [
     id: "vlm-latency",
     value: "200.8×",
     label: "Prefill Latency Cut",
-    detail: "4-bit GGUF quantization, batch parallelization & category-first CPU early exit at FairWAI",
+    detail: "4-bit GGUF quantization, batch parallelization & category-first CPU early exit at FairwAI",
     roles: ["all", "ai-engineer", "ml-engineer", "data-engineer"],
   },
   {
@@ -127,11 +127,11 @@ export const impactMetrics = [
 export const experiences = [
   {
     id: "fairwai",
-    company: "FairWAI",
+    company: "FairwAI",
     role: "AI/ML Engineering Intern",
     location: "New York, USA (Remote)",
     period: "Aug 2026 – Present",
-    chapter: "FairWAI // Edge Multimodal Systems",
+    chapter: "FairwAI // Edge Multimodal Systems",
     tagline: "Multimodal ML pipeline with streaming ASR, diarization, and quantized VLM clinical nudges",
     metrics: ["200.8× Latency Cut", "650 MB Footprint", "96.67% VLM Accuracy"],
     roles: ["ai-engineer", "ml-engineer", "sde", "data-engineer", "data-scientist"],

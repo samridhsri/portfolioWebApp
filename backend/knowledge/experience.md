@@ -1,55 +1,72 @@
 # Professional Experience
 
-## Student Caller / Engagement Ambassador
-**NYU Phonathon** | Feb 2025 – Present
-*Location:* New York, NY
+## FairwAI — AI / Machine Learning Intern
+- **Company:** FairwAI
+- **Role:** AI / Machine Learning Intern
+- **Timeline:** 2026
+- **Focus:** On-device speech recognition, speaker diarization, vision-language models, and low-latency mobile inference.
 
-- Engaged alumni and donors to strengthen university relations and raise funds for campus initiatives.
+### FairwAI Speech Recognition & ASR Pipelines
+- Integrated WhisperKit for real-time, on-device transcription on iPhone and deployed whisper.cpp for CPU inference.
+- Evaluated and quantized Distil-Whisper models for reduced memory usage.
+- Implemented sliding-window streaming transcription and benchmarked Word Error Rate (WER) across diverse acoustic conditions.
 
----
+### FairwAI Speaker Diarization
+- Built and evaluated speaker diarization pipelines using pyannote.audio to identify and segment distinct speakers in meeting audio.
+- Integrated diarization outputs directly into downstream ASR and summarization workflows.
 
-## Machine Learning Intern
-**Course5 Intelligence (C5i)** | Feb 2024 – Jul 2024
-*Location:* Gurugram, India
+### FairwAI Vision-Language Models (VLMs)
+- Benchmarked lightweight vision-language models including SmolVLM, Moondream2, and Qwen2-VL for edge deployment.
+- Designed calibration prompt sets, evaluated inference latency vs. accuracy tradeoffs, and produced structured JSON outputs.
 
-Worked on scalable machine learning pipelines, NLP systems, and Retrieval-Augmented Generation (RAG) in production environments:
-
-- **Scalable ML Pipelines** — Built scalable Python-based data and machine learning pipelines supporting NLP and LLM workloads in production environments.
-- **Distributed RAG Systems** — Developed distributed Retrieval-Augmented Generation (RAG) systems using FAISS and transformer models (BERT, T5, BART), improving retrieval precision by 15%.
-- **Containerized FastAPI Services** — Designed and deployed containerized FastAPI services for ML inference, handling 50K+ monthly requests with low latency.
-- **Inference Optimization** — Optimized inference and data processing pipelines using ONNX, improving throughput and resource utilization.
-
----
-
-## Software Engineering Intern
-**Mahindra and Mahindra** | Sep 2023 – Dec 2023
-*Location:* Mumbai, India (Remote)
-
-Engineered computer vision data pipelines and deep learning solutions for automated quality inspection:
-
-- **Computer Vision Pipelines** — Engineered computer vision data pipelines using Python, C, and OpenCV to process large-scale image datasets for automated quality inspection.
-- **Deep Learning Model Training** — Trained and evaluated deep learning models (YOLOv8, Mask R-CNN) across CPU and GPU environments.
-- **Cost & Efficiency Optimization** — Applied statistical analysis and machine learning techniques contributing to a 10% reduction in project costs.
-- **Cross-Functional Integration** — Collaborated with cross-functional teams to integrate ML components into existing production systems.
+### FairwAI On-Device AI & Quantization
+- Deployed LLMs and VLMs on iOS leveraging Apple Neural Engine and Core ML.
+- Explored MLC-LLM and llama.cpp runtimes with 4-bit model quantization.
+- Measured Time-to-First-Token (TTFT) and end-to-end latency to optimize compute and memory constraints.
+- **Tech Stack:** Python, PyTorch, WhisperKit, whisper.cpp, pyannote.audio, llama.cpp, MLC-LLM, Core ML, ONNX, Quantization, Git.
 
 ---
 
-## Key Accomplishments & Projects
+## Course5 Intelligence — Machine Learning Intern
+- **Company:** Course5 Intelligence
+- **Role:** Machine Learning Intern
+- **Timeline:** Spring – Summer 2025
+- **Focus:** Production LLM applications, transformer fine-tuning, and retrieval-augmented generation (RAG).
 
-### AI Research Intelligence Platform
-- Engineered an agentic research platform using LangGraph for task decomposition and orchestration, PostgreSQL + pgvector for semantic search, Cohere for reranking, and Redis for caching.
-
-### Local LLM Inference Optimization (DS-GA 1019)
-- Achieved **up to 7.5x speedup** in local LLM inference optimization leveraging Numba JIT compilation, Cython, INT8 quantization, KV caching, and asynchronous batching.
-
-### Real-Time F1 Telemetry Platform (RaceFlux)
-- Built distributed streaming pipeline using Apache Kafka and Apache Spark Structured Streaming with sub-5s latency, MLflow model tracking, and Streamlit dashboards.
-
-### Full-Stack & Production Web Systems
-- Built Triage (Raycast-style AI productivity agent with Gemini 2.5 Flash & Notion SDK), Music Mindscape (Spotify AI Mind Map), and MUJ Convocation Portal (2000+ live users).
+### Course5 Intelligence Key Contributions & Technical Scope
+- Built LLM-driven automation pipelines and FastAPI REST services for internal analytics workflows.
+- Fine-tuned transformer models on domain-specific datasets with customized tokenization and evaluation pipelines.
+- Implemented semantic retrieval pipelines integrating vector databases and document chunking for context-grounded Q&A.
+- Focused on production inference performance, reducing API response latency and memory overhead.
+- **Tech Stack:** Python, FastAPI, Hugging Face Transformers, LangChain, ChromaDB, vector databases, REST APIs.
 
 ---
 
-## Career Focus & Goals
+## Mahindra & Mahindra — Software Engineering Intern (Computer Vision)
+- **Company:** Mahindra & Mahindra
+- **Role:** Software Engineering Intern (Computer Vision)
+- **Timeline:** 2024
+- **Focus:** Computer vision automation for industrial inspection.
 
-Actively seeking **Software Development Engineer (SDE) or Machine Learning Engineering Full-Time Roles for 2026** to build and scale production AI/ML infrastructure, agentic workflows, inference optimization pipelines, and full-stack applications.
+### Mahindra & Mahindra Key Contributions & Technical Scope
+- Built end-to-end computer vision pipelines for automated component inspection, replacing manual visual checks.
+- Developed preprocessing, annotation, and model evaluation workflows using OpenCV and deep learning frameworks.
+- Prepared and validated industrial image datasets for defect identification.
+- **Tech Stack:** Python, OpenCV, PyTorch, Computer Vision Tooling.
+
+---
+
+## NYU Phonathon — Engagement Ambassador
+- **Organization:** NYU Phonathon (NYU Tandon School of Engineering)
+- **Role:** Engagement Ambassador
+- **Timeline:** Current
+- **Location:** Brooklyn, New York
+- **Scope:** Conduct outreach to alumni and donors, communicating university initiatives and supporting engineering school fundraising campaigns.
+
+---
+
+## Manipal University Jaipur — Technical Leadership & Mentorship
+- **Organization:** Manipal University Jaipur
+- **Role:** Competitive Programming Lead & Mentor
+- **Timeline:** 2021 – 2023
+- **Scope:** Founded and led competitive programming initiatives; mentored 50+ students in data structures, algorithms, and technical interview preparation; organized campus coding contests and tech workshops.

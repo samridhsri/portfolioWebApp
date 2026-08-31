@@ -1,99 +1,78 @@
 # Education
 
 ## Master of Science in Computer Engineering
-**NYU Tandon School of Engineering** | Graduated May 2026
 
-New York, NY
-Got an A in every subject except Digital Signal Processing 😔
-**GPA:** - 3.86
-
-### Key Courses & Projects
-
-**Advanced Python for Data Science (DS-GA 1019)**
-- Optimized local LLM inference with Numba, Cython, and quantization (~7.5x speedup)
-- Implemented Cython-based heat equation solver for numerical computing
-- Built advanced data structures using itertools and functional programming
-
-
-**Computer Vision & Image Analysis**
-- Kitchen Hygiene Compliance Detection — Computer vision for safety monitoring
-- Plant Disease Detection — Multi-dataset plant classification (PlantWild_v2, PlantDoc)
-- Explored YOLOv11 instance segmentation and transfer learning approaches
-
-**Big Data & Distributed Systems**
-- Apache Spark DataFrame operations and distributed processing
-- Data pipeline design and optimization
-
-**Systems & Performance**
-- Focus on optimization, profiling, and production-grade code
-
-### Research & Publications
-
-Published work on leaf edge detection in machine learning, combining image processing and deep learning methodologies.
+### NYU Tandon School of Engineering (New York University)
+- **Dates:** Graduated May 2026
+- **Location:** Brooklyn, New York
+- **GPA:** 3.86 / 4.0
+- **Focus:** AI systems, machine learning engineering, distributed computing, and performance optimization.
+- **Academic record:** Received an A in every subject except Digital Signal Processing.
 
 ---
 
-## B.Tech in Computer Engineering
-**Manipal University Jaipur** | 2020-2024
+## Graduate Coursework & Projects
 
-**GPA:** 9.05/10
+### Advanced Python for Data Science (DS-GA 1019)
+Focused on performance engineering, low-level Python optimization, and scientific computing.
+- Optimized local LLM inference using Numba JIT, Cython, INT8 quantization, KV caching, and async batching, achieving ~7.5x speedups.
+- Implemented a high-performance Cython-based heat equation numerical solver.
+- Built streaming data pipelines using generators, itertools, and functional design patterns.
 
-Jaipur, India
+### Computer Vision & Deep Learning
+- **Kitchen Hygiene Compliance:** Real-time workplace compliance and safety monitoring using YOLOv11 instance segmentation.
+- **Plant Disease Detection:** Multi-dataset disease classification using transfer learning and segmentation across the PlantWild_v2 and PlantDoc datasets.
 
-### Achievements
+### Big Data & Distributed Systems
+- Built scalable ETL and streaming data pipelines using Apache Spark and distributed DataFrame transformations.
+- Worked on query optimization and partitioned storage patterns.
 
-- **Convocation Portal Project** — Full-stack web application serving 2000+ users, built from conception to deployment
-- **Technical Club Leadership** — Founded and led competitive programming initiatives
-- **Research Publication** — Leaf edge detection in machine learning (peer-reviewed)
-- Academic excellence across computer science fundamentals, algorithms, and systems design
+### Systems & Performance Engineering
+- Explored profiling, CUDA GPU optimization, multiprocessing, JAX, and low-level memory layout optimization.
+
+---
+
+## Research & Publications
+
+- **Topic:** Machine learning and computer vision methodologies for leaf edge detection and botanical image analysis.
+- **Scope:** Feature extraction, edge segmentation algorithms, and applied deep learning experimentation resulting in peer-reviewed publication.
+
+---
+
+## Bachelor of Technology in Computer & Communication Engineering
+
+### Manipal University Jaipur
+- **Dates:** 2020 – 2024
+- **Location:** Jaipur, Rajasthan, India
+- **GPA:** 9.05 / 10.0
+- **Foundations:** Data structures, algorithms, operating systems, computer networks, database systems, and software architecture.
+
+### Undergraduate Highlights
+- **Convocation Portal:** Designed, built, and deployed the official university convocation platform used by 2,000+ students and administrators for registration, seating, and logistics.
+- **Technical Leadership:** Founded and led campus competitive programming initiatives, organized technical workshops, and mentored 50+ students in algorithms and problem-solving.
+- **Research:** Published research on image processing and ML-based edge detection.
 
 ---
 
 ## Programming Diploma
-**IIT Madras** | 2019-2021
 
-Chennai, India
-
-Foundational program in programming languages, data structures, and computer science fundamentals.
-
----
-
-## Technical Foundation
-
-### Languages & Tools
-- **Programming Languages:** Python (primary), JavaScript, Java, C++
-- **Data Science & ML:** PyTorch, TensorFlow, scikit-learn, pandas, NumPy
-- **Web Development:** React, Django, FastAPI, Node.js, Express
-- **Data & Storage:** SQL, PostgreSQL, Firebase
-- **Deployment & DevOps:** Docker, GCP, cloud deployment
-- **Optimization:** Cython, Numba, JAX, CUDA optimization
-- **Other Tools:** LaTeX/Overleaf, Git, Jupyter, VS Code
-
-### Specializations
-- Large Language Models and Transformer architectures
-- Computer Vision and image processing
-- Natural Language Processing
-- Full-stack web development
-- Performance optimization and systems design
-- Distributed computing (Spark)
+### IIT Madras
+- **Dates:** 2019 – 2021
+- **Location:** Chennai, Tamil Nadu, India
+- **Focus:** Rigorous foundation in Python programming, data structures, algorithm design, and computational thinking.
 
 ---
 
-## Continuous Learning
+## Technical Skills Summary
 
-I'm committed to staying at the cutting edge of AI/ML:
-
-- Regular participation in hackathons (Last one was Columbia Google AI hackathons, March 2026)
-- Self-directed learning in emerging AI techniques and architectures
-- Engagement with technical communities and peer learning
+- **Languages:** Python (primary), JavaScript, TypeScript, SQL, Java, C++, Bash
+- **ML / AI:** PyTorch, TensorFlow, Hugging Face Transformers, LangChain, ChromaDB, vector databases, RAG pipelines, Core ML, WhisperKit, whisper.cpp, pyannote.audio, llama.cpp, MLC-LLM
+- **Optimization:** Cython, Numba JIT, CUDA, INT8 and 4-bit quantization, KV caching, async batching
+- **Backend & Web:** FastAPI, Django, Flask, Node.js, React, Next.js, Tailwind CSS, PostgreSQL, Docker, GCP
 
 ---
 
-## Why NYU Tandon?
+## Hackathons & Continuous Learning
 
-NYU Tandon's rigorous curriculum, emphasis on both theory and practice, and location in the heart of the NYC tech ecosystem provided the ideal environment to:
-
-- Deepen ML and systems expertise
-- Build production-grade full-stack systems
-- Network with industry professionals and peers
-- Prepare for impactful roles in AI/ML engineering
+- **Columbia Google AI Hackathon (March 2026):** Built *Startup Autopsy*, an agentic startup analysis tool using Google Vertex AI and ADK.
+- Actively experiment with emerging multimodal architectures, on-device inference runtimes, and agentic workflows.

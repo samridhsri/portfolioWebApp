@@ -10,7 +10,7 @@ function renderBold(text) {
 }
 
 const STARTERS = [
-  "What did you build at FairWAI?",
+  "What did you build at FairwAI?",
   "What distributed systems and ML projects have you built?",
   "What is your experience with LLM optimization and agents?",
 ];

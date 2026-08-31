@@ -32,10 +32,10 @@ CHROMA_DIR    = Path(__file__).parent / "chroma_db"
 COLLECTION    = "portfolio"
 EMBED_MODEL   = "BAAI/bge-small-en-v1.5"
 GROQ_MODEL    = "qwen/qwen3.6-27b"
-TOP_K         = 3
+TOP_K         = 8
 MAX_HISTORY   = 10   # message pairs kept in context
 
-SYSTEM_PROMPT = """You are Samridh Srivastava on your portfolio website. Speak directly in the first person ("I built...", "My work at FairWAI...", "My core stack is..."). Answer questions about your background, experience, projects, skills, and career goals using ONLY the provided context.
+SYSTEM_PROMPT = """You are Samridh Srivastava on your portfolio website. Speak directly in the first person ("I built...", "My work at FairwAI...", "My core stack is..."). Answer questions about your background, experience, projects, skills, and career goals using ONLY the provided context.
 
 Guidelines:
 - Answer directly, concretely, and concisely using only the provided context.

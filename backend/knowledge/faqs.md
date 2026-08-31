@@ -1,89 +1,161 @@
-# Frequently Asked Questions (FAQs)
+# Frequently Asked Questions
 
-## About Samridh Srivastava
+## About Me
 
-### Q: Who is Samridh Srivastava?
-**A:** Samridh Srivastava is a Computer Engineering M.S. graduate from NYU Tandon School of Engineering (graduated May 2026, 3.86 GPA) and holds a B.Tech in Computer Engineering from Manipal University Jaipur (9.05 GPA) along with a Programming Diploma from IIT Madras. He specializes in AI/ML engineering, LLM & agentic systems, data engineering, performance optimization, and full-stack development.
-
-### Q: What roles is Samridh currently seeking?
-**A:** Samridh is actively seeking **full-time Software Development Engineer (SDE) or Machine Learning Engineering (MLE) roles for 2026**. He is interested in building scalable AI/ML pipelines, agentic workflows, production LLM systems, real-time data platforms, and full-stack applications.
-
-### Q: Where is Samridh located?
-**A:** Samridh is based in **Brooklyn, New York (NY)**, with strong connections in New Delhi, India. He is authorized to work in the US and open to remote or relocation opportunities.
+### Q: Who are you?
+**A:** I'm Samridh Srivastava, a Computer Engineering graduate from NYU Tandon School of Engineering. I specialize in AI/ML engineering, large language models, on-device and edge inference optimization, distributed data pipelines, and full-stack software development.
 
 ---
 
-## Projects & Technical Deep Dives
-
-### Q: What is the AI Research Intelligence Platform?
-**A:** The **AI Research Intelligence Platform** is an agentic AI research platform that decomposes complex research questions into parallel workflows, retrieves and reranks information, and synthesizes evidence-backed insights using LangGraph, PostgreSQL (with pgvector), Redis, Cohere Rerank, FastAPI, and Docker.
-- **GitHub:** https://github.com/samridhsri/ai-research-intelligence
-
-### Q: Tell me about the Local LLM Inference Optimization framework.
-**A:** In a performance engineering project at NYU Tandon (DS-GA 1019), Samridh achieved **up to 7.5x throughput improvement** and **>40% memory reduction** for local LLM inference across GPT-2, TinyLlama, and Pythia. Key techniques include:
-- Transformer KV-cache reuse (up to 3.15x speedup)
-- INT8 quantization
-- Asynchronous batching (176+ tokens/sec)
-- Numba JIT compilation & Cython kernels
-- **GitHub:** https://github.com/ranjan2601/DS-GA-1019
-
-### Q: What is RaceFlux (F1 Race Telemetry Analytics Platform)?
-**A:** **RaceFlux** is a real-time, production-grade Formula 1 telemetry analytics platform built using Apache Kafka and Apache Spark Structured Streaming. It ingests 6 live/historical telemetry data streams with sub-5s micro-batch processing, trains Gradient Boosting position prediction models tracked via MLflow, and serves interactive analytics across 6 Streamlit dashboards.
-- **GitHub:** https://github.com/samridhsri/f1-race-telemetry
-
-### Q: What is Triage: AI Productivity Agent?
-**A:** **Triage** is a Raycast-style AI productivity interface for capturing unstructured thoughts and automatically routing them into structured Notion tasks using Gemini 2.5 Flash, automated JSON classification, Notion SDK integration, FastAPI, and Docker.
-- **GitHub:** https://github.com/samridhsri/triage
-
-### Q: What is Music Mindscape?
-**A:** **Music Mindscape** is a Spotify-connected interactive mind map visualization that clusters top tracks into 9 musical zones using audio feature similarity or AI-powered re-clustering via Gemini 2.5 Flash. It includes an Influence Simulator to search and overlay any Spotify artist as a ghost node.
-- **GitHub:** https://github.com/samridhsri/music-mindscape
-
-### Q: What is the Plant Disease Detection System?
-**A:** It is an end-to-end MLOps pipeline for plant disease detection featuring distributed training with Ray, ONNX + INT8 quantization for sub-150ms inference, MLflow tracking, OpenStack Swift storage, and Dockerized Terraform deployment monitored by Prometheus and Grafana.
-- **GitHub:** https://github.com/meghrathod/plantdisease-ml
-
-### Q: What is the Urban Sustainability Calculator?
-**A:** A full-stack urban planning platform built with Next.js, React-Leaflet, Flask, and Google Gemini API that evaluates urban regions across 10+ sustainability metrics using real-time OpenStreetMap data.
-- **GitHub:** https://github.com/ranjan2601/Urban-Sustainability-Calculator
-
-### Q: What is the RoBERTa LoRA project?
-**A:** Implemented parameter-efficient fine-tuning (PEFT) of RoBERTa using LoRA on the AG News dataset. Achieved 92.8% accuracy and F1-score while training only 864K / 125M parameters (0.69% of total model parameters).
-- **GitHub:** https://github.com/samridhsri/finetuning-with-lora-dl-project-2
-
-### Q: What is the Custom ResNet project?
-**A:** Designed a custom lightweight ResNet (4,4,4,3) architecture with Squeeze-and-Excitation modules and MixCut augmentation, achieving 96.19% CIFAR-10 accuracy with only 4.79M parameters.
-- **GitHub:** https://github.com/samridhsri/DL-Project-1-Cifar10-Classification-Using-Resnet
-
-### Q: What is the MUJ Convocation Portal?
-**A:** A full-stack web application (React.js, Node.js, Express.js, MongoDB, AWS) built and deployed for Manipal University Jaipur, serving 2000+ students for event registration, seat allocation, and logistics.
-- **Live URL:** https://mujconvocation.in/
+### Q: What are you currently looking for?
+**A:** I am actively seeking full-time Software Development Engineer (SDE), AI/ML Engineer, and AI Infrastructure roles. I am especially interested in product-focused AI teams, engineering-driven startups, and teams tackling technically ambitious problems.
 
 ---
 
-## Experience & Background
-
-### Q: What internship experience does Samridh have?
-1. **Course5 Intelligence (C5i)** (Machine Learning Intern, Feb 2024 – Jul 2024):
-   - Scalable Python data & ML pipelines for NLP/LLM workloads.
-   - Distributed RAG using FAISS and BERT, T5, BART (+15% retrieval precision).
-   - Containerized FastAPI services handling 50K+ monthly requests.
-   - Inference optimization via ONNX.
-2. **Mahindra and Mahindra** (Software Engineering Intern, Sep 2023 – Dec 2023):
-   - Computer vision pipelines (Python, OpenCV, C) for quality inspection.
-   - Trained YOLOv8 and Mask R-CNN models across CPU/GPU environments.
-   - Contributed to 10% reduction in project costs.
-3. **NYU Phonathon** (Student Caller / Engagement Ambassador, Feb 2025 – Present):
-   - Alumni engagement and fundraising initiatives.
+### Q: Where are you based?
+**A:** I'm based in Brooklyn, New York, and open to NYC-based roles, remote opportunities, and relocation. I also have strong ties to New Delhi, India.
 
 ---
 
-## Skills & Tech Stack
+### Q: When did you graduate?
+**A:** I graduated from NYU Tandon School of Engineering in May 2026 with an M.S. in Computer Engineering.
 
-### Q: What programming languages and tools is Samridh proficient in?
-- **Languages:** Python, Java, C++, JavaScript, SQL
-- **ML & AI:** PyTorch, TensorFlow, Scikit-learn, Hugging Face, ONNX, LangChain, RAG
-- **Data Engineering:** Apache Spark, Hadoop, Kafka, Airflow, Databricks, Ray
-- **MLOps & DevOps:** Docker, Kubernetes, Terraform, CI/CD, MLflow, FastAPI, Flask
-- **Web Development:** React.js, Next.js, Node.js, Tailwind CSS, REST APIs
-- **Cloud & Databases:** AWS (EC2, S3), MongoDB, PostgreSQL, MySQL
+---
+
+### Q: What is your visa and work authorization status?
+**A:** 
+- In the U.S. on an F-1 student visa.
+- Graduated from NYU Tandon in May 2026 with an M.S. in Computer Engineering.
+- Authorized to work in the U.S. under F-1 OPT with eligibility for the 24-month STEM OPT extension (up to 36 months total).
+- Open to employers that have not previously sponsored H-1B visas.
+- Require future employment sponsorship after my OPT / STEM OPT period.
+
+---
+
+### Q: What makes your background distinctive?
+**A:** I bridge the gap between machine learning and systems engineering. Rather than treating ML as a black-box API or solely focusing on model training, I build the full pipeline: low-level inference optimization (quantization, KV caching, Cython/C++ kernels), backend services (FastAPI, Kafka, Spark), and clean interactive interfaces (React, Next.js).
+
+---
+
+## Education & Academics
+
+### Q: What did you study at NYU?
+**A:** My M.S. in Computer Engineering at NYU Tandon focused on AI systems, machine learning engineering, distributed computing, and performance optimization. I took courses in high-performance Python, computer vision, big data, and systems engineering.
+
+---
+
+### Q: What was your GPA?
+**A:** 
+- NYU Tandon (M.S. in Computer Engineering): **3.86 / 4.0**
+- Manipal University Jaipur (B.Tech in CCE): **9.05 / 10.0**
+- I received an A in every graduate course at NYU except Digital Signal Processing.
+
+---
+
+### Q: What was your favorite course?
+**A:** *Advanced Python for Data Science* (DS-GA 1019). It connected theoretical algorithms with concrete systems optimization, profiling, Cython kernels, and async batching, directly inspiring my local LLM inference optimization project.
+
+---
+
+### Q: Have you published research?
+**A:** Yes. I published peer-reviewed research on leaf edge detection using machine learning and computer vision methodologies (IEEE publication, DOI: 10.1109/10284977).
+
+---
+
+## Technical Skills & Architecture
+
+### Q: What programming languages do you use most?
+**A:** Python is my primary language for ML engineering, backend systems, and data pipelines. I also work regularly with JavaScript/TypeScript, SQL, C++, Java, and Bash.
+
+---
+
+### Q: What are your primary frameworks and tools?
+**A:** 
+- **AI / ML:** PyTorch, Hugging Face Transformers, LangChain, ChromaDB, WhisperKit, whisper.cpp, pyannote.audio, llama.cpp, MLC-LLM, Core ML.
+- **Optimization:** Cython, Numba JIT, CUDA, INT8/4-bit quantization, KV-cache optimization, async batching.
+- **Backend:** FastAPI, Django, Flask, Node.js, Express.
+- **Frontend & Visualization:** React, Next.js, Tailwind CSS, D3.js.
+- **Data & Infra:** PostgreSQL, Redis, Apache Kafka, Apache Spark, Docker, GCP, Git.
+
+---
+
+### Q: Tell me about your local LLM inference optimization project.
+**A:** At NYU Tandon (DS-GA 1019), I optimized local LLM inference (GPT-2, TinyLlama) in Python. Using profiling with `cProfile`, I implemented Transformer KV-cache reuse, INT8 quantization, asynchronous continuous batching, and custom Numba JIT / Cython kernels. The optimizations yielded up to ~7.5x throughput improvements and cut memory usage by over 40%.
+
+---
+
+### Q: What is KV caching and why does it matter?
+**A:** During autoregressive generation, each new token requires computing attention against all previous tokens. KV caching stores the computed Key and Value matrices of past tokens so they do not need to be recalculated at every step. This cuts per-token generation latency from quadratic to linear relative to context length.
+
+---
+
+### Q: What is quantization and what tradeoffs exist?
+**A:** Quantization converts model weights and activations from higher precision (such as FP32 or FP16) to lower precision (such as INT8 or 4-bit INT4). This cuts memory bandwidth requirements and memory footprint significantly, enabling larger models to run on resource-constrained hardware with minimal loss in output quality.
+
+---
+
+### Q: What experience do you have with RAG systems?
+**A:** I have built production and internal RAG pipelines at Course5 Intelligence and for personal projects like this portfolio assistant. My implementations cover chunking strategies, semantic embedding models, vector storage with ChromaDB and pgvector, hybrid search, and streaming response synthesis via FastAPI and Groq/Qwen.
+
+---
+
+## Projects & Experience
+
+### Q: What projects have you built?
+**A:** Key projects include:
+- **FairwAI Speech & VLM Systems:** On-device iPhone transcription with WhisperKit, whisper.cpp on CPU, pyannote speaker diarization, and lightweight VLM evaluation (SmolVLM, Moondream2) with Core ML and 4-bit quantization.
+- **Local LLM Inference Optimizer:** High-throughput local LLM inference framework achieving ~7.5x speedups via KV caching, INT8 quantization, and Cython kernels.
+- **F1 RaceFlux:** Real-time Formula 1 telemetry platform processing 10,000+ events/sec across Kafka, Spark Structured Streaming, and 5+ FastAPI microservices.
+- **MUJ Convocation Portal:** Full-stack university platform serving 2,000+ students and administrators with zero downtime during peak registration.
+- **Portfolio RAG Chatbot:** Streaming conversational assistant grounded on structured markdown knowledge using FastAPI, ChromaDB, and Groq.
+- **Triage:** Open-source Windows utility (Ctrl+Alt+T) that captures unstructured thoughts and classifies them into Notion databases using Gemini 2.5 Flash.
+- **Music Mindscape:** Interactive music clustering and taste visualization graph combining Spotify, Last.fm, Gemini API, and D3.js.
+- **Kitchen Hygiene Compliance Detection:** Real-time YOLOv11 instance segmentation pipeline for commercial kitchen hygiene compliance.
+- **Plant Disease Detection:** Agricultural vision system with ONNX quantization achieving sub-150ms latency across PlantWild_v2 and PlantDoc datasets.
+- **Startup Autopsy:** Multi-agent startup analysis platform built with Vertex AI and ADK at the Columbia AI Hackathon.
+
+---
+
+### Q: Which project are you most proud of?
+**A:** The local LLM inference optimization project. It challenged me at the intersection of systems engineering, memory access patterns, and machine learning, delivering measurable 7.5x performance gains.
+
+---
+
+### Q: What project taught you the most?
+**A:** Deploying the MUJ Convocation Portal and building full-stack AI products. They proved that model quality is only one part of the problem—reliability, edge cases, latency, database locking, and user experience matter just as much.
+
+---
+
+## Personal & Fun Questions
+
+### Q: What do you do outside tech?
+**A:** I play PlayStation 5, cook, go to the gym, watch movies, and read non-fiction.
+
+---
+
+### Q: What games do you play?
+**A:** I play Fortnite (2,000+ hours, PSN: `SamTheReaper04`), Rocket League, Battlefield, Spider-Man, and story-driven PlayStation titles.
+
+---
+
+### Q: What books do you recommend?
+**A:** *Atomic Habits* by James Clear and *How to Lie with Statistics* by Darrell Huff.
+
+---
+
+### Q: Tabs or spaces?
+**A:** Spaces. Always 2 or 4 spaces.
+
+---
+
+### Q: Dark mode or light mode?
+**A:** Dark mode everywhere.
+
+---
+
+### Q: How can someone contact you?
+**A:** You can reach me via:
+- **Email:** samridh@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/samridh-srivastava-a6b888ba/
+- **GitHub:** https://github.com/samridhsri
+- **Portfolio:** https://samridhsrivastava.com

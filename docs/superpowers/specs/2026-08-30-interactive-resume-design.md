@@ -12,10 +12,130 @@
 Transform the existing single-card resume page into an interactive, production-grade engineering resume called the **"Neural Chrono-Matrix"**. 
 
 The design combines:
-1. **Interactive Story Journey Mode**: A chronological, milestone-driven technical narrative featuring quantifiable telemetry ribbons, chapter milestones (from foundational systems in India to cutting-edge multimodal edge inference at FairWAI and NYU graduate research), and expandable in-line technical drawers.
-2. **Classic ATS / 1-Page Summary Mode**: A zero-friction, high-density structured layout with printer-friendly styling, immediate text copyability, and ATS keyword compliance.
-3. **5-Track Tailored Role Switcher**: Instant dynamic filtering across all 5 career tracks (**AI Engineer / FDE**, **ML Engineer**, **Software Engineer / SDE**, **Data Engineer**, **Data Scientist**), which re-weights bullet points, featured projects, and skills, while offering tailored PDF downloads.
-4. **Complete Contextual Integration**: Including FairWAI (multimodal edge VLM pipeline), NYU Phonathon, Course5 Intelligence, Mahindra & Mahindra, NYU Tandon MS CE (GPA 3.86), Manipal University Jaipur B.Tech (GPA 9.05), IIT Madras Diploma, IEEE published research, and 7+ production projects.
+1. **Interactive Story Journey Mode**: A chronological, milestone-driven technical narrative featuring quantifiable telemetry ribbons, chapter milestones (from foundational systems in India to cutting-edge multimodal edge inference at FairwAI and NYU graduate research), and expandable in-line technical drawers.
+2. **Targeted Role Tracks Mode**: Instant recruiter filtering into 5 distinct specialized lenses (AI Engineer, ML Engineer, Software Engineer / SDE, Data Engineer, Data Scientist) with tailored summaries, track badges, and dynamic bullet prioritization.
+3. **Quantifiable Impact Metric Ribbons**: High-signal, interactive counters displaying proven engineering outcomes (e.g. 200.8× VLM latency reduction, 7.5× local LLM speedup, 50K+ monthly requests, 2,000+ users, 10K+/s streaming throughput).
+4. **Complete Contextual Integration**: Including FairwAI (multimodal edge VLM pipeline), NYU Phonathon, Course5 Intelligence, Mahindra & Mahindra, NYU Tandon MS CE (GPA 3.86), Manipal University Jaipur B.Tech (GPA 9.05), IIT Madras Diploma, IEEE published research, and 7+ production projects.
+5. **Integrated Artifact Downloads & Navigation**: Dynamic PDF resume download links per role track, live project links, and direct anchor jump points seamlessly synchronized with the existing sticky sub-navigation and theme system.
+
+---
+
+## 1. Resume Content Schema & Master Data
+
+### 1.1 Professional Experience Entries
+
+1. **FairwAI** | *AI/ML Engineering Intern* | New York, NY (Remote) | Aug 2026 – Present
+   - **Tagline**: Multimodal ML pipeline with streaming ASR, diarization, and quantized VLM clinical nudges
+   - **Metrics**: `200.8× Latency Cut` (12.05s → 60ms) | `650 MB Footprint` | `96.67% VLM Accuracy`
+   - **Core Bullets**:
+     - Engineered edge-native multimodal ML/AI pipeline integrating streaming ASR, speaker diarization, language identification, computer vision, and VLM inference for real-time clinical communication analysis.
+     - Quantized SmolVLM-Instruct to 4-bit GGUF (`Q4_K_M`), combined with batch parallelization and category-first CPU early exit, reducing prefill inference latency from 12.05s to 60ms (200.8× speedup) while fitting in 650 MB RAM on edge devices.
+     - Built on-device iOS audio capture system using WhisperKit and whisper.cpp, streaming 16kHz audio chunks with sliding-window diarization for real-time speaker segmentation across multi-speaker clinical dialogues.
+     - Evaluated lightweight VLMs (SmolVLM, Moondream2, Qwen2-VL) on custom clinician-patient video datasets, achieving 96.67% accuracy in nonverbal cue detection and delivering low-latency clinical nudges.
+   - **Skills/Tags**: `Python` `PyTorch` `WhisperKit` `whisper.cpp` `pyannote.audio` `llama.cpp` `MLC-LLM` `Core ML` `SmolVLM` `Qwen2-VL` `Quantization (GGUF)` `Edge AI`
+
+2. **NYU Phonathon (NYU Tandon)** | *Engagement Ambassador* | Brooklyn, NY | Aug 2025 – May 2026
+   - **Tagline**: University donor & alumni engagement campaigns and institutional advocacy
+   - **Metrics**: `Top Tier Engagement` | `NYU Tandon Representation`
+   - **Core Bullets**:
+     - Engaged 500+ NYU alumni and donors to communicate university research milestones, academic initiatives, and engineering program updates.
+     - Represented NYU Tandon School of Engineering in institutional advancement and student mentorship outreach.
+   - **Skills/Tags**: `Technical Communication` `Alumni Outreach` `Advocacy` `Stakeholder Engagement`
+
+3. **Course5 Intelligence (C5i)** | *Machine Learning Intern* | Bengaluru, India | Jan 2024 – Jun 2024
+   - **Tagline**: Production LLM RAG pipelines and transformer fine-tuning for enterprise analytics
+   - **Metrics**: `50K+ Monthly Requests` | `40% Latency Cut` | `94.2% Intent Accuracy`
+   - **Core Bullets**:
+     - Built enterprise RAG pipelines using LangChain, LlamaIndex, and FAISS vector databases, serving context-grounded insights across 50,000+ monthly analytical queries.
+     - Fine-tuned domain-specific transformer models for intent classification and text summarization, achieving 94.2% accuracy on internal enterprise benchmarks.
+     - Containerized ML inference services with FastAPI and Docker, implementing Redis caching and asynchronous request batching to cut API p95 latency by 40%.
+   - **Skills/Tags**: `Python` `FastAPI` `LangChain` `LlamaIndex` `FAISS` `Transformers` `Docker` `Redis` `RAG`
+
+4. **Mahindra & Mahindra** | *Computer Vision & Software Engineering Intern* | Mumbai, India | Jun 2023 – Dec 2023
+   - **Tagline**: Edge computer vision and automated visual inspection systems
+   - **Metrics**: `35-40% Latency Reduction` | `98.1% Defect Precision` | `Automated Quality Control`
+   - **Core Bullets**:
+     - Developed end-to-end computer vision pipelines for automated component inspection and surface defect detection using YOLOv8 and Mask R-CNN.
+     - Converted PyTorch models to ONNX and applied INT8 post-training quantization, achieving 35–40% latency reduction on edge industrial compute units.
+     - Built automated data annotation and quality validation scripts in OpenCV and Python, processing 25,000+ manufacturing inspection images.
+   - **Skills/Tags**: `Python` `OpenCV` `PyTorch` `YOLOv8` `Mask R-CNN` `ONNX Runtime` `INT8 Quantization` `Computer Vision`
+
+---
+
+### 1.2 Education, Certifications & Honors
+
+1. **New York University (NYU Tandon School of Engineering)** | Brooklyn, NY
+   - *Master of Science in Computer Engineering* | Graduated: May 2026 | **GPA: 3.86 / 4.0**
+   - **Key Coursework**: Advanced Python for Data Science (DS-GA 1019, Grade: A), Machine Learning, Computer Vision, Big Data & Distributed Systems, Cloud Computing, High Performance Computing.
+   - **Distinction**: Straight A's in all courses with a single A- in Digital Signal Processing.
+
+2. **Manipal University Jaipur (MUJ)** | Jaipur, India
+   - *Bachelor of Technology in Computer & Communication Engineering* | 2020 – 2024 | **GPA: 9.05 / 10.0**
+   - **Leadership & Distinction**: Founder & President of Competitive Programming Club; Academic Merit Scholarship; Mentored 50+ peers.
+
+3. **Indian Institute of Technology, Madras (IIT Madras)** | Chennai, India
+   - *Diploma in Programming & Data Science* | 2019 – 2021
+   - **Foundational Focus**: Computational Thinking, Data Structures, Algorithms in Python.
+
+4. **Research Publication**:
+   - IEEE Published Research Paper in Computer Vision & Deep Learning (DOI: `10.1109/10284977`) on edge detection and feature extraction methodologies.
+
+---
+
+### 1.3 Role Tracks Mapping Matrix
+
+| Track ID | Track Name | Badge | Primary Focus & Highlights |
+|---|---|---|---|
+| `all` | Comprehensive | Full Overview | All 4 professional experiences, all 8 metrics, full education and technical skills. |
+| `ai-engineer` | AI Engineer / FDE | Agentic & Multimodal | FairwAI (Edge VLM & ASR), Course5 (LLM RAG), LangGraph Agentic Research Platform, Triage Notion Assistant, Gemini Multimodal. |
+| `ml-engineer` | ML Engineer | Inference & Deep Learning | FairwAI (4-bit GGUF quantization), Local LLM Optimizer (7.5× speedup, INT8, KV-cache), Mahindra (ONNX, YOLOv8), Plant Disease (sub-150ms). |
+| `sde` | Software Engineer (SDE) | Backend & Systems | MUJ Convocation Portal (2,000+ users), F1 RaceFlux (Kafka, Spark, 5 microservices), FastAPI backends (50K+ reqs), Docker, PostgreSQL. |
+| `data-engineer` | Data Engineer | Streaming & Pipelines | F1 RaceFlux (10K+ events/sec, Kafka, Spark Streaming), Course5 (FAISS, RAG vector ETL), pgvector & Redis Queue ingestion. |
+| `data-scientist` | Data Scientist | Predictive Modeling & Analytics | Statistical modeling, XGBoost + SHAP feature attribution (24% MAE reduction), Music Mindscape clustering, clinical benchmarking. |
+
+---
+
+## 2. Interactive Architecture & Component Breakdown
+
+### 2.1 File Structure & Modular Hierarchy
+
+```
+src/
+├── data/
+│   └── resumeData.js                     # Master resume dataset (experiences, education, skills, metrics, tracks)
+├── components/
+│   └── resume/
+│       ├── InteractiveResume.jsx         # Section container with track selector, mode switcher, metrics ribbon
+│       ├── TrackSelector.jsx             # Role track switcher tabs (AI Engineer, ML Engineer, SDE, etc.)
+│       ├── ImpactMetricsRibbon.jsx       # Dynamic quantifiable telemetry cards with subtle glowing borders
+│       ├── StoryJourneyView.jsx          # Chronological timeline narrative with expandable technical drawers
+│       ├── TargetedTrackView.jsx         # Role-focused structured view with prioritized bullets and skills
+│       ├── ExperienceDrawer.jsx          # Expandable deep-dive drawer for architectures, metrics, and code snippets
+│       └── ResumeHeaderActions.jsx       # Mode toggles (Story vs. Track), PDF Resume download button, Print view
+```
+
+---
+
+## 3. UI/UX Design & Aesthetic Specifications
+
+- **Theme Cohesion**: Fully integrated with the 16 existing theme tokens (`--bg-primary`, `--text-primary`, `--accent-primary`, `--accent-secondary`, `--card-bg`, `--accent-glow`, `--border-color`).
+- **Telemetry Ribbon**: High-visibility metric cards with Geist Mono values and subtle accent glow on hover.
+- **Story Journey**: Chronological vertical spine connecting milestones from Manipal (2020) to FairwAI (2026).
+- **In-Line Technical Drawers**: Fluid accordion animations with zero layout shift, displaying detailed architectural highlights, metrics, and technology chips.
+- **Accessibility & Motion**: Full keyboard navigation support (`Tab`, `Enter`, `Space`, `Esc`), WCAG AAA contrast ratios, and `prefers-reduced-motion` compliance.
+
+---
+
+## 4. Verification & Testing Plan
+
+1. **State & Filtering Verification**:
+   - Verify role track filtering across all 5 tracks (`all`, `ai-engineer`, `ml-engineer`, `sde`, `data-engineer`, `data-scientist`).
+   - Confirm impact metrics update dynamically according to the selected track.
+2. **Interactive Drawer Verification**:
+   - Default state: First and most recent milestone (FairwAI) expanded by default; others collapsed with clear summary & badges.
+   - Test expansion and collapse across all milestones (FairwAI, Course5, Mahindra, NYU, MUJ, IIT Madras).
+3. **Cross-Theme & Responsive Verification**:
+   - Test across all 16 portfolio themes and verify responsiveness across mobile (375px), tablet (768px), and desktop (1440px).
 
 ---
 
