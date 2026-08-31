@@ -28,7 +28,7 @@ export const roleTracks = [
     title: "AI/ML Engineer specializing in LLMs, agentic AI, multimodal systems, and inference optimization",
     summary: "Built production agentic workflows with LangGraph, multimodal VLM edge pipelines at FairWAI (200.8x latency reduction), and full-stack AI apps with Gemini 2.5 Flash and Vertex AI.",
     pdfName: "Samridh_Srivastava_Resume_AIEngineer.pdf",
-    pdfUrl: "https://drive.google.com/file/d/1L5i-MZ2d16QehOudgUbCeQbAKX3yZQgz/view",
+    pdfUrl: "https://drive.google.com/file/d/1_5dK0D3DaDhgAtDUY_FIge1Ju77WRdbn/view?usp=drive_link",
   },
   {
     id: "ml-engineer",
@@ -38,7 +38,7 @@ export const roleTracks = [
     title: "Machine Learning Engineer specializing in model development, deep learning, and production ML systems",
     summary: "Built low-latency inference pipelines, 4-bit GGUF quantization, PyTorch fine-tuning with LoRA, ONNX Runtime optimizations (+25% throughput), and edge computer vision models.",
     pdfName: "Samridh_Srivastava_Resume_MLEngineer.pdf",
-    pdfUrl: "https://drive.google.com/file/d/1L5i-MZ2d16QehOudgUbCeQbAKX3yZQgz/view",
+    pdfUrl: "https://drive.google.com/file/d/1CidfkC0grarlbXVuHFyciDvlPeFgwotW/view?usp=drive_link",
   },
   {
     id: "sde",
@@ -48,7 +48,7 @@ export const roleTracks = [
     title: "Software Engineer specializing in backend systems, distributed systems, and AI/ML",
     summary: "Built production web applications (MUJ Convocation Portal for 2,000+ users), containerized FastAPI backends handling 50K+ monthly requests, and distributed streaming microservices.",
     pdfName: "Samridh_Srivastava_Resume_SoftwareEngineer.pdf",
-    pdfUrl: "https://drive.google.com/file/d/1L5i-MZ2d16QehOudgUbCeQbAKX3yZQgz/view",
+    pdfUrl: "https://drive.google.com/file/d/1X15a3FN9WQa7tju8spkTRgqIcjGaiVNX/view?usp=drive_link",
   },
   {
     id: "data-engineer",
@@ -58,7 +58,7 @@ export const roleTracks = [
     title: "Data Engineer specializing in data pipelines, distributed systems, stream processing, and cloud infrastructure",
     summary: "Built real-time streaming pipelines processing 10,000+ events/sec using Apache Kafka and Spark Structured Streaming, pgvector vector search, and Redis Queue async ingestion.",
     pdfName: "Samridh_Srivastava_Resume_DataEngineer.pdf",
-    pdfUrl: "https://drive.google.com/file/d/1L5i-MZ2d16QehOudgUbCeQbAKX3yZQgz/view",
+    pdfUrl: "https://drive.google.com/file/d/1J1L_bnYmQkw5gPQn5noUa85QeABCyYtt/view?usp=drive_link",
   },
   {
     id: "data-scientist",
@@ -68,7 +68,7 @@ export const roleTracks = [
     title: "Data Scientist specializing in predictive modeling, statistical analysis, and machine learning",
     summary: "Built evaluation benchmarks across 50 clinical encounters, cut cycle-time prediction error by 24% using XGBoost with SHAP attribution, and analyzed trends across 1,300+ tech layoffs.",
     pdfName: "Samridh_Srivastava_Resume_DataScientist.pdf",
-    pdfUrl: "https://drive.google.com/file/d/1L5i-MZ2d16QehOudgUbCeQbAKX3yZQgz/view",
+    pdfUrl: "https://drive.google.com/file/d/1WiJ6hsKPAw6V5qd5imvCDD_fFVysYHqx/view?usp=drive_link",
   },
 ];
 
