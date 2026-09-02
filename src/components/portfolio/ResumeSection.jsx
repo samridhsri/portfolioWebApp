@@ -28,22 +28,26 @@ const ResumeSection = () => {
   return (
     <div className="max-w-5xl mx-auto space-y-8 py-2 px-2 sm:px-4">
       {/* Resume Top Header with Identity, Pill Mode Switcher & Download Dropdown */}
-      <ResumeHeader
-        activeRole={activeRole}
-        setActiveRole={setActiveRole}
-        viewMode={viewMode}
-        setViewMode={setViewMode}
-      />
+      <div className="relative z-40">
+        <ResumeHeader
+          activeRole={activeRole}
+          setActiveRole={setActiveRole}
+          viewMode={viewMode}
+          setViewMode={setViewMode}
+        />
+      </div>
 
       {/* 5-Track Role Switcher */}
-      <RoleTrackSelector
-        activeRole={activeRole}
-        setActiveRole={setActiveRole}
-      />
+      <div className="relative z-20">
+        <RoleTrackSelector
+          activeRole={activeRole}
+          setActiveRole={setActiveRole}
+        />
+      </div>
 
       {/* Dual Mode Dynamic Rendering */}
       {viewMode === "story" ? (
-        <div className="space-y-10 animate-in fade-in duration-200">
+        <div className="space-y-10 animate-in fade-in duration-200 relative z-10">
           {/* Quantified Telemetry Ribbon */}
           <ImpactTelemetry activeRole={activeRole} />
 
@@ -54,7 +58,7 @@ const ResumeSection = () => {
           <SkillMatrix activeRole={activeRole} />
         </div>
       ) : (
-        <div className="animate-in fade-in duration-200">
+        <div className="animate-in fade-in duration-200 relative z-10">
           {/* Classic ATS / Single Page Clean Layout */}
           <ClassicAtsView activeRole={activeRole} />
         </div>

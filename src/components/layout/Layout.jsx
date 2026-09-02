@@ -10,44 +10,29 @@ const getPuzzlePositions = (section) => {
   const w = window.innerWidth;
   const h = window.innerHeight;
 
-  // Responsive scale factor: on mobile (< 640px) shrink to ~45-55px, tablet (~65-75px), desktop (~85-110px)
+  // Responsive scale factor: smaller on mobile/tablet to avoid cluttering reading space
   const isMobile = w < 640;
   const isTablet = w >= 640 && w < 1024;
-  const s = (baseSize) => Math.round(baseSize * (isMobile ? 0.48 : isTablet ? 0.72 : 1.0));
+  const s = (baseSize) => Math.round(baseSize * (isMobile ? 0.42 : isTablet ? 0.65 : 0.85));
 
+  // Balanced peripheral distribution in outer margins only
   const positions = {
     home: [
-      // Top corners & floating accents
-      { id: 1, x: Math.max(15, w * 0.04), y: Math.max(70, h * 0.14), size: s(105) },
-      { id: 2, x: Math.max(w - (isMobile ? 70 : 160), w * 0.88), y: Math.max(65, h * 0.12), size: s(98) },
-      { id: 11, x: Math.max(w * 0.18, 50), y: Math.max(40, h * 0.06), size: s(80) },
-      { id: 12, x: Math.max(w * 0.78, w - (isMobile ? 85 : 200)), y: Math.max(45, h * 0.07), size: s(82) },
+      // Left peripheral margin
+      { id: 1, x: Math.max(15, w * 0.03), y: Math.max(90, h * 0.16), size: s(85) },
+      { id: 3, x: Math.max(12, w * 0.025), y: Math.max(280, h * 0.45), size: s(75) },
+      { id: 5, x: Math.max(20, w * 0.035), y: Math.max(480, h * 0.72), size: s(80) },
 
-      // Mid-lateral flanks
-      { id: 3, x: Math.max(10, w * 0.03), y: Math.max(220, h * 0.38), size: s(90) },
-      { id: 4, x: Math.max(w - (isMobile ? 65 : 150), w * 0.90), y: Math.max(210, h * 0.36), size: s(94) },
-      { id: 5, x: Math.max(18, w * 0.05), y: Math.max(340, h * 0.58), size: s(88) },
-      { id: 6, x: Math.max(w - (isMobile ? 75 : 170), w * 0.87), y: Math.max(330, h * 0.56), size: s(100) },
-
-      // Lower viewport & bottom periphery
-      { id: 7, x: Math.max(25, w * 0.07), y: Math.max(460, h * 0.78), size: s(95) },
-      { id: 8, x: Math.max(w - (isMobile ? 70 : 165), w * 0.89), y: Math.max(450, h * 0.76), size: s(108) },
-      { id: 9, x: Math.max(w * 0.22, 60), y: Math.max(h - (isMobile ? 80 : 130), 500), size: s(86) },
-      { id: 10, x: Math.max(w * 0.74, w - (isMobile ? 110 : 260)), y: Math.max(h - (isMobile ? 75 : 125), 490), size: s(92) },
+      // Right peripheral margin
+      { id: 2, x: Math.max(w - (isMobile ? 55 : 120), w * 0.92), y: Math.max(85, h * 0.14), size: s(82) },
+      { id: 4, x: Math.max(w - (isMobile ? 50 : 115), w * 0.93), y: Math.max(260, h * 0.42), size: s(78) },
+      { id: 6, x: Math.max(w - (isMobile ? 58 : 125), w * 0.91), y: Math.max(460, h * 0.70), size: s(85) },
     ],
     about: [
-      { id: 1, x: Math.max(w - (isMobile ? 75 : 165), w * 0.87), y: Math.max(75, h * 0.15), size: s(105) },
-      { id: 2, x: Math.max(18, w * 0.04), y: Math.max(65, h * 0.12), size: s(98) },
-      { id: 11, x: Math.max(w * 0.22, 60), y: Math.max(40, h * 0.06), size: s(80) },
-      { id: 12, x: Math.max(w * 0.75, w - (isMobile ? 90 : 210)), y: Math.max(45, h * 0.07), size: s(82) },
-
-      { id: 3, x: Math.max(w - (isMobile ? 65 : 155), w * 0.89), y: Math.max(220, h * 0.38), size: s(92) },
-      { id: 4, x: Math.max(15, w * 0.05), y: Math.max(210, h * 0.35), size: s(96) },
-      { id: 5, x: Math.max(20, w * 0.04), y: Math.max(340, h * 0.58), size: s(88) },
-      { id: 6, x: Math.max(w - (isMobile ? 70 : 160), w * 0.88), y: Math.max(330, h * 0.55), size: s(98) },
-
-      { id: 7, x: Math.max(w * 0.76, w - (isMobile ? 110 : 250)), y: Math.max(h - (isMobile ? 80 : 130), 480), size: s(100) },
-      { id: 8, x: Math.max(w * 0.18, 50), y: Math.max(h - (isMobile ? 75 : 125), 470), size: s(90) },
+      { id: 1, x: Math.max(w - (isMobile ? 55 : 120), w * 0.92), y: Math.max(95, h * 0.16), size: s(85) },
+      { id: 3, x: Math.max(15, w * 0.03), y: Math.max(260, h * 0.42), size: s(78) },
+      { id: 5, x: Math.max(w - (isMobile ? 58 : 125), w * 0.91), y: Math.max(440, h * 0.68), size: s(82) },
+      { id: 2, x: Math.max(18, w * 0.035), y: Math.max(85, h * 0.14), size: s(80) },
     ],
   };
 
@@ -59,7 +44,6 @@ const Layout = ({ children, puzzleType = "home" }) => {
   const [currentPuzzles, setCurrentPuzzles] = useState(() =>
     puzzleType ? getPuzzlePositions(puzzleType) : []
   );
-  const [taglineOpacity, setTaglineOpacity] = useState(1);
 
   useEffect(() => {
     const updatePositions = () => {
@@ -75,27 +59,13 @@ const Layout = ({ children, puzzleType = "home" }) => {
     return () => window.removeEventListener("resize", updatePositions);
   }, [puzzleType]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const fadeStart = 60;
-      const fadeEnd = 260;
-      const opacity = scrollY <= fadeStart
-        ? 1
-        : Math.max(0, 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart));
-      setTaglineOpacity(opacity);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="min-h-screen grid-bg relative overflow-x-hidden">
-      {/* Ambient Floating Glow Orbs */}
+    <div className="min-h-screen grid-bg relative overflow-x-hidden flex flex-col justify-between">
+      {/* Ambient Floating Glow Orbs (Subtle Depth) */}
       <div className="ambient-glow-orb-1" aria-hidden="true" />
       <div className="ambient-glow-orb-2" aria-hidden="true" />
 
-      {/* Puzzle Pieces Background */}
+      {/* Subtle Peripheral Puzzle Pieces Background (Preserved Identity) */}
       {currentPuzzles.map((piece) => (
         <PuzzlePiece
           key={piece.id}
@@ -107,11 +77,6 @@ const Layout = ({ children, puzzleType = "home" }) => {
         />
       ))}
 
-      {/* Puzzle Tagline */}
-      <div className="puzzle-tagline" style={{ opacity: taglineOpacity }}>
-        "Every interface is a puzzle. I enjoy solving the hard parts."
-      </div>
-
       {/* Theme Toggle Button */}
       <ThemeToggle />
 
@@ -119,15 +84,25 @@ const Layout = ({ children, puzzleType = "home" }) => {
       <ChatWidget />
 
       {/* Main Content */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex-1">
         {/* Navigation */}
         <Navbar />
 
         {/* Content Sections */}
-        <div className="container mx-auto px-4 sm:px-8 py-8 sm:py-16" key={location.pathname}>
+        <main className="container mx-auto px-4 sm:px-8 py-6 sm:py-12" key={location.pathname}>
           {children}
-        </div>
+        </main>
       </div>
+
+      {/* Elegant Footer with Signature Puzzle Tagline */}
+      <footer className="relative z-10 py-6 border-t border-[var(--border-subtle)] text-center text-xs font-mono" style={{ color: 'var(--text-tertiary)' }}>
+        <p className="italic">
+          &ldquo;Every interface is a puzzle. I enjoy solving the hard parts.&rdquo;
+        </p>
+        <p className="text-[11px] text-[var(--text-tertiary)] opacity-60 mt-1">
+          Designed &amp; engineered by Samridh Srivastava &bull; New York, NY
+        </p>
+      </footer>
     </div>
   );
 };

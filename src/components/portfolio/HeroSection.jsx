@@ -1,7 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { LuGraduationCap, LuArrowDown, LuFileText } from "react-icons/lu";
-import TypingName from "./TypingName";
-import RotatingText from "./RotatingText";
+import {
+  LuGraduationCap,
+  LuArrowDown,
+  LuFileText,
+  LuGithub,
+  LuLinkedin,
+  LuShieldCheck
+} from "react-icons/lu";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -19,108 +24,158 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="text-center space-y-6 max-w-4xl mx-auto pt-2 pb-6">
-      {/* Animoji with Dual Halo & Ambient Levitation */}
-      <div className="flex justify-center relative pt-2">
+    <div className="text-center space-y-6 max-w-4xl mx-auto pt-2 pb-4">
+      {/* Animoji / Profile Representation */}
+      <div className="flex justify-center relative pt-1">
         <div className="relative inline-block">
           <div className="avatar-halo-glow" aria-hidden="true" />
-          <div className="avatar-halo-secondary" aria-hidden="true" />
           <img
             src="/images/aboutPage/frontPageAnimoji-removebg.png"
             alt="Samridh Srivastava avatar"
-            className="avatar-levitate w-48 h-48 sm:w-60 sm:h-60 md:w-68 md:h-68 object-contain relative z-10 select-none pointer-events-none"
+            className="w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 object-contain relative z-10 select-none pointer-events-none transition-transform duration-300 hover:scale-105"
             style={{
-              filter: 'drop-shadow(0 0 28px var(--accent-glow))'
+              filter: 'drop-shadow(0 0 24px var(--accent-glow))'
             }}
           />
         </div>
       </div>
 
-      {/* Name & Dynamic Role Typing */}
-      <div className="space-y-3 sm:space-y-4">
-        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl leading-tight tracking-tight title-glow-pulse">
-          <TypingName />
+      {/* Instant Professional Identity — Zero Latency */}
+      <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium border border-[var(--border-color)] text-[var(--accent-primary)] bg-[var(--bg-secondary)] backdrop-blur-md">
+          <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--accent-emerald)] opacity-75 animate-ping" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent-emerald)]" />
+          </span>
+          <span>AI / ML SYSTEMS ENGINEER</span>
+        </div>
+
+        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl leading-tight tracking-tight text-[var(--text-primary)]">
+          Samridh Srivastava
         </h1>
 
-        {/* Rotating Subtitle / Roles */}
-        <div className="text-base sm:text-xl md:text-2xl min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center px-4">
-          <RotatingText />
-        </div>
+        {/* Clear Positioning Statement */}
+        <p className="text-base sm:text-xl md:text-2xl font-grotesk font-medium max-w-2xl mx-auto leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+          Building <span className="text-[var(--text-primary)] font-semibold">production-ready intelligent systems</span>, low-latency inference pipelines, and agentic workflows.
+        </p>
       </div>
 
-      {/* Current Academic Status with Live Radar Beacon */}
-      <div className="text-xs sm:text-sm font-mono flex justify-center">
+      {/* Core Specialization Pills */}
+      <div className="flex flex-wrap justify-center gap-2 pt-1 max-w-2xl mx-auto">
+        {[
+          "LLMs",
+          "AI Agents",
+          "ML Systems",
+          "Distributed Systems",
+          "MLOps",
+          "Inference Optimization"
+        ].map((domain) => (
+          <span
+            key={domain}
+            className="pill-motion px-3 py-1.5 rounded-lg border text-xs font-mono font-medium"
+            style={{
+              backgroundColor: 'var(--card-bg)',
+              borderColor: 'var(--border-color)',
+              color: 'var(--accent-secondary)'
+            }}
+          >
+            {domain}
+          </span>
+        ))}
+      </div>
+
+      {/* Candidate Qualification Badges */}
+      <div className="flex flex-wrap justify-center items-center gap-2.5 pt-1 text-xs font-mono">
         <div
-          className="inline-flex items-center justify-center gap-2.5 px-4 py-2 rounded-full border backdrop-blur-md transition-all duration-200 hover:border-[var(--accent-primary)] hover:shadow-[0_0_20px_var(--accent-glow-subtle)]"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border backdrop-blur-md"
           style={{
             borderColor: 'var(--border-color)',
             backgroundColor: 'var(--card-bg)',
             color: 'var(--text-secondary)'
           }}
         >
-          <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
-            <span className="status-beacon-ping" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent-emerald)]" />
-          </span>
-          <LuGraduationCap className="text-base shrink-0" style={{ color: 'var(--accent-primary)' }} aria-hidden="true" />
+          <LuGraduationCap className="text-sm shrink-0 text-[var(--accent-primary)]" aria-hidden="true" />
           <span>
-            MS Computer Engineering @ <span className="font-semibold text-[var(--text-primary)]">NYU</span>
+            MS Computer Engineering @ <span className="font-semibold text-[var(--text-primary)]">NYU</span> (3.86 GPA)
+          </span>
+        </div>
+
+        <div
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border backdrop-blur-md"
+          style={{
+            borderColor: 'var(--border-color)',
+            backgroundColor: 'var(--card-bg)',
+            color: 'var(--text-secondary)'
+          }}
+        >
+          <LuShieldCheck className="text-sm shrink-0 text-[var(--accent-emerald)]" aria-hidden="true" />
+          <span>
+            U.S. Work Authorized <span className="text-[var(--text-tertiary)]">(OPT / STEM OPT · 36 Mo)</span>
           </span>
         </div>
       </div>
 
-      {/* Primary CTAs */}
-      <div className="flex flex-col sm:flex-row gap-3.5 justify-center items-center pt-2 max-w-md mx-auto sm:max-w-none">
+      {/* Immediate Recruiter CTAs (1-Click Access) */}
+      <div className="flex flex-wrap gap-3 justify-center items-center pt-3 max-w-xl mx-auto">
         <button
           onClick={handleScrollToProjects}
-          className="btn-shimmer-sheen w-full sm:w-auto px-7 py-3.5 rounded-full text-sm sm:text-base font-medium flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-transform duration-150 active:scale-95"
+          className="btn-shimmer-sheen px-6 py-3 rounded-full text-xs sm:text-sm font-medium font-mono flex items-center justify-center gap-2 cursor-pointer focus:outline-none focus-visible:ring-2 active:scale-95 transition-transform"
           style={{
             backgroundColor: 'var(--accent-primary)',
             color: '#ffffff',
-            boxShadow: '0 0 24px var(--accent-glow)'
+            boxShadow: '0 0 20px var(--accent-glow)'
           }}
-          aria-label="Scroll down to view projects"
+          aria-label="Scroll down to view featured systems"
         >
-          <span>Explore Featured Work</span>
-          <LuArrowDown className="text-base animate-subtle-bob" aria-hidden="true" />
+          <span>View Featured Systems</span>
+          <LuArrowDown className="text-sm" aria-hidden="true" />
         </button>
+
         <button
           onClick={() => navigate('/resume')}
-          className="w-full sm:w-auto px-7 py-3.5 rounded-full text-sm sm:text-base font-medium font-mono border backdrop-blur-md flex items-center justify-center gap-2 cursor-pointer transition-all duration-200 hover:border-[var(--accent-primary)] hover:bg-[var(--card-hover-bg)] active:scale-95 focus:outline-none focus-visible:ring-2"
+          className="px-5 py-3 rounded-full text-xs sm:text-sm font-medium font-mono border backdrop-blur-md flex items-center justify-center gap-2 cursor-pointer transition-all duration-150 hover:border-[var(--accent-primary)] hover:bg-[var(--card-hover-bg)] active:scale-95 focus:outline-none focus-visible:ring-2"
           style={{
             backgroundColor: 'var(--card-bg)',
             color: 'var(--text-primary)',
             borderColor: 'var(--border-color)'
           }}
-          aria-label="Navigate to Resume page"
+          aria-label="Navigate to Resume and ATS page"
         >
           <LuFileText className="text-base text-[var(--accent-primary)]" aria-hidden="true" />
-          <span>Interactive Resume</span>
+          <span>Resume &amp; ATS</span>
         </button>
-      </div>
 
-      {/* Credibility Architecture Tags */}
-      <div className="pt-6 sm:pt-8 border-t max-w-2xl mx-auto" style={{ borderColor: 'var(--border-subtle)' }}>
-        <p className="text-xs uppercase tracking-widest mb-3 font-mono font-medium" style={{ color: 'var(--text-tertiary)' }}>
-          CORE SPECIALIZATIONS
-        </p>
-        <div className="flex flex-wrap justify-center gap-2 text-xs font-mono">
-          {["Agentic AI & RAG", "Distributed Systems", "LLM Optimization", "High-Throughput Web"].map(
-            (item) => (
-              <span
-                key={item}
-                className="pill-motion px-3 py-1.5 rounded-md border cursor-default"
-                style={{
-                  backgroundColor: 'var(--card-bg)',
-                  borderColor: 'var(--border-color)',
-                  color: 'var(--text-secondary)'
-                }}
-              >
-                {item}
-              </span>
-            )
-          )}
-        </div>
+        <a
+          href="https://github.com/samridhsri"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-3 rounded-full text-xs sm:text-sm font-mono border backdrop-blur-md flex items-center justify-center gap-2 cursor-pointer transition-all duration-150 hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] active:scale-95 focus:outline-none focus-visible:ring-2"
+          style={{
+            backgroundColor: 'var(--card-bg)',
+            color: 'var(--text-secondary)',
+            borderColor: 'var(--border-color)'
+          }}
+          aria-label="Samridh Srivastava GitHub profile"
+        >
+          <LuGithub className="text-base" aria-hidden="true" />
+          <span>GitHub</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/samridh-srivastava-a6b888ba/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-3 rounded-full text-xs sm:text-sm font-mono border backdrop-blur-md flex items-center justify-center gap-2 cursor-pointer transition-all duration-150 hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] active:scale-95 focus:outline-none focus-visible:ring-2"
+          style={{
+            backgroundColor: 'var(--card-bg)',
+            color: 'var(--text-secondary)',
+            borderColor: 'var(--border-color)'
+          }}
+          aria-label="Samridh Srivastava LinkedIn profile"
+        >
+          <LuLinkedin className="text-base" aria-hidden="true" />
+          <span>LinkedIn</span>
+        </a>
       </div>
     </div>
   );

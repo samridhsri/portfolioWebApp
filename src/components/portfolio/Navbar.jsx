@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { LuGithub, LuLinkedin } from 'react-icons/lu';
 
 const Navbar = () => {
   return (
@@ -28,7 +29,7 @@ const Navbar = () => {
               key={path}
               to={path}
               className={({ isActive }) =>
-                `px-3 sm:px-5 py-1.5 sm:py-1.5 text-xs sm:text-sm font-medium font-mono rounded-full transition-all duration-200 active:scale-95 focus:outline-none focus-visible:ring-2 ${
+                `px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium font-mono rounded-full transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 ${
                   isActive
                     ? 'bg-[var(--accent-primary)] text-white shadow-[0_0_16px_var(--accent-glow)] font-semibold'
                     : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]'
@@ -38,6 +39,30 @@ const Navbar = () => {
               {label}
             </NavLink>
           ))}
+
+          {/* Direct Recruiter External Links */}
+          <div className="hidden sm:flex items-center gap-1 pl-1 ml-1 border-l border-[var(--border-subtle)]">
+            <a
+              href="https://github.com/samridhsri"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-full text-[var(--text-secondary)] hover:text-[var(--accent-primary)] hover:bg-[var(--bg-secondary)] transition-colors duration-150"
+              title="GitHub Profile"
+              aria-label="GitHub Profile"
+            >
+              <LuGithub className="text-base" aria-hidden="true" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/samridh-srivastava-a6b888ba/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 rounded-full text-[var(--text-secondary)] hover:text-[var(--accent-primary)] hover:bg-[var(--bg-secondary)] transition-colors duration-150"
+              title="LinkedIn Profile"
+              aria-label="LinkedIn Profile"
+            >
+              <LuLinkedin className="text-base" aria-hidden="true" />
+            </a>
+          </div>
         </div>
       </nav>
     </header>

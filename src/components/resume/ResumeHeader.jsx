@@ -40,9 +40,9 @@ const ResumeHeader = ({
   };
 
   return (
-    <header className="space-y-6 pt-2 pb-4">
+    <header className="space-y-6 pt-2 pb-4 relative z-40">
       {/* Top Banner / Identity Card */}
-      <div className="p-6 sm:p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] backdrop-blur-xl shadow-[var(--glass-shadow)] transition-all duration-300">
+      <div className="p-6 sm:p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--card-bg)] backdrop-blur-xl shadow-[var(--glass-shadow)] transition-all duration-300 relative z-40">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div className="space-y-3 flex-1">
             {/* Work Auth & Academic Status Badge */}
@@ -152,8 +152,15 @@ const ResumeHeader = ({
                 </button>
 
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-72 rounded-xl border border-[var(--border-color)] bg-[var(--card-bg)] backdrop-blur-2xl shadow-2xl z-50 p-2 space-y-1 animate-in fade-in slide-in-from-top-2 duration-150">
-                    <div className="px-3 py-1.5 text-[11px] font-mono text-[var(--text-tertiary)] uppercase tracking-wider">
+                  <div
+                    className="absolute right-0 mt-2 w-72 rounded-xl border border-[var(--border-color)] shadow-2xl z-50 p-2 space-y-1 animate-in fade-in duration-150"
+                    style={{
+                      backgroundColor: 'var(--bg-secondary)',
+                      boxShadow: '0 16px 48px rgba(0, 0, 0, 0.75), 0 0 0 1px var(--border-color)',
+                      opacity: 1,
+                    }}
+                  >
+                    <div className="px-3 py-1.5 text-[11px] font-mono text-[var(--text-tertiary)] uppercase tracking-wider border-b border-[var(--border-subtle)] pb-2 mb-1">
                       Select Tailored Resume PDF
                     </div>
                     {roleTracks.map((role) => (
@@ -164,8 +171,8 @@ const ResumeHeader = ({
                         rel="noreferrer"
                         className={`flex items-center justify-between p-2.5 rounded-lg text-xs font-mono transition-colors ${
                           activeRole === role.id
-                            ? "bg-[var(--bg-secondary)] text-[var(--accent-primary)] font-semibold border border-[var(--border-subtle)]"
-                            : "text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]"
+                            ? "bg-[var(--card-hover-bg)] text-[var(--accent-primary)] font-semibold border border-[var(--accent-primary)]/30"
+                            : "text-[var(--text-secondary)] hover:bg-[var(--card-hover-bg)] hover:text-[var(--text-primary)]"
                         }`}
                         onClick={() => setDropdownOpen(false)}
                       >
@@ -175,7 +182,7 @@ const ResumeHeader = ({
                             {role.badge}
                           </span>
                         </div>
-                        <LuExternalLink className="text-xs shrink-0" />
+                        <LuExternalLink className="text-xs shrink-0 opacity-75" />
                       </a>
                     ))}
                   </div>
