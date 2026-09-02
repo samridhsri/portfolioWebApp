@@ -11,10 +11,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  // Default to cyberpunk theme
+  // Default to light (white) theme
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('portfolio-theme');
-    return savedTheme || 'cyberpunk';
+    return savedTheme || 'light';
   });
 
   useEffect(() => {
@@ -25,9 +25,9 @@ export const ThemeProvider = ({ children }) => {
 
   const toggleTheme = () => {
     setTheme((prevTheme) => {
-      if (prevTheme === 'cyberpunk') return 'dark';
-      if (prevTheme === 'dark') return 'light';
-      return 'cyberpunk';
+      if (prevTheme === 'light') return 'dark';
+      if (prevTheme === 'dark') return 'cyberpunk';
+      return 'light';
     });
   };
 
