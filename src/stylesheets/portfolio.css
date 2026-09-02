@@ -69,7 +69,7 @@
   }
 }
 
-/* Puzzle Pieces — Preserved Signature Theme with Calibrated Motion */
+/* Puzzle Pieces — Tactile Floating & Interactive Drag */
 .puzzle-piece {
   position: fixed;
   cursor: grab;
@@ -77,13 +77,13 @@
   touch-action: none;
   display: block;
   transform-origin: center center;
-  opacity: 0.22;
-  z-index: 5;
+  opacity: 0.50;
+  z-index: 35;
   will-change: transform, opacity;
-  filter: drop-shadow(0 0 10px var(--accent-glow-subtle));
+  filter: drop-shadow(0 0 12px var(--accent-glow-subtle));
   transition: opacity var(--duration-normal) var(--ease-out),
               filter var(--duration-normal) var(--ease-out),
-              transform var(--duration-normal) var(--ease-out);
+              transform var(--duration-fast) var(--ease-out);
 }
 
 .puzzle-piece:active {
@@ -92,20 +92,22 @@
 
 @media (hover: hover) and (pointer: fine) {
   .puzzle-piece:hover {
-    opacity: 0.85;
-    z-index: 30;
-    filter: drop-shadow(0 0 20px var(--accent-glow));
-    transform: scale(1.06);
+    opacity: 0.98;
+    z-index: 45;
+    filter: drop-shadow(0 0 24px var(--accent-glow)) drop-shadow(0 0 12px var(--accent-primary));
+    transform: scale(1.10);
+    cursor: grab;
   }
 }
 
 .puzzle-piece.dragging {
-  opacity: 0.95;
-  z-index: 50;
-  cursor: grabbing;
+  opacity: 1 !important;
+  z-index: 60 !important;
+  cursor: grabbing !important;
   animation: none !important;
   transition: none !important;
-  filter: drop-shadow(0 0 28px var(--accent-glow));
+  filter: drop-shadow(0 0 32px var(--accent-glow)) drop-shadow(0 0 18px var(--accent-secondary)) !important;
+  transform: scale(1.15) !important;
 }
 
 /* Organic, ultra-slow multi-phase drift per piece ID */
